@@ -1,43 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="31dp"
-        android:background="@drawable/c127777" />
-
+    android:layout_height="match_parent"
+    android:background="#F4F7F7">
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:orientation="vertical">
-        
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-      
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="test"
+                android:text="한글자음"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="test"
+
+                android:text="한글모음"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="test"
+
+                android:text="한글약어"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="test"
+
+                android:text="알파벳"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="test"
+
+                android:text="숫자"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="test"
+
+                android:text="문장부호"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
-
     <Button
-        android:id="@+id/button3"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
+        android:text="뒤로가기"
         android:background="@drawable/shape_list"
         android:clickable="true"
         android:onClick="GoBack"
-        android:text="뒤로가기"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp" />
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

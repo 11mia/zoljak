@@ -22,6 +22,7 @@
         <activity android:name=".StudyConsonantActivity"/>
         <activity android:name=".DeveloperActivity"/>
         <activity android:name=".TestActivity"/>
+        <activity android:name=".TestContentActivity"/>
     </application>
 
 </manifest>
