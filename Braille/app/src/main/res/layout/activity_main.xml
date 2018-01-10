@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.miseon.braille.MainActivity"
+    android:orientation="vertical"
+    android:background="#F4F7F7">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_list"
+        android:text="학습"
+        android:textSize="20sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="70dp"
+        android:textColor="#ffffffff"
+        android:clickable="true"
+        android:onClick="GoToStudy"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_list"
+        android:text="테스트"
+        android:textSize="20sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffffff"
+        android:clickable="true"
+        android:onClick="GoToTest"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:background="@drawable/shape_list"
+        android:text="번역"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffffff"
+        android:clickable="true"
+        android:onClick="GoToTranslate"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:background="@drawable/shape_list"
+        android:text="부록"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffffff"
+        android:clickable="true"
+        android:onClick="GoToSupplement"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_list"
+        android:textSize="20sp"
+        android:text="개발자"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffffff"
+        android:clickable="true"
+        android:onClick="ShowDeveloper"/>
+
+</LinearLayout>

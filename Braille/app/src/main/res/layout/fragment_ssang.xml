@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="60dp"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ㄲ"
+                android:textSize="30sp"
+                android:background="@drawable/shape_button"
+                android:layout_margin="2dp"
+                android:clickable="true"
+                android:onClick="click"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ㄸ"
+                android:textSize="30sp"
+                android:background="@drawable/shape_button"
+                android:layout_margin="2dp"
+                android:clickable="true"
+                android:onClick="click"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ㅃ"
+                android:textSize="30sp"
+                android:background="@drawable/shape_button"
+                android:layout_margin="2dp"
+                android:clickable="true"
+                android:onClick="click"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ㅉ"
+                android:textSize="30sp"
+                android:background="@drawable/shape_button"
+                android:layout_margin="2dp"
+                android:clickable="true"
+                android:onClick="click"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ㅆ"
+                android:textSize="30sp"
+                android:background="@drawable/shape_button"
+                android:layout_margin="2dp"
+                android:clickable="true"
+                android:onClick="click"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

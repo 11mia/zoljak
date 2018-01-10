@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout2">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_list"
+            android:text="초성"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:onClick="consonantClick"
+            android:id="@+id/initial"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_list"
+            android:text="종성"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/finalconsonant"
+            android:clickable="true"
+            android:onClick="consonantClick"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_list"
+            android:text="쌍자음"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:onClick="consonantClick"
+            android:id="@+id/ssang"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/consonantFragment"
+        android:layout_width="300dp"
+        android:layout_height="355dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_list"
+        android:clickable="true"
+        android:onClick="GoBack"
+        android:text="뒤로가기"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_below="@+id/consonantFragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+
+</RelativeLayout>
