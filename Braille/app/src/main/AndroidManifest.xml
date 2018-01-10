@@ -20,6 +20,8 @@
         <activity android:name=".Splash_Activity"/>
         <activity android:name=".StudyMainActivity"/>
         <activity android:name=".StudyConsonantActivity"/>
+        <activity android:name=".DeveloperActivity"/>
+        <activity android:name=".TestActivity"/>
     </application>
 
 </manifest>

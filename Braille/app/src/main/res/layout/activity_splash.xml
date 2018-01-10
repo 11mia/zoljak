@@ -5,14 +5,15 @@
     android:background="#F4F7F7">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:text="점자학습 앱"
         android:textSize="40sp"
-        android:id="@+id/textView"
-        android:layout_marginBottom="20dp"
         android:layout_above="@+id/imageView"
-        android:layout_marginLeft="105dp" />
+
+        android:layout_marginLeft="103dp"/>
 
     <ImageView
         android:layout_width="200dp"
