@@ -3,4 +3,5 @@
     <color name="colorPrimary">#B6CDBD</color>
     <color name="colorPrimaryDark">#5C715E</color>
     <color name="colorAccent">#5C715E</color>
+    <color name="whilte">#000000</color>
 </resources>
