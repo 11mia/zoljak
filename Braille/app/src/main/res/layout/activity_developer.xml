@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/linearLayout3"
         android:layout_alignStart="@+id/linearLayout3"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="120dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -120,7 +120,7 @@
         android:orientation="horizontal"
         android:layout_above="@+id/button5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="57dp"
+        android:layout_marginBottom="53dp"
         android:id="@+id/linearLayout6">
 
         <LinearLayout

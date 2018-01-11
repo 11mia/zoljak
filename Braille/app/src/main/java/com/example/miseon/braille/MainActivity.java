@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {
-                                Intent it = new Intent(MainActivity.this,TestActivity.class);
+                                Intent it = new Intent(MainActivity.this,TestActivity2.class);
                                 it.putExtra("flag",2);
                                 startActivity(it);
                             }
@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoToTranslate(View v){
-
+        Intent it = new Intent(this,TranslateActivity.class);
+        startActivity(it);
     }
 
     public void GoToSupplement(View v){

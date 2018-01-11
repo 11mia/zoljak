@@ -65,10 +65,11 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_list"
+        android:textColor="#ffffff"
         android:clickable="true"
         android:onClick="GoBack"
         android:text="뒤로가기"
-        android:textColor="#ffffff"
+
         android:textSize="20sp"
         android:layout_below="@+id/consonantFragment"
         android:layout_centerHorizontal="true"

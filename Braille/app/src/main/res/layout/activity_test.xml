@@ -19,15 +19,16 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/tmbt1"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:background="@drawable/shape_list"
                 android:clickable="true"
                 android:onClick="test"
                 android:text="한글자음"
                 android:textColor="#ffffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"/>
+                android:textSize="20sp" />
 
             <Button
                 android:layout_width="100dp"

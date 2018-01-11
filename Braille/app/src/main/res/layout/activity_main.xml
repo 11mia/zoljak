@@ -10,64 +10,64 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:text="학습"
-        android:textSize="20sp"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="70dp"
-        android:textColor="#ffffffff"
+        android:background="@drawable/shape_list"
         android:clickable="true"
-        android:onClick="GoToStudy"/>
+        android:onClick="GoToStudy"
+        android:text="학습"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/shape_list"
+        android:clickable="true"
+        android:onClick="GoToTest"
         android:text="테스트"
-        android:textSize="20sp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="30dp"
         android:textColor="#ffffffff"
-        android:clickable="true"
-        android:onClick="GoToTest"/>
+        android:textSize="20sp" />
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/shape_list"
+        android:clickable="true"
+        android:onClick="GoToTranslate"
         android:text="변환"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="30dp"
         android:textColor="#ffffffff"
-        android:clickable="true"
-        android:onClick="GoToTranslate"/>
+        android:textSize="20sp" />
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/shape_list"
+        android:clickable="true"
+        android:onClick="GoToSupplement"
         android:text="부록"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="30dp"
         android:textColor="#ffffffff"
-        android:clickable="true"
-        android:onClick="GoToSupplement"/>
+        android:textSize="20sp" />
 
     <Button
-        android:layout_width="100dp"
+        android:layout_width="131dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:textSize="20sp"
-        android:text="개발자"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="30dp"
-        android:textColor="#ffffffff"
+        android:background="@drawable/shape_list"
         android:clickable="true"
-        android:onClick="ShowDeveloper"/>
+        android:onClick="ShowDeveloper"
+        android:text="개발자"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
 
 </LinearLayout>

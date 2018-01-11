@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#5C715E</color>
     <color name="colorAccent">#5C715E</color>
     <color name="whilte">#000000</color>
+    <color name="testbuttoncolor">#e9f7f7</color>
 </resources>
