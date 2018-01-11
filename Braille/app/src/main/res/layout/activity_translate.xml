@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <Button
+                android:id="@+id/gultojeom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_button"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="글자->점자"
+                android:textSize="20sp"
+                android:clickable="true"
+                android:onClick="clicktranslate"/>
+
+
+            <Button
+                android:id="@+id/jeomtogul"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:onClick="clicktranslate"
+                android:text="점자->글자"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/translateview"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/gobackbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:background="@drawable/shape_list"
+            android:textColor="#ffffff"
+            android:text="뒤로가기"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:onClick="GoBack"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
