@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Braille</string>
+    <string name="in1">c777477</string>
+    <string name="in2">c177477</string>
+    <string name="in3">c727477</string>
+    <string name="in4">c777757</string>
+    <string name="in5">c177757</string>
+    <string name="in6">c777457</string>
+    <string name="in7">c777776</string>
+    <string name="in8">c127457</string>
+    <string name="in9">c777476</string>
+    <string name="in10">c777756</string>
+    <string name="in11">c127477</string>
+    <string name="in12">c127757</string>
+    <string name="in13">c177457</string>
+    <string name="in14">c727457</string>
 </resources>
+

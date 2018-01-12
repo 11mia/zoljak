@@ -141,12 +141,12 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/c01" />
+                 />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/c01" />
+                 />
 
         </LinearLayout>
 
@@ -159,13 +159,13 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/c01" />
+                 />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="229dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/c01" />
+                />
 
         </LinearLayout>
 
@@ -178,13 +178,13 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/c01" />
+                 />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/c01" />
+                 />
 
         </LinearLayout>
     </LinearLayout>
