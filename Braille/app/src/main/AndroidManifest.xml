@@ -28,6 +28,8 @@
         <activity android:name=".TestContentActivity2"/>
 
         <activity android:name=".TranslateActivity"/>
+        <activity android:name=".TranslateActivity1"/>
+        <activity android:name=".TranslateActivity2"/>
     </application>
 
 </manifest>

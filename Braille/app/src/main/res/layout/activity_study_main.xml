@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F7F7">
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:orientation="vertical"
         android:id="@+id/linearLayout"
+        android:layout_width="284dp"
+        android:layout_height="254dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="286dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -33,12 +38,12 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_list"
+                android:layout_marginLeft="30dp"
 
+                android:background="@drawable/shape_list"
                 android:text="한글모음"
                 android:textColor="#ffffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
 
@@ -51,21 +56,22 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_list"
+                android:layout_marginLeft="30dp"
 
+                android:background="@drawable/shape_list"
                 android:text="한글약어"
                 android:textColor="#ffffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"/>
+                android:textSize="20sp" />
+
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_list"
+                android:layout_marginLeft="30dp"
 
+                android:background="@drawable/shape_list"
                 android:text="알파벳"
                 android:textColor="#ffffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -77,35 +83,26 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_list"
+                android:layout_marginLeft="30dp"
 
+                android:background="@drawable/shape_list"
                 android:text="숫자"
                 android:textColor="#ffffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"/>
+                android:textSize="20sp" />
+
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_list"
+                android:layout_marginLeft="30dp"
 
+                android:background="@drawable/shape_list"
                 android:text="문장부호"
                 android:textColor="#ffffffff"
-                android:textSize="20sp"
-                android:layout_marginLeft="30dp"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="뒤로가기"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="GoBack"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
 
-</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

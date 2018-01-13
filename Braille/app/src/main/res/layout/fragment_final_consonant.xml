@@ -1,193 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="60dp"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView2">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㄱ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㄴ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㄷ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㄹ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅁ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅂ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅅ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅇ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅈ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅊ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅋ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅌ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅍ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ㅎ"
-                android:textSize="30sp"
-                android:background="@drawable/shape_button"
-                android:layout_margin="2dp"/>
-
-
-        </LinearLayout>
-    </ScrollView>
-
     <LinearLayout
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="51dp"
-        android:orientation="vertical"
-        android:layout_marginRight="47dp"
-        android:layout_marginEnd="47dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="150dp"
             android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                 />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
 
-            <ImageView
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㄱ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/i1"
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c177777" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                 />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㄴ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i2"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c727757"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㄷ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i3"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c773757"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㄹ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i4"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c727777"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅁ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i5"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c727776"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅂ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i6"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c127777"/>
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="150dp"
             android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                 />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="229dp"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅅ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i7"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c773777"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅇ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i8"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c723756"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅈ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i9"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c173777"/>
+            </LinearLayout>
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅊ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:layout_margin="2dp"
+                    android:id="@+id/i10"
+                    android:background="@drawable/c723777"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅋ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i11"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c723757"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅌ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:id="@+id/i12"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c723776"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="113dp"
                 android:layout_height="match_parent"
-                 />
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button"
+                android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅍ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/i13"
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c727756" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="117dp"
                 android:layout_height="match_parent"
-                 />
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="ㅎ"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/i14"
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/c773756" />
+            </LinearLayout>
         </LinearLayout>
+
+
     </LinearLayout>
 
 
-</RelativeLayout>
+
+</ScrollView>

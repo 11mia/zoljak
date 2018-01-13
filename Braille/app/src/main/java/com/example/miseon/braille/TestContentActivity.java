@@ -4,17 +4,11 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import static android.graphics.drawable.Drawable.*;
-import static java.lang.Math.random;
 
 
 public class TestContentActivity extends AppCompatActivity {
@@ -54,9 +48,12 @@ public class TestContentActivity extends AppCompatActivity {
     }
 
 
+
+
     public void resultOX(View v){//이건 테스트할 때 나오는 버튼을 눌렀을떄 호출되는 함수입니다.그냥 임시로 적어놓음.
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
+
 
         // 제목셋팅
         alertDialogBuilder.setTitle("답 결과");
@@ -76,10 +73,11 @@ public class TestContentActivity extends AppCompatActivity {
 
         // 다이얼로그 생성
         AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setIcon(R.drawable.braille);
+
 
         // 다이얼로그 보여주기
         alertDialog.show();
     }
-
 
 }
