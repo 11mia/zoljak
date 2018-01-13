@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView3"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="19dp"
-        android:text="민영"
-        android:textSize="30dp" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="79dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="민영"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="250dp"
+        android:layout_width="228dp"
         android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268">
 
         <ImageView
             android:layout_width="0dp"
@@ -45,56 +62,90 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:id="@+id/textView3"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="미선"
-        android:layout_marginBottom="120dp"
-        android:id="@+id/textView3" />
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:layout_width="300dp"
+        android:id="@+id/linearLayout5"
+        android:layout_width="301dp"
         android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673">
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="@drawable/c177757"/>
+            android:background="@drawable/c177757" />
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="@drawable/c173757"/>
+            android:background="@drawable/c173757" />
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="@drawable/c777776"/>
+            android:background="@drawable/c777776" />
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="@drawable/c723456"/>
+            android:background="@drawable/c723456" />
 
 
     </LinearLayout>
 
 
-
-
     <Button
+        android:id="@+id/button5"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:text="뒤로가기"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/shape_list"
         android:clickable="true"
         android:onClick="GoBack"
+        android:text="뒤로가기"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="57dp"
-        android:id="@+id/button5" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
