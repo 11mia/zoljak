@@ -1,6 +1,993 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="327dp"
+        android:layout_height="460dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="가"
+                        android:textAlignment="center"
+
+                        android:textSize="30sp"
+                        android:textColor="#000000" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c127476" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="나"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c177477"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="다"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c727477"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="마"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c177757"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="바"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c777457"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="사"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c123777"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="자"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:id="@+id/i7"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c777476"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="카"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c127477"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="타"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c127757"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="파"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c177457"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="하"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c727457"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="억"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c177456"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="언"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c723456"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="얼"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c723457"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="연"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c177776"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="열"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c127756"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="영"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c127456"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="옥"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c173476"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="온"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c123756"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="옹"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c123456"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="운"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c127457"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="울"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c123476"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="은"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c173756"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="을"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c723476"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="인"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c123457"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+
+                        android:layout_margin="2dp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="것"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c777456"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c723477"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그래서"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c723477"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그러나"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177477"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그러면"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c727757"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그러므로"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c727776"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그런데"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c173457"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그리고"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c173776"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="그리하여"
+                        android:textColor="#000000"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177777"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c177756"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

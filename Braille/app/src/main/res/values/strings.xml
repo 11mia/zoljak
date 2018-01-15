@@ -14,6 +14,12 @@
     <string name="in12">c127757</string>
     <string name="in13">c177457</string>
     <string name="in14">c727457</string>
+    <string name="mul">\?</string>
+    <string name="opendouble">\"(열기)</string>
+    <string name="closedouble">\"(닫기)</string>
+    <string name="opensingle">\'(열기)</string>
+    <string name="closesingle">\'(닫기)</string>
+    <string name="apo">\'(아포스트로피)</string>
 
 
 </resources>

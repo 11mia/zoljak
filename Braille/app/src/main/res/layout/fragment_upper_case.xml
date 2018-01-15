@@ -9,7 +9,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -21,14 +21,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="A"
+                    android:textColor="#000000"
                     android:textAlignment="center"
                     android:textSize="30sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -54,13 +55,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="B"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -84,7 +87,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -96,13 +99,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="C"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -128,13 +133,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="D"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -156,7 +163,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -168,13 +175,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
+                    android:textColor="#000000"
+
                     android:text="E"
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -200,13 +209,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="F"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -228,7 +239,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -240,13 +251,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
+                    android:textColor="#000000"
+
                     android:text="G"
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -272,13 +285,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="H"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -300,7 +315,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -312,13 +327,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
+                    android:textColor="#000000"
+
                     android:text="I"
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -344,13 +361,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="J"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -372,7 +391,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -384,13 +403,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="K"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -416,13 +437,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
+                    android:textColor="#000000"
+
                     android:text="L"
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -444,7 +467,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -456,13 +479,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="M"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -488,13 +513,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="N"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -516,7 +543,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -528,13 +555,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="O"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -560,13 +589,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="P"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -588,7 +619,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -600,13 +631,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:text="q"
+                    android:layout_height="38dp"
+                    android:text="Q"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -632,13 +665,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="R"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -660,7 +695,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -672,13 +707,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="S"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -704,13 +741,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="T"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -732,7 +771,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -744,13 +783,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="U"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -776,13 +817,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="V"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -804,7 +847,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -816,13 +859,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
+                    android:textColor="#000000"
+
                     android:text="W"
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -848,13 +893,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="X"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -876,7 +923,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="155dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
@@ -888,13 +935,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="Y"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
@@ -920,13 +969,15 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="38dp"
                     android:text="Z"
+                    android:textColor="#000000"
+
                     android:textAlignment="center"
                     android:textSize="30sp" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="91dp"
+                    android:layout_height="92dp"
                     android:orientation="horizontal"
                     android:layout_margin="2dp">
                     <ImageView
