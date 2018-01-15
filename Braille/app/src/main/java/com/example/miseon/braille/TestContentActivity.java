@@ -27,7 +27,7 @@ public class TestContentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testcontent);
-        setTitle("테스트");
+        setTitle("테스트(글자->점자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

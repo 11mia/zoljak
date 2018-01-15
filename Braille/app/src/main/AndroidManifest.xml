@@ -30,6 +30,11 @@
         <activity android:name=".TranslateActivity"/>
         <activity android:name=".TranslateActivity1"/>
         <activity android:name=".TranslateActivity2"/>
+        <activity android:name=".StudyVowelActivity"/>
+        <activity android:name=".StudyAlphabetActivity"/>
+        <activity android:name=".StudyNumberActivity"/>
+        <activity android:name=".StudySymbolActivity"/>
+        <activity android:name="StudyAbbreviationActivity"/>
     </application>
 
 </manifest>

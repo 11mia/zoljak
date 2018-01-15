@@ -21,10 +21,39 @@ public class StudyMainActivity extends AppCompatActivity {
     public void GoBack(View v){
         finish();
     }
+
     public void Consonant(View v){
         Intent it = new Intent(this,StudyConsonantActivity.class);
         startActivity(it);
     }
+
+    public void vowel(View v){
+        Intent it = new Intent(this,StudyVowelActivity.class);
+        startActivity(it);
+    }
+
+    public void alphabet(View v){
+        Intent it = new Intent(this,StudyAlphabetActivity.class);
+        startActivity(it);
+    }
+
+    public void number(View v){
+        Intent it = new Intent(this,StudyNumberActivity.class);
+        startActivity(it);
+    }
+
+    public void symbol(View v){
+        Intent it = new Intent(this,StudySymbolActivity.class);
+        startActivity(it);
+    }
+
+    public void abbreviation(View v){
+        Intent it = new Intent(this,StudyAbbreviationActivity.class);
+        startActivity(it);
+
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

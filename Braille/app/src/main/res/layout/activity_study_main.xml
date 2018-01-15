@@ -39,6 +39,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:clickable="true"
+                android:onClick="vowel"
 
                 android:background="@drawable/shape_list"
                 android:text="한글모음"
@@ -57,6 +59,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:clickable="true"
+                android:onClick="abbreviation"
 
                 android:background="@drawable/shape_list"
                 android:text="한글약어"
@@ -67,6 +71,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:clickable="true"
+                android:onClick="alphabet"
 
                 android:background="@drawable/shape_list"
                 android:text="알파벳"
@@ -84,6 +90,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:clickable="true"
+                android:onClick="number"
 
                 android:background="@drawable/shape_list"
                 android:text="숫자"
@@ -94,6 +102,8 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:clickable="true"
+                android:onClick="symbol"
 
                 android:background="@drawable/shape_list"
                 android:text="문장부호"

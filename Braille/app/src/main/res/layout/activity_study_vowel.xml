@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="327dp"
+        android:layout_height="460dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅏ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c127776" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅑ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c773457"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅓ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c723477"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅕ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c177756"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅗ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c173776"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅛ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c773476"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅜ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:id="@+id/i7"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c173477"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅠ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c177476"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅡ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:id="@+id/i9"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c727476"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅣ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c173757"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅐ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c123757"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅔ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c173457"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅖ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c773477"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅘ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c123776"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅚ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c173456"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅝ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_margin="2dp"
+
+                        android:background="@drawable/c123477"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="ㅢ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        android:background="@drawable/c727456"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+
+                        android:layout_margin="2dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="ㅒ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c773457"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c123757"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="ㅙ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c123776"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c123757"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="ㅞ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c123477"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c123757"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="ㅟ"
+                        android:textAlignment="center"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:orientation="horizontal"
+                        android:layout_margin="2dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c173477"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c123757"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
