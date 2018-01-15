@@ -300,7 +300,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="113dp"
+            android:layout_width="96dp"
             android:layout_height="match_parent"
             android:layout_margin="7dp"
             android:background="@drawable/shape_button"
@@ -322,7 +322,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="117dp"
+            android:layout_width="96dp"
             android:layout_height="match_parent"
             android:layout_margin="7dp"
             android:background="@drawable/shape_button"

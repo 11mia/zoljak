@@ -88,7 +88,7 @@
         android:background="@drawable/shape_list"
         android:clickable="true"
         android:onClick="ShowDeveloper"
-        android:text="개발자"
+        android:text="개발"
         android:textColor="#ffffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -6,13 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import static java.lang.Math.random;
 
 
 public class TestContentActivity2 extends AppCompatActivity {
@@ -32,6 +29,8 @@ public class TestContentActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_testcontent2);
         setTitle("테스트");
         Intent it = getIntent();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         iv1 = (ImageView) findViewById((R.id.testjeomimage));//임시로 적어놓은거
         iv1.setImageResource(ran[3]);
@@ -46,6 +45,16 @@ public class TestContentActivity2 extends AppCompatActivity {
         b3.setText("ㅇ");
         b4.setText("ㅋ");
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //onBackPressed();
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void resultOX(View v){//이건 테스트할 때 나오는 버튼을 눌렀을떄 호출되는 함수입니다.그냥 임시로 적어놓음.
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -58,7 +67,7 @@ public class TestContentActivity2 extends AppCompatActivity {
         alertDialogBuilder
                 .setMessage("정답입니다")
                 .setCancelable(false)
-                .setNeutralButton("닫기",
+                .setPositiveButton("닫기",
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {

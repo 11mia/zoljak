@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,9 +16,22 @@ public class TestActivity2 extends AppCompatActivity{
         setContentView(R.layout.activity_test);
 
         setTitle("테스트(점자->글자)");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
     public void GoBack(View v){
         finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //onBackPressed();
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void test(View v){

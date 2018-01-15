@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class TestContentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testcontent);
         setTitle("테스트");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         Intent it = getIntent();
         flag = it.getIntExtra("flag", 1);
@@ -48,6 +51,16 @@ public class TestContentActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //onBackPressed();
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
     public void resultOX(View v){//이건 테스트할 때 나오는 버튼을 눌렀을떄 호출되는 함수입니다.그냥 임시로 적어놓음.
@@ -62,7 +75,7 @@ public class TestContentActivity extends AppCompatActivity {
         alertDialogBuilder
                 .setMessage("정답입니다.")
                 .setCancelable(false)
-                .setNeutralButton("닫기",
+                .setPositiveButton("닫기",
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {

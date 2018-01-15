@@ -116,18 +116,18 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button"
-                android:text="추가"
-                android:layout_margin="5dp"/>
+                android:text="추가" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button"
-                android:text="변환"
-                android:layout_margin="5dp"/>
+                android:text="변환" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,10 +139,18 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_button"
-                android:text="지우기"
-                android:layout_margin="5dp"/>
+
+                android:background="@drawable/del" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/space"
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -154,10 +162,10 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button"
-                android:text="초기화"
-                android:layout_margin="5dp"/>
+                android:text="초기화" />
         </LinearLayout>
     </LinearLayout>
 
