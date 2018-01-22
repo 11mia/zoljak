@@ -23,45 +23,25 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/dot1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
                 android:tag="1"
                 tools:layout_editor_absoluteX="91dp"
                 tools:layout_editor_absoluteY="78dp" />
 
             <Button
+                android:id="@+id/dot4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
-                android:tag="2"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:tag="3"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
                 android:tag="4"
                 tools:layout_editor_absoluteX="91dp"
                 tools:layout_editor_absoluteY="78dp" />
@@ -75,19 +55,57 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/dot2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
-                android:tag="5"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="2"
                 tools:layout_editor_absoluteX="91dp"
                 tools:layout_editor_absoluteY="78dp" />
 
             <Button
+                android:id="@+id/dot5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="5"
+                tools:layout_editor_absoluteX="91dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dot3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="3"
+                tools:layout_editor_absoluteX="91dp"
+                tools:layout_editor_absoluteY="78dp" />
+
+            <Button
+                android:id="@+id/dot6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
                 android:tag="6"
                 tools:layout_editor_absoluteX="91dp"
                 tools:layout_editor_absoluteY="78dp" />
@@ -119,6 +137,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:onClick="clickAdd"
                 android:text="추가" />
 
             <Button
@@ -127,6 +147,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:onClick="clickTranslate"
                 android:text="변환" />
         </LinearLayout>
 
@@ -141,6 +163,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="clickDel"
 
                 android:background="@drawable/del" />
 
@@ -150,7 +174,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/space"
-                 />
+                android:clickable="true"
+                android:onClick="clickSpace"/>
         </LinearLayout>
 
         <LinearLayout
@@ -165,6 +190,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:onClick="clear"
                 android:text="초기화" />
         </LinearLayout>
     </LinearLayout>
@@ -175,6 +202,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="215dp" />
+
+    <ScrollView
+        android:layout_width="357dp"
+        android:layout_height="77dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024">
+
+        <LinearLayout
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>

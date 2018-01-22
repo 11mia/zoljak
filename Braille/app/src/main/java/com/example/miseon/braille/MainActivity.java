@@ -104,10 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoToTranslate(View v){
-        /*
-        Intent it = new Intent(this,TranslateActivity.class);
-        startActivity(it);
-        */
+
         /*
         fragment안에서는 기능에 제약사항이 많아지기에 activity를 나눠봄
         */

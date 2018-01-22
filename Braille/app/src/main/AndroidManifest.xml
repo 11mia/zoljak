@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.miseon.braille">
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -27,7 +28,6 @@
         <activity android:name=".TestContentActivity"/>
         <activity android:name=".TestContentActivity2"/>
 
-        <activity android:name=".TranslateActivity"/>
         <activity android:name=".TranslateActivity1"/>
         <activity android:name=".TranslateActivity2"/>
         <activity android:name=".StudyVowelActivity"/>

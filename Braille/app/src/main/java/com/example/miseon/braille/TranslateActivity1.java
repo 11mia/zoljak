@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 
-
 public class TranslateActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +13,18 @@ public class TranslateActivity1 extends AppCompatActivity {
         setTitle("변환(한글->점자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
+/*
+        List<String> jasoList = new ArrayList<String>();
+
+        try {
+            jasoList = HangulParser.disassemble('한');
+        } catch (HangulParserException e) {
+            e.printStackTrace();
+        }
+
+*/
 
 
     }
