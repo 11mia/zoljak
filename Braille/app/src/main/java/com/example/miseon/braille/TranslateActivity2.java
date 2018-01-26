@@ -120,7 +120,7 @@ public class TranslateActivity2 extends AppCompatActivity{
                 }
                 break;
         }
-        mVibe.vibrate(50);
+        mVibe.vibrate(50);//0.05초
     }
 
     public void clickAdd(View v){
@@ -140,8 +140,8 @@ public class TranslateActivity2 extends AppCompatActivity{
         String str = "c" + num;
         int id_img = res.getIdentifier(str, "drawable", getPackageName());
         iv.setImageResource(id_img);
-        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, getResources().getDisplayMetrics());
-        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getResources().getDisplayMetrics());
+        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, getResources().getDisplayMetrics());//30dp
+        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getResources().getDisplayMetrics());//50dp
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
         //  layoutParams.rightMargin=2;
         layoutParams.gravity = Gravity.CENTER;
