@@ -125,7 +125,7 @@ public class TranslateActivity2 extends AppCompatActivity{
 
     public void clickAdd(View v){
         int num = flag1*100000+flag2*10000+flag3*1000+flag4*100+flag5*10+flag6;
-        LinearLayout layout=(LinearLayout) findViewById(R.id.input1);;
+        LinearLayout layout=(LinearLayout) findViewById(R.id.input1);
 
         if(totalWidth>300)
             layout = (LinearLayout) findViewById(R.id.input2);
@@ -167,6 +167,8 @@ public class TranslateActivity2 extends AppCompatActivity{
         butn.setBackgroundDrawable(drawable);
         butn = (Button) findViewById(R.id.dot6);
         butn.setBackgroundDrawable(drawable);
+        mVibe.vibrate(50);//0.05초
+
 
     }
 
@@ -181,6 +183,8 @@ public class TranslateActivity2 extends AppCompatActivity{
         }
         ivId=-1;
         totalWidth=0;
+        mVibe.vibrate(50);//0.05초
+
     }
 
     public void clickSpace(View v){
@@ -194,7 +198,7 @@ public class TranslateActivity2 extends AppCompatActivity{
 
         ImageView iv = new ImageView(this);
         Resources res = getResources();
-        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
+        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics());
         final int height = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getResources().getDisplayMetrics());
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width,height);
         layoutParams.gravity = Gravity.CENTER;
@@ -205,6 +209,8 @@ public class TranslateActivity2 extends AppCompatActivity{
         totalWidth+=10;
         iv.setId(ivId);
         layout.addView(iv);
+        mVibe.vibrate(50);//0.05초
+
     }
 
     public void clickDel(View v){
@@ -224,8 +230,15 @@ public class TranslateActivity2 extends AppCompatActivity{
 
             ivId--;
         }
+        mVibe.vibrate(50);//0.05초
+
 
         //Toast.makeText(this,"totalWidth = "+totalWidth,Toast.LENGTH_SHORT).show();
+    }
+
+    public void clickTranslate(View v){
+        mVibe.vibrate(50);//0.05초
+
     }
 
 
