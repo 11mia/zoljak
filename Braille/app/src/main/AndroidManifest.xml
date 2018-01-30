@@ -35,6 +35,8 @@
         <activity android:name=".StudyNumberActivity"/>
         <activity android:name=".StudySymbolActivity"/>
         <activity android:name="StudyAbbreviationActivity"/>
+        <activity android:name=".PracticeContentActivity"/>
+        <activity android:name=".PracticeMainActivity"/>
     </application>
 
 </manifest>

@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="284dp"
-        android:layout_height="254dp"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="286dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -38,7 +38,7 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="40dp"
                 android:clickable="true"
                 android:onClick="vowel"
 
@@ -70,7 +70,7 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="40dp"
                 android:clickable="true"
                 android:onClick="alphabet"
 
@@ -101,7 +101,7 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="40dp"
                 android:clickable="true"
                 android:onClick="symbol"
 
@@ -110,6 +110,7 @@
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
         </LinearLayout>
+
 
     </LinearLayout>
 

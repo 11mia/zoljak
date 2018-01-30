@@ -12,7 +12,7 @@ public class StudyMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_main);
-        setTitle("학습");
+        setTitle("점자표");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

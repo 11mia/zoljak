@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void ShowBraille(View v){
+    public void studyBraille(View v){
         Intent it = new Intent(this,StudyMainActivity.class);
         startActivity(it);
 
@@ -64,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void BrailleStudy(View v){
+    public void practiceBraille(View v){
+        Intent it = new Intent(this,PracticeMainActivity.class);
+        startActivity(it);
+
 
     }
 
