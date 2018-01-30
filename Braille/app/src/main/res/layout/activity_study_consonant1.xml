@@ -56,7 +56,7 @@
             android:background="@drawable/shape_button"
             android:clickable="true"
             android:onClick="consonantClick"
-            android:text="쌍자음"
+            android:text="된소리"
             android:textColor="#000000"
             android:textSize="20sp" />
 

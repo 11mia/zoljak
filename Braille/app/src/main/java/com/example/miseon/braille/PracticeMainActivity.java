@@ -34,6 +34,7 @@ public class PracticeMainActivity extends AppCompatActivity {
     public void practiceConsonant(View v){
         Intent it = new Intent(this,PracticeContentActivity.class);
         it.putExtra("flag",1);
+        it.putExtra("count",1);
         startActivity(it);
 
     }
@@ -42,36 +43,48 @@ public class PracticeMainActivity extends AppCompatActivity {
     public void practiceVowel(View v){
         Intent it = new Intent(this,PracticeContentActivity.class);
         it.putExtra("flag",2);
+        it.putExtra("count",1);
+
         startActivity(it);
     }
 
     public void practiceAbbreviation(View v){
         Intent it = new Intent(this,PracticeContentActivity.class);
         it.putExtra("flag",3);
+        it.putExtra("count",1);
+
         startActivity(it);
     }
 
     public void practiceAlphabet(View v){
         Intent it = new Intent(this,PracticeContentActivity.class);
         it.putExtra("flag",4);
+        it.putExtra("count",1);
+
         startActivity(it);
     }
 
     public void practiceNumber(View v){
         Intent it = new Intent(this,PracticeContentActivity.class);
         it.putExtra("flag",5);
+        it.putExtra("count",1);
+
         startActivity(it);
     }
 
     public void practiceSymbol(View v){
-        Intent it = new Intent(this,PracticeContentActivity.class);
+        Intent it = new Intent(this,PracticeContentActivity2.class);
         it.putExtra("flag",6);
+        it.putExtra("count",1);
+
         startActivity(it);
     }
 
     public void practiceRandom(View v){
-        Intent it = new Intent(this,PracticeContentActivity.class);
+        Intent it = new Intent(this,PracticeContentActivity.class);//랜덤에서 ...,```제외.
         it.putExtra("flag",7);
+        it.putExtra("count",1);
+
         startActivity(it);
     }
 

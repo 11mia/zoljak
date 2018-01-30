@@ -153,20 +153,7 @@ public class TranslateActivity2 extends AppCompatActivity{
         layout.addView(iv);
 
         totalWidth += 30;
-        flag1 = flag2 = flag3 = flag4 = flag5 = flag6 = 7;
-        Drawable drawable = res.getDrawable(R.drawable.shape_dot);
-        Button butn = (Button) findViewById(R.id.dot1);
-        butn.setBackgroundDrawable(drawable);
-        butn = (Button) findViewById(R.id.dot2);
-        butn.setBackgroundDrawable(drawable);
-        butn = (Button) findViewById(R.id.dot3);
-        butn.setBackgroundDrawable(drawable);
-        butn = (Button) findViewById(R.id.dot4);
-        butn.setBackgroundDrawable(drawable);
-        butn = (Button) findViewById(R.id.dot5);
-        butn.setBackgroundDrawable(drawable);
-        butn = (Button) findViewById(R.id.dot6);
-        butn.setBackgroundDrawable(drawable);
+        initialization();
         mVibe.vibrate(50);//0.05초
 
 
@@ -184,6 +171,8 @@ public class TranslateActivity2 extends AppCompatActivity{
         ivId=-1;
         totalWidth=0;
         mVibe.vibrate(50);//0.05초
+        initialization();
+
 
     }
 
@@ -238,6 +227,27 @@ public class TranslateActivity2 extends AppCompatActivity{
 
     public void clickTranslate(View v){
         mVibe.vibrate(50);//0.05초
+
+    }
+
+    public void initialization(){
+
+        Resources res = getResources();
+
+        flag1 = flag2 = flag3 = flag4 = flag5 = flag6 = 7;
+        Drawable drawable = res.getDrawable(R.drawable.shape_dot);
+        Button butn = (Button) findViewById(R.id.dot1);
+        butn.setBackgroundDrawable(drawable);
+        butn = (Button) findViewById(R.id.dot2);
+        butn.setBackgroundDrawable(drawable);
+        butn = (Button) findViewById(R.id.dot3);
+        butn.setBackgroundDrawable(drawable);
+        butn = (Button) findViewById(R.id.dot4);
+        butn.setBackgroundDrawable(drawable);
+        butn = (Button) findViewById(R.id.dot5);
+        butn.setBackgroundDrawable(drawable);
+        butn = (Button) findViewById(R.id.dot6);
+        butn.setBackgroundDrawable(drawable);
 
     }
 

@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/practiceLetter"
-        android:layout_width="350dp"
+        android:id="@+id/quizword"
+        android:layout_width="300dp"
         android:layout_height="90dp"
         android:gravity="center_horizontal"
-        android:textSize="55sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <LinearLayout
-        android:layout_width="180dp"
-        android:layout_height="290dp"
+        android:layout_width="120dp"
+        android:layout_height="200dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57">
+        app:layout_constraintVertical_bias="0.60">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,8 +38,8 @@
 
             <Button
                 android:id="@+id/dot11"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -47,8 +48,8 @@
 
             <Button
                 android:id="@+id/dot14"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -65,8 +66,8 @@
 
             <Button
                 android:id="@+id/dot12"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -75,8 +76,8 @@
 
             <Button
                 android:id="@+id/dot15"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -93,8 +94,8 @@
 
             <Button
                 android:id="@+id/dot13"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -103,8 +104,8 @@
 
             <Button
                 android:id="@+id/dot16"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -115,17 +116,15 @@
     </LinearLayout>
 
 
-
     <LinearLayout
-        android:layout_width="180dp"
-        android:layout_height="290dp"
+        android:layout_width="120dp"
+        android:layout_height="200dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57">
+        app:layout_constraintVertical_bias="0.60">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,8 +134,8 @@
 
             <Button
                 android:id="@+id/dot21"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -145,8 +144,8 @@
 
             <Button
                 android:id="@+id/dot24"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -163,8 +162,8 @@
 
             <Button
                 android:id="@+id/dot22"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -173,8 +172,8 @@
 
             <Button
                 android:id="@+id/dot25"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -191,8 +190,8 @@
 
             <Button
                 android:id="@+id/dot23"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -201,8 +200,8 @@
 
             <Button
                 android:id="@+id/dot26"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/shape_dot"
                 android:clickable="true"
@@ -211,6 +210,106 @@
 
         </LinearLayout>
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.60">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dot31"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="31" />
+
+            <Button
+                android:id="@+id/dot34"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="34" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dot32"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="32" />
+
+            <Button
+                android:id="@+id/dot35"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="35" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dot33"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="33" />
+
+            <Button
+                android:id="@+id/dot36"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_dot"
+                android:clickable="true"
+                android:onClick="ClickDot"
+                android:tag="36" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
 
 
     <Button
@@ -228,7 +327,7 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.90" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
         android:layout_width="100dp"
@@ -245,7 +344,8 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.90" />
+        app:layout_constraintVertical_bias="0.95" />
+
 
 
 </android.support.constraint.ConstraintLayout>
