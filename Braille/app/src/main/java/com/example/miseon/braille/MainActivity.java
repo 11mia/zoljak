@@ -53,9 +53,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void GoToStudy(View v){
+    public void ShowBraille(View v){
         Intent it = new Intent(this,StudyMainActivity.class);
         startActivity(it);
+
+    }
+
+
+    public void aboutBraille(View v){
+
+    }
+
+    public void BrailleStudy(View v){
 
     }
 
