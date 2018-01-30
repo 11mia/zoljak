@@ -9,128 +9,123 @@
     tools:context="com.example.miseon.braille.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="aboutBraille"
-        android:text="점자이야기"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.20"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="practiceBraille"
-        android:text="점자연습"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="aboutBraille"
+                android:text="점자이야기"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="studyBraille"
+                android:text="점자표"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="40dp"
+                />
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="studyBraille"
-        android:text="점자표"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="GoToTest"
-        android:text="테스트"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40" />
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="practiceBraille"
+                android:text="점자연습"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="120dp"
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
 
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="GoToTranslate"
-        android:text="변환"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.60" />
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="GoToTest"
+                android:text="테스트"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="40dp"
+                />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="120dp"
 
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="GoToSupplement"
-        android:text="부록"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.60" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="120dp"
 
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="ShowDeveloper"
-        android:text="개발"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="120dp"
+
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="GoToTranslate"
+                android:text="변환"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                />
+
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="120dp"
+
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list"
+                android:clickable="true"
+                android:onClick="GoToSupplement"
+                android:text="부록"
+                android:textColor="#ffffffff"
+                android:textSize="20sp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
