@@ -32,7 +32,7 @@
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/shape_list"
                 android:clickable="true"
-                android:onClick="test"
+                android:onClick="testConsonant"
                 android:text="한글자음"
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
@@ -44,7 +44,7 @@
                 android:background="@drawable/shape_list"
                 android:clickable="true"
 
-                android:onClick="test"
+                android:onClick="testVowel"
                 android:text="한글모음"
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
@@ -64,7 +64,7 @@
                 android:background="@drawable/shape_list"
                 android:clickable="true"
 
-                android:onClick="test"
+                android:onClick="testAbbreviation"
                 android:text="한글약어"
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
@@ -76,7 +76,7 @@
                 android:background="@drawable/shape_list"
                 android:clickable="true"
 
-                android:onClick="test"
+                android:onClick="testAlphabet"
                 android:text="알파벳"
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
@@ -95,7 +95,7 @@
                 android:background="@drawable/shape_list"
                 android:clickable="true"
 
-                android:onClick="test"
+                android:onClick="testNumber"
                 android:text="숫자"
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
@@ -107,7 +107,7 @@
                 android:background="@drawable/shape_list"
                 android:clickable="true"
 
-                android:onClick="test"
+                android:onClick="testSymbol"
                 android:text="문장부호"
                 android:textColor="#ffffffff"
                 android:textSize="20sp" />
@@ -125,7 +125,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/shape_list"
                 android:clickable="true"
-                android:onClick="Random"
+                android:onClick="testRandom"
                 android:text="랜덤"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />

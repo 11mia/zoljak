@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
-/**
- * Created by miseon on 2018-01-30.
- */
+
 
 public class PracticeMainActivity extends AppCompatActivity {
     @Override

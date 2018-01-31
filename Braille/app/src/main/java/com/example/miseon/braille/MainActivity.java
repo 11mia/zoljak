@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {
-                                Intent it = new Intent(MainActivity.this,TestActivity2.class);
+                                Intent it = new Intent(MainActivity.this,TestActivity.class);
                                 it.putExtra("flag",2);
                                 startActivity(it);
                             }

@@ -91,7 +91,7 @@ public class PracticeContentActivity extends AppCompatActivity {
                         //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
                         //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
-                        tv.setText(letter+"("+type+")");
+                        tv.setText(letter+" ("+type+")");
 
                     }
 
@@ -498,7 +498,8 @@ public class PracticeContentActivity extends AppCompatActivity {
 
 // Layout Inflater로 View를 가져옴.
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-        context);
+                context);
+
         alertDialogBuilder.setTitle("힌트")
                 .setCancelable(false)
                 .setPositiveButton("확인",
@@ -516,7 +517,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 // Layout에 있는 TextView및 ImageView에 아이콘 및 Text지정
 //
         TextView text = (TextView) layout.findViewById(R.id.hintText);
-        text.setText(letter+"("+type+")");
+        text.setText(letter+" ("+type+")");
 
         Resources res = getResources();
         int id_img;

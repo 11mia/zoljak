@@ -24,7 +24,6 @@
         <activity android:name=".DeveloperActivity"/>
 
         <activity android:name=".TestActivity"/>
-        <activity android:name=".TestActivity2"/>
         <activity android:name=".TestContentActivity"/>
         <activity android:name=".TestContentActivity2"/>
 

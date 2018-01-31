@@ -7,13 +7,13 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="개발"
+        android:title=" 개발"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/action_settings2"
         android:orderInCategory="200"
-        android:title="종료"
+        android:title=" 종료"
         app:showAsAction="never"/>
 
 

@@ -379,7 +379,7 @@ public class DBManager extends SQLiteOpenHelper {
             for(int i=0; i<26; i++) {
                 values.put("num", count++);
                 values.put("letter", letter4[i]);
-                values.put("type", "알파벳대문자");
+                values.put("type", "대문자");
                 values.put("dot_num", 2);
                 values.put("dot_1", alpha_fir[0]);
                 values.put("dot_2",alpha[i]);
@@ -392,7 +392,7 @@ public class DBManager extends SQLiteOpenHelper {
             for(int i=0; i<26; i++) {
                 values.put("num", count++);
                 values.put("letter", letter4_1[i]);
-                values.put("type", "알파벳소문자");
+                values.put("type", "소문자");
                 values.put("dot_num", 1);
                 values.put("dot_1",alpha[i]);
                 values.put("dot_2", (String) null);
