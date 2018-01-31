@@ -73,7 +73,7 @@ public class PracticeMainActivity extends AppCompatActivity {
     }
 
     public void practiceSymbol(View v){
-        Intent it = new Intent(this,PracticeContentActivity2.class);
+        Intent it = new Intent(this,PracticeContentActivity.class);
         it.putExtra("flag",6);
         it.putExtra("count",1);
 

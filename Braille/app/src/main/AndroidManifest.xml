@@ -37,7 +37,6 @@
         <activity android:name="StudyAbbreviationActivity"/>
         <activity android:name=".PracticeContentActivity"/>
         <activity android:name=".PracticeMainActivity"/>
-        <activity android:name=".PracticeContentActivity2"/>
     </application>
 
 </manifest>

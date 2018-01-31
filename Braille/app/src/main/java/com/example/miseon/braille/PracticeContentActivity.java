@@ -1,6 +1,8 @@
 package com.example.miseon.braille;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -10,9 +12,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +50,9 @@ public class PracticeContentActivity extends AppCompatActivity {
     SQLiteDatabase sqlitedb;
     DBManager dbmanager;
 
+    final Context context = this;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +64,8 @@ public class PracticeContentActivity extends AppCompatActivity {
         flag = it.getIntExtra("flag",1);
         count=it.getIntExtra("count",1);
         TextView tv = (TextView)findViewById(R.id.practiceLetter);
+        int randomNum;
+        Cursor cursor;
 
         try {
             dbmanager = new DBManager(this);
@@ -66,8 +75,8 @@ public class PracticeContentActivity extends AppCompatActivity {
             switch (flag) {
                 case 1:
                     setTitle("점자연습-한글자음");
-                    int randomNum = randomRange(1,35);
-                    Cursor cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                    randomNum = randomRange(1,35);
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
                     if(cursor.moveToNext()){
                         letter = cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
@@ -91,33 +100,168 @@ public class PracticeContentActivity extends AppCompatActivity {
                 case 2:
                     setTitle("점자연습-한글모음");
 
+                    randomNum = randomRange(36,56);
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        type = cursor.getString(cursor.getColumnIndex("type"));
+                        dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        if(dot_num==1){
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2="c777777";
+                        }else{
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
+                        }
+                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+
+                        tv.setText(letter);
+
+                    }
+
 
                     break;
                 case 3:
                     setTitle("점자연습-한글약어");
+
+                    randomNum = randomRange(57,89);
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        type = cursor.getString(cursor.getColumnIndex("type"));
+                        dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        if(dot_num==1){
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2="c777777";
+                        }else{
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
+                        }
+                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+
+                        tv.setText(letter);
+
+                    }
+
 
 
                     break;
                 case 4:
                     setTitle("점자연습-알파벳");
 
+                    randomNum = randomRange(90,141);
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        type = cursor.getString(cursor.getColumnIndex("type"));
+                        dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        if(dot_num==1){
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2="c777777";
+                        }else{
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
+                        }
+                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+
+
+                        tv.setText(letter);
+
+                    }
+
+
 
                     break;
                 case 5:
                     setTitle("점자연습-숫자");
+
+                    randomNum = randomRange(142,151);
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        type = cursor.getString(cursor.getColumnIndex("type"));
+                        dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        if(dot_num==1){
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2="c777777";
+                        }else{
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
+                        }
+                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+
+                        tv.setText(letter);
+
+                    }
+
 
 
                     break;
                 case 7:
                     setTitle("점자연습-랜덤");
 
+                    do {
+                        randomNum = randomRange(1, 180);
+                    }while((randomNum==152));
+
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        type = cursor.getString(cursor.getColumnIndex("type"));
+                        dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        if(dot_num==1){
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2="c777777";
+                        }else{
+                            dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                            dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
+                        }
+                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
+                            tv.setText(letter+"("+type+")");
+                        else
+                            tv.setText(letter);
+
+
+
+                    }
+
+
+
 
                     break;
 
-         /*   case 6:
+                  case 6:
+                      setTitle("점자연습-문장부호");
+
+                      randomNum = randomRange(153,180);
+                      cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
+                      if(cursor.moveToNext()){
+                          letter = cursor.getString(cursor.getColumnIndex("letter"));
+                          type = cursor.getString(cursor.getColumnIndex("type"));
+                          dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
+                          if(dot_num==1){
+                              dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                              dot_2="c777777";
+                          }else{
+                              dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
+                              dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
+                          }
+                          //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
+                          //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+
+                          tv.setText(letter);
+
+                      }
 
 
-                break;*/
+
+                      break;
 
 
             }
@@ -270,19 +414,80 @@ public class PracticeContentActivity extends AppCompatActivity {
         input1= "c"+num1;
         input2= "c"+num2;
 
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                context);
+        alertDialogBuilder.setTitle("정답 확인");
+
         if(input1.equals(dot_1)&&input2.equals(dot_2)&&(count!=3)){
-            Toast.makeText(this,"정답입니다.",Toast.LENGTH_SHORT).show();
-            Intent it = new Intent(this,PracticeContentActivity.class);
-            it.putExtra("flag",1);
-            it.putExtra("count",++count);
-            startActivity(it);
-            finish();
+           // Toast.makeText(this,"정답입니다.",Toast.LENGTH_SHORT).show();
+
+            // AlertDialog 셋팅
+            alertDialogBuilder
+                    .setMessage("    정답입니다.\n\n    다음문제로 넘어갑니다.")
+                    .setCancelable(false)
+                    .setPositiveButton("확인",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(
+                                        DialogInterface dialog, int id) {
+                                    Intent it = new Intent(PracticeContentActivity.this,PracticeContentActivity.class);
+                                    it.putExtra("flag",flag);
+                                    it.putExtra("count",++count);
+                                    startActivity(it);
+                                    overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                                    finish();
+                                }
+                            });
+
+            // 다이얼로그 생성
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.setIcon(R.drawable.braille);
+
+            // 다이얼로그 보여주기
+            alertDialog.show();
+
+
         }else if(input1.equals(dot_1)&&input2.equals(dot_2)&&(count==3)){
-            Toast.makeText(this,"정답입니다. 연습을 종료합니다.",Toast.LENGTH_SHORT).show();
-            finish();
+           // Toast.makeText(this,"정답입니다. 연습을 종료합니다.",Toast.LENGTH_SHORT).show();
+
+            alertDialogBuilder
+                    .setMessage("    정답입니다.\n\n    연습을 종료합니다.")
+                    .setCancelable(false)
+                    .setPositiveButton("확인",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(
+                                        DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            });
+
+            // 다이얼로그 생성
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.setIcon(R.drawable.braille);
+
+            // 다이얼로그 보여주기
+            alertDialog.show();
+
         }else{
-            Toast.makeText(this,"오답입니다. 다시 시도하세요.",Toast.LENGTH_SHORT).show();
-            initialization();
+            // Toast.makeText(this,"오답입니다. 다시 시도하세요.",Toast.LENGTH_SHORT).show();
+
+            // AlertDialog 셋팅
+            alertDialogBuilder
+                    .setMessage("    오답입니다.\n\n    다시 시도하세요.")
+                    .setCancelable(false)
+                    .setPositiveButton("확인",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(
+                                        DialogInterface dialog, int id) {
+                                    initialization();
+                                }
+                            });
+
+            // 다이얼로그 생성
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.setIcon(R.drawable.braille);
+
+            // 다이얼로그 보여주기
+            alertDialog.show();
 
 
         }
@@ -290,6 +495,63 @@ public class PracticeContentActivity extends AppCompatActivity {
     }
 
     public void hint(View v){
+
+// Layout Inflater로 View를 가져옴.
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+        context);
+        alertDialogBuilder.setTitle("힌트")
+                .setCancelable(false)
+                .setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialog, int id) {
+                            }
+                        });
+
+        LayoutInflater inflater;
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.dialog_practice_hint, null);
+
+//
+// Layout에 있는 TextView및 ImageView에 아이콘 및 Text지정
+//
+        TextView text = (TextView) layout.findViewById(R.id.hintText);
+        text.setText(letter+"("+type+")");
+
+        Resources res = getResources();
+        int id_img;
+
+
+        ImageView image = (ImageView) layout.findViewById(R.id.hintImage1);
+
+        id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
+        image.setImageResource(id_img);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        // image.setImageResource(R.drawable.braille);
+
+        image = (ImageView) layout.findViewById(R.id.hintImage2);
+
+        id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
+        image.setImageResource(id_img);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        //image.setImageResource(R.drawable.braille);
+
+//
+// Dialog Builder에 Layout View를 할당.
+//
+        alertDialogBuilder.setView(layout);
+
+//
+// Custom Dialog Display
+//
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setIcon(R.drawable.braille);
+
+        alertDialog.show();
+
+
 
     }
 

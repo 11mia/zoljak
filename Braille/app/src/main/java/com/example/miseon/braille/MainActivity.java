@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(it);
             return true;
         }
+        if(id==R.id.action_settings2){
+           finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 
