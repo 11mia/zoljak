@@ -120,6 +120,21 @@ public class TestActivity extends AppCompatActivity{
         startActivity(it);
     }
 
+    public void testWord(View v){
+        Intent it;
+
+        if(flag==1)
+            it = new Intent(TestActivity.this,TestContentActivity.class);
+        else
+            it=new Intent(TestActivity.this,TestContentActivity2.class);
+
+        it.putExtra("case",8);
+        it.putExtra("count",1);
+        startActivity(it);
+
+
+    }
+
     public void testRandom(View v){
         Intent it;
 

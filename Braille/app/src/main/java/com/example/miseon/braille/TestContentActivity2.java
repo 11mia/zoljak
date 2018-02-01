@@ -10,11 +10,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,8 @@ public class TestContentActivity2 extends AppCompatActivity {
     int dot_num;
     String dot_1;
     String dot_2;
+    String dot_3;
+    String dot_4;
 
     int answerNum;
 
@@ -39,15 +44,13 @@ public class TestContentActivity2 extends AppCompatActivity {
 
     final Context context = this;
 
-    ImageView testImg0; //dot_num==1일 경우
-    ImageView testImg1; //dot_num==2일 경우
-    ImageView testImg2; //dot_num==2일 경우
 
     TextView tv1;
     TextView tv2;
     TextView tv3;
     TextView tv4;
-    String lowercase;
+
+    LinearLayout testLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,14 +63,13 @@ public class TestContentActivity2 extends AppCompatActivity {
         flag = it.getIntExtra("case",1);
         count=it.getIntExtra("count",1);
 
-        testImg0 =(ImageView)findViewById(R.id.testImg0);
-        testImg1 =(ImageView)findViewById(R.id.testImg1);
-        testImg2 =(ImageView)findViewById(R.id.testImg2);
 
         tv1 = (TextView)findViewById(R.id.testTv1);
         tv2 = (TextView)findViewById(R.id.testTv2);
         tv3 = (TextView)findViewById(R.id.testTv3);
         tv4 = (TextView)findViewById(R.id.testTv4);
+
+        testLayout = (LinearLayout)findViewById(R.id.testLayout);
 
 
         int randomNum;
@@ -76,6 +78,7 @@ public class TestContentActivity2 extends AppCompatActivity {
         try {
             dbmanager = new DBManager(this);
             sqlitedb = dbmanager.getReadableDatabase();
+            sqlitedb.beginTransaction();
 
 
             int id_img;
@@ -206,40 +209,36 @@ public class TestContentActivity2 extends AppCompatActivity {
                     if(cursor.moveToNext()){
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
-                       // if(type.equals("알파벳소문자"))
-                     //       lowercase = letter.toLowerCase();
-                       // tv1.setText(lowercase);
-                        tv1.setText(letter+"\n("+type+")");
+                        if(type.equals("소문자"))
+                            tv1.setAllCaps(false);
+                        tv1.setText(letter);
 
                     }
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[1]},null,null,"num");
                     if(cursor.moveToNext()){
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
-                       /* if(type.equals("알파벳소문자"))
-                            lowercase = letter.toLowerCase();
-                        tv2.setText(lowercase);*/
-                        tv2.setText(letter+"\n("+type+")");
+                        if(type.equals("소문자"))
+                            tv2.setAllCaps(false);
+                        tv2.setText(letter);
 
                     }
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[2]},null,null,"num");
                     if(cursor.moveToNext()){
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
-                      /*  if(type.equals("알파벳소문자"))
-                            lowercase = letter.toLowerCase();
-                        tv3.setText(lowercase);*/
-                        tv3.setText(letter+"\n("+type+")");
+                        if(type.equals("소문자"))
+                            tv3.setAllCaps(false);
+                        tv3.setText(letter);
 
                     }
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[3]},null,null,"num");
                     if(cursor.moveToNext()){
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
-                      /*  if(type.equals("알파벳소문자"))
-                            lowercase = letter.toLowerCase();
-                        tv4.setText(lowercase);*/
-                        tv4.setText(letter+"\n("+type+")");
+                        if(type.equals("소문자"))
+                            tv4.setAllCaps(false);
+                        tv4.setText(letter);
 
                     }
 
@@ -284,7 +283,7 @@ public class TestContentActivity2 extends AppCompatActivity {
                     setTitle("테스트-랜덤");
 
                     for(int i=0;i<4;i++) {
-                        randomNum=randomRange(1,180);
+                        randomNum=randomRange(1,320);
                         randomNumList[i]=randomNum;
                         for(int j=0;j<i;j++)
                             if(randomNumList[i]==randomNumList[j]||randomNumList[i]==152)
@@ -297,12 +296,11 @@ public class TestContentActivity2 extends AppCompatActivity {
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
 
-                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성")|type.equals("소문자")|type.equals("대문자"))
+                        if(type.equals("소문자")|type.equals("단어알파벳"))
+                            tv1.setAllCaps(false);
+
+                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
                             tv1.setText(letter+"\n("+type+")");
-                        /*else if(type.equals("알파벳소문자")){
-                            letter = letter.toLowerCase();
-                            tv1.setText(letter);
-                        }*/
                         else
                             tv1.setText(letter);
                     }
@@ -311,12 +309,11 @@ public class TestContentActivity2 extends AppCompatActivity {
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
 
-                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성")|type.equals("소문자")|type.equals("대문자"))
+                        if(type.equals("소문자")|type.equals("단어알파벳"))
+                            tv2.setAllCaps(false);
+
+                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
                             tv2.setText(letter+"\n("+type+")");
-                        /**else if(type.equals("알파벳소문자")){
-                            letter = letter.toLowerCase();
-                            tv2.setText(letter);
-                        }*/
                         else
                             tv2.setText(letter);
                     }
@@ -325,12 +322,11 @@ public class TestContentActivity2 extends AppCompatActivity {
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
 
-                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성")|type.equals("소문자")|type.equals("대문자"))
+                        if(type.equals("소문자")|type.equals("단어알파벳"))
+                            tv3.setAllCaps(false);
+
+                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
                             tv3.setText(letter+"\n("+type+")");
-                       /* else if(type.equals("알파벳소문자")){
-                           letter = letter.toLowerCase();
-                            tv3.setText(letter);
-                        }*/
                         else
                             tv3.setText(letter);
                     }
@@ -339,12 +335,11 @@ public class TestContentActivity2 extends AppCompatActivity {
                         letter=cursor.getString(cursor.getColumnIndex("letter"));
                         type = cursor.getString(cursor.getColumnIndex("type"));
 
-                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성")|type.equals("소문자")|type.equals("대문자"))
+                        if(type.equals("소문자")|type.equals("단어알파벳"))
+                            tv4.setAllCaps(false);
+
+                        if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
                             tv4.setText(letter+"\n("+type+")");
-                        /*else if(type.equals("알파벳소문자")){
-                            letter = letter.toLowerCase();
-                            tv4.setText(letter);
-                        }*/
                         else
                             tv4.setText(letter);
                     }
@@ -387,6 +382,59 @@ public class TestContentActivity2 extends AppCompatActivity {
 
                     break;
 
+                case 8:
+                    setTitle("테스트-단어");
+
+                    for(int i=0;i<4;i++) {
+
+                        randomNum=randomRange(183,320);
+                        randomNumList[i]=randomNum;
+                        for(int j=0;j<i;j++)
+                            if(randomNumList[i]==randomNumList[j])
+                                i--;
+
+                    }
+
+
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[0]},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter=cursor.getString(cursor.getColumnIndex("letter"));
+                        type=cursor.getString(cursor.getColumnIndex("type"));
+
+                        if(type.equals("단어알파벳"))
+                            tv1.setAllCaps(false);
+
+                        tv1.setText(letter);
+                    }
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[1]},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter=cursor.getString(cursor.getColumnIndex("letter"));
+                        type=cursor.getString(cursor.getColumnIndex("type"));
+
+                        if(type.equals("단어알파벳"))
+                            tv2.setAllCaps(false);
+                        tv2.setText(letter);
+                    }
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[2]},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter=cursor.getString(cursor.getColumnIndex("letter"));
+                        type=cursor.getString(cursor.getColumnIndex("type"));
+
+                        if(type.equals("단어알파벳"))
+                            tv3.setAllCaps(false);
+                        tv3.setText(letter);
+                    }
+                    cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[3]},null,null,"num");
+                    if(cursor.moveToNext()){
+                        letter=cursor.getString(cursor.getColumnIndex("letter"));
+                        type=cursor.getString(cursor.getColumnIndex("type"));
+
+                        if(type.equals("단어알파벳"))
+                            tv4.setAllCaps(false);
+                        tv4.setText(letter);
+                    }
+
+
 
             }
 
@@ -394,30 +442,34 @@ public class TestContentActivity2 extends AppCompatActivity {
             cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[answerNum]},null,null,"num");
             if(cursor.moveToNext()){
                 dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
-                if(dot_num==1){
-                    dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
-                    id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
-                    testImg0.setImageResource(id_img);
-                    testImg0.setScaleType(ImageView.ScaleType.FIT_XY);
-                }else{
-                    dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
-                    dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
 
-                    id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
-                    testImg1.setImageResource(id_img);
-                    testImg1.setScaleType(ImageView.ScaleType.FIT_XY);
-                    id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
-                    testImg2.setImageResource(id_img);
-                    testImg2.setScaleType(ImageView.ScaleType.FIT_XY);
+                for(int i=1;i<=dot_num;i++){
+
+                    ImageView iv = new ImageView(this); //추가할 이미지뷰
+                    String str = cursor.getString(cursor.getColumnIndex("dot_"+i));
+                    id_img = res.getIdentifier(str, "drawable", getPackageName());
+                    iv.setImageResource(id_img);
+                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics());//30dp
+                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100, getResources().getDisplayMetrics());//50dp
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                    layoutParams.gravity = Gravity.CENTER;
+                    iv.setLayoutParams(layoutParams);
+                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                    testLayout.setGravity(Gravity.CENTER);
+                    testLayout.addView(iv);
                 }
 
             }
 
-
+            sqlitedb.setTransactionSuccessful();
 
         }catch(SQLiteException e){
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
+        }finally{
+            sqlitedb.endTransaction();
         }
+
+        sqlitedb.close();
 
     }
     @Override
@@ -431,95 +483,113 @@ public class TestContentActivity2 extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void checkAnswer(View v){
+    public void checkAnswer(View v) {
         int id = v.getId();
-        Button clickedButn = (Button)findViewById(id);
-        String input_tag = (String)clickedButn.getTag();
+        Button clickedButn = (Button) findViewById(id);
+        String input_tag = (String) clickedButn.getTag();
         int input = Integer.parseInt(input_tag);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
 
-        Cursor cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[input]},null,null,"num");
-        if(cursor.moveToNext()) {
-            letter = cursor.getString(cursor.getColumnIndex("letter"));
-            type = cursor.getString(cursor.getColumnIndex("type"));
-            dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
-            if (dot_num == 1) {
-                dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
-            } else {
-                dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
-                dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
+        try {
+            dbmanager = new DBManager(this);
+            sqlitedb = dbmanager.getReadableDatabase();
+            sqlitedb.beginTransaction();
+
+
+
+            Cursor cursor = sqlitedb.query("Braille", null, "num=?", new String[]{"" + randomNumList[input]}, null, null, "num");
+            if (cursor.moveToNext()) {
+                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                type = cursor.getString(cursor.getColumnIndex("type"));
+                dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
+
+                switch (dot_num) {
+                    case 1:
+                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
+                        break;
+                    case 2:
+                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
+                        dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
+                        break;
+                    case 3:
+                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
+                        dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
+                        dot_3 = cursor.getString(cursor.getColumnIndex("dot_3"));
+                        break;
+                    case 4:
+                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
+                        dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
+                        dot_3 = cursor.getString(cursor.getColumnIndex("dot_3"));
+                        dot_4 = cursor.getString(cursor.getColumnIndex("dot_4"));
+                        break;
+
+                }
             }
-        }
-        LayoutInflater inflater;
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.dialog_test_content2, null);
+            LayoutInflater inflater;
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View layout = inflater.inflate(R.layout.dialog_test_content2, null);
 
 
+            if (input == answerNum && count < 3) {
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("확인",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(
+                                            DialogInterface dialog, int id) {
+                                        Intent it = new Intent(TestContentActivity2.this, TestContentActivity2.class);
+                                        it.putExtra("case", flag);
+                                        it.putExtra("count", ++count);
+                                        startActivity(it);
+                                        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                                        finish();
+                                    }
+                                });
+                alertDialogBuilder.setTitle("정답입니다. 다음문제로 넘어갑니다.");
 
+            } else if (input == answerNum && count == 3) {
 
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("확인",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(
+                                            DialogInterface dialog, int id) {
+                                        finish();
+                                    }
+                                });
+                alertDialogBuilder.setTitle("정답입니다. 연습을 종료합니다.");
+            } else {
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("확인",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(
+                                            DialogInterface dialog, int id) {
+                                    }
+                                });
+                alertDialogBuilder.setTitle("오답입니다. 다시 시도하세요.");
 
-        if(input==answerNum&&count<3) {
-            alertDialogBuilder
-                    .setCancelable(false)
-                    .setPositiveButton("확인",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(
-                                        DialogInterface dialog, int id) {
-                                    Intent it = new Intent(TestContentActivity2.this, TestContentActivity2.class);
-                                    it.putExtra("case", flag);
-                                    it.putExtra("count", ++count);
-                                    startActivity(it);
-                                    overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
-                                    finish();
-                                }
-                            });
-            alertDialogBuilder.setTitle("정답입니다. 다음문제로 넘어갑니다.");
-
-        }
-        else if(input==answerNum&&count==3){
-
-            alertDialogBuilder
-                    .setCancelable(false)
-                    .setPositiveButton("확인",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(
-                                        DialogInterface dialog, int id) {
-                                    finish();
-                                }
-                            });
-            alertDialogBuilder.setTitle("정답입니다. 연습을 종료합니다.");
-        }
-        else{
-            alertDialogBuilder
-                    .setCancelable(false)
-                    .setPositiveButton("확인",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(
-                                        DialogInterface dialog, int id) {
-                                }
-                            });
-            alertDialogBuilder.setTitle("오답입니다. 다시 시도하세요.");
-
-        }
+            }
 
 
             TextView text = (TextView) layout.findViewById(R.id.testText);
-            text.setText(letter+" ("+type+")");
+            if (type.equals("초성") | type.equals("중성") | type.equals("종성") | type.equals("된소리초성") | type.equals("된소리종성") | type.equals("소문자") | type.equals("대문자"))
+                text.setText(letter + " (" + type + ")");
+            else
+                text.setText(letter);
 
             Resources res = getResources();
             int id_img;
 
-            if(dot_num==1) {
+            if (dot_num == 1) {
                 ImageView image = (ImageView) layout.findViewById(R.id.testImage0);
                 id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
                 image.setImageResource(id_img);
                 image.setScaleType(ImageView.ScaleType.FIT_XY);
-            }
-
-
-            else if(dot_num==2) {
+            } else if (dot_num == 2) {
                 ImageView image = (ImageView) layout.findViewById(R.id.testImage1);
                 id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
                 image.setImageResource(id_img);
@@ -528,16 +598,55 @@ public class TestContentActivity2 extends AppCompatActivity {
                 id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
                 image.setImageResource(id_img);
                 image.setScaleType(ImageView.ScaleType.FIT_XY);
+            } else if (dot_num == 3) {
+                ImageView image = (ImageView) layout.findViewById(R.id.testImage3);
+                id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+                image = (ImageView) layout.findViewById(R.id.testImage4);
+                id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+                image = (ImageView) layout.findViewById(R.id.testImage5);
+                id_img = res.getIdentifier(dot_3, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+
+            } else if (dot_num == 4) {
+                ImageView image = (ImageView) layout.findViewById(R.id.testImage6);
+                id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+                image = (ImageView) layout.findViewById(R.id.testImage7);
+                id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+                image = (ImageView) layout.findViewById(R.id.testImage8);
+                id_img = res.getIdentifier(dot_3, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+                image = (ImageView) layout.findViewById(R.id.testImage9);
+                id_img = res.getIdentifier(dot_4, "drawable", getPackageName());
+                image.setImageResource(id_img);
+                image.setScaleType(ImageView.ScaleType.FIT_XY);
+
+
             }
-
-
 
             alertDialogBuilder.setView(layout);
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.setIcon(R.drawable.braille);
             alertDialog.show();
+
+            sqlitedb.setTransactionSuccessful();
+        } catch (SQLiteException e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }finally{
+            sqlitedb.endTransaction();
         }
+    }
+
 
 
 
