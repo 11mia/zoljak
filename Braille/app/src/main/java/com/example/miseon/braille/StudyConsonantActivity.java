@@ -260,5 +260,11 @@ public class StudyConsonantActivity extends AppCompatActivity {
     }
     public void click(View v) {
     }
+
+
+/*
+    public void clickConsonant(View v){
+        Toast.makeText(this,"click",Toast.LENGTH_LONG).show();
+    }*/
 }
 

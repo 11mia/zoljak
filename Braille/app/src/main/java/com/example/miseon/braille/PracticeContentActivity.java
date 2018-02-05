@@ -496,7 +496,6 @@ public class PracticeContentActivity extends AppCompatActivity {
 
     public void hint(View v){
 
-// Layout Inflater로 View를 가져옴.
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
 
@@ -513,9 +512,6 @@ public class PracticeContentActivity extends AppCompatActivity {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.dialog_practice_hint, null);
 
-//
-// Layout에 있는 TextView및 ImageView에 아이콘 및 Text지정
-//
         TextView text = (TextView) layout.findViewById(R.id.hintText);
         text.setText(letter+" ("+type+")");
 
@@ -529,24 +525,14 @@ public class PracticeContentActivity extends AppCompatActivity {
         image.setImageResource(id_img);
         image.setScaleType(ImageView.ScaleType.FIT_XY);
 
-        // image.setImageResource(R.drawable.braille);
-
         image = (ImageView) layout.findViewById(R.id.hintImage2);
 
         id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
         image.setImageResource(id_img);
         image.setScaleType(ImageView.ScaleType.FIT_XY);
 
-        //image.setImageResource(R.drawable.braille);
-
-//
-// Dialog Builder에 Layout View를 할당.
-//
         alertDialogBuilder.setView(layout);
 
-//
-// Custom Dialog Display
-//
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setIcon(R.drawable.braille);
 

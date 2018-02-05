@@ -19,11 +19,64 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/얘3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <LinearLayout
+                android:layout_width="165dp"
+                android:layout_height="155dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/shape_button"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:text="수표"
+                        android:textAlignment="center"
+
+                        android:textColor="#000000"
+                        android:textSize="30sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/c773456" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/얘"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
@@ -40,9 +93,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="0"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -77,9 +130,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="1"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -107,6 +160,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/얘2"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
@@ -123,9 +177,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="2"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -160,9 +214,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="3"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -190,6 +244,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/얘4"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
@@ -206,9 +261,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="4"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -243,9 +298,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="5"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -289,9 +344,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:text="6"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -326,9 +381,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="7"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -372,10 +427,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="8"
-                        android:textColor="#000000"
-
-
                         android:textAlignment="center"
+
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -410,9 +465,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="9"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
@@ -453,16 +508,16 @@
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="7dp"
-                    tools:ignore="MissingConstraints">
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="7dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="10"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout

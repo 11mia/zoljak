@@ -934,7 +934,7 @@ public class TestContentActivity extends AppCompatActivity {
             View layout = inflater.inflate(R.layout.dialog_test_content2, null);
 
 
-            if (input == answerNum && count < 3) {
+            if (input == answerNum && count < 7) {
                 alertDialogBuilder
                         .setCancelable(false)
                         .setPositiveButton("확인",
@@ -951,7 +951,7 @@ public class TestContentActivity extends AppCompatActivity {
                                 });
                 alertDialogBuilder.setTitle("정답입니다. 다음문제로 넘어갑니다.");
 
-            } else if (input == answerNum && count == 3) {
+            } else if (input == answerNum && count == 7) {
 
                 alertDialogBuilder
                         .setCancelable(false)

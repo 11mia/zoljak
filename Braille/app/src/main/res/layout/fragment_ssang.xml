@@ -25,7 +25,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
-                    android:text="ㄲ(초성)"
+                    android:text="쌍자음초성표"
                     android:textColor="#000000"
                     android:textAlignment="center"
                     android:textSize="30sp" />
@@ -44,10 +44,54 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/shape_button">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="ㄲ(초성)"
+                    android:textColor="#000000"
+
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="92dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="2dp">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/c777776"/>
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="@drawable/c777477"/>
                 </LinearLayout>
             </LinearLayout>
 
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -82,16 +126,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -124,8 +158,19 @@
                         android:layout_weight="1"
                         android:background="@drawable/c777457"/>
                 </LinearLayout>
+
             </LinearLayout>
 
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -158,26 +203,15 @@
                         android:layout_weight="1"
                         android:background="@drawable/c777776"/>
                 </LinearLayout>
-
             </LinearLayout>
 
-
-
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                >
 
                 <TextView
                     android:layout_width="match_parent"
@@ -196,45 +230,13 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/c777776"/>
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/c777476"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_margin="7dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp"
-
-                    android:textColor="#000000"
-
-                    android:textAlignment="center"
-                    android:textSize="30sp" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="92dp"
-                    android:orientation="horizontal"
-                    android:layout_margin="2dp">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:background="@drawable/c777776"
                         />
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:background="@drawable/c777476"
                         />
                 </LinearLayout>
 
