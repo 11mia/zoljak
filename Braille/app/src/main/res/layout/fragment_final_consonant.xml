@@ -20,7 +20,9 @@
                 android:orientation="vertical"
                 android:layout_margin="7dp"
                 android:background="@drawable/shape_button"
-               >
+                android:clickable="true"
+                android:id="@+id/c1"
+                android:tag="253">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -44,7 +46,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c2"
+                android:tag="255">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -66,7 +71,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c3"
+                android:tag="257">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -97,7 +105,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c4"
+                android:tag="259">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -119,7 +130,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c5"
+                android:tag="261">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -141,7 +155,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c6"
+                android:tag="263">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -170,7 +187,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c7"
+                android:tag="265">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -192,7 +212,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c8"
+                android:tag="267">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -215,7 +238,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c9"
+                android:tag="269">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -245,7 +271,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c10"
+                android:tag="271">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -267,7 +296,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c11"
+                android:tag="273">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -289,7 +321,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button">
+                android:background="@drawable/shape_button"
+                android:clickable="true"
+                android:id="@+id/c12"
+                android:tag="275">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -319,7 +354,10 @@
                 android:layout_margin="7dp"
                 android:background="@drawable/shape_button"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:clickable="true"
+                android:id="@+id/c13"
+                android:tag="277">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -343,7 +381,10 @@
                 android:layout_margin="7dp"
                 android:background="@drawable/shape_button"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:clickable="true"
+                android:id="@+id/c14"
+                android:tag="279">
 
                 <TextView
                     android:layout_width="match_parent"

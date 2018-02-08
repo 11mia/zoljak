@@ -172,7 +172,7 @@ public class DBManager extends SQLiteOpenHelper {
 
             String []letterword_ssangcho={"꿀","꽃","딸","떡","뿔", "빵","쑥","싸다","짜다","날짜"};
             int[] dot_num_ssangcho={3,4,3,3,3,3,4,3,3,4};
-            String [] ssangcho_img_1={"c777776","c777776","c777776","c777776","c777776","c777776","c777776,","c777776","c777776","c177477"};
+            String [] ssangcho_img_1={"c777776","c777776","c777776","c777776","c777776","c777776","c777776","c777776","c777776","c177477"};
             String [] ssangcho_img_2={"c777477","c777477","c727477","c727477","c777457","c777457","c777776","c777776","c777476","c127776"};
             String [] ssangcho_img_3={"c123476","c173776","c727777","c177456","c123476","c723756","c173477","c727477","c727477","c777776"};
             String [] ssangcho_img_4={null,"c723777",null,null,null,null,"c177777",null,null,"c777476"};

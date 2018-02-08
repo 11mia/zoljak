@@ -19,9 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by miseon on 2018-01-15.
- */
 
 public class StudyVowelActivity extends AppCompatActivity {
 
@@ -33,10 +30,7 @@ public class StudyVowelActivity extends AppCompatActivity {
     DBManager dbmanager;
     String letter;
     int dot_num;
-    String dot_1;
-    String dot_2;
-    String dot_3;
-    String dot_4;
+
     final Context context = this;
 
 
@@ -88,6 +82,8 @@ public class StudyVowelActivity extends AppCompatActivity {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(
                                         DialogInterface dialog, int id) {
+                                    v1.removeAllViews();
+                                    v2.removeAllViews();
                                 }
                             });
 
@@ -105,7 +101,7 @@ public class StudyVowelActivity extends AppCompatActivity {
                 letter = cursor.getString(cursor.getColumnIndex("letter"));
                 dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
 
-                Toast.makeText(this,letter,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,letter,Toast.LENGTH_SHORT).show();
                 tv1.setText(letter);
 
                 for(int i=1;i<=dot_num;i++){
@@ -146,7 +142,7 @@ public class StudyVowelActivity extends AppCompatActivity {
                     iv.setScaleType(ImageView.ScaleType.FIT_XY);
                     v2.addView(iv);
                 }
-                Toast.makeText(this,letter,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,letter,Toast.LENGTH_SHORT).show();
 
             }
 
