@@ -74,15 +74,10 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
         jeomjafont=(TextView)this.findViewById(R.id.resultjeomjafont);
 
-/*
-        List<String> jasoList = new ArrayList<String>();
+        //키보드 올리기
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
 
-        try {
-            jasoList = HangulParser.disassemble('한');
-        } catch (HangulParserException e) {
-            e.printStackTrace();
-        }
-*/
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -1805,6 +1800,9 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         jeomjafont.setText("");
 
         imageView.removeAllViews();
+        //키보드 올리기
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
     @Override

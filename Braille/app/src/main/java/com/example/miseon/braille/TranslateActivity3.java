@@ -1,11 +1,13 @@
 package com.example.miseon.braille;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.InputMethodManager;
 
 public class TranslateActivity3 extends AppCompatActivity {
 
@@ -14,6 +16,9 @@ public class TranslateActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_translate1);
         setTitle("변환(영어->점자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //키보드 올리기
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
 
     }
 
