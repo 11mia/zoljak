@@ -1,5 +1,6 @@
 package com.example.miseon.braille;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -85,6 +86,8 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         switch (item.getItemId()) {
             case android.R.id.home:
                 //onBackPressed();
+                InputMethodManager immhide = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                immhide.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 finish();
                 return true;
             case R.id.translateHangul:
