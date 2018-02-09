@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#B6CDBD</color>
-    <color name="colorPrimaryDark">#5C715E</color>
+    <color name="colorPrimary">#b6cdbd</color>
+    <color name="colorPrimaryDark">#5c715e</color>
     <color name="colorAccent">#5C715E</color>
     <color name="whilte">#000000</color>
     <color name="testbuttoncolor">#e9f7f7</color>
+    <color name="testbuttoncolor1">#caddd1</color>
 </resources>

@@ -173,7 +173,6 @@ public class TranslateActivity2 extends AppCompatActivity{
         mVibe.vibrate(50);//0.05초
         initialization();
 
-
     }
 
     public void clickSpace(View v){

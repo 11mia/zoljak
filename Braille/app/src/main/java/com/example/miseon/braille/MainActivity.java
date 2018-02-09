@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void aboutBraille(View v){
+        Intent it = new Intent(this,StoryBookActivity.class);
+        startActivity(it);
 
     }
 
@@ -195,6 +197,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GoToSupplement(View v){
+        Intent it = new Intent(this,SupplementActivity.class);
+        startActivity(it);
 
     }
 

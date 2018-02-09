@@ -36,6 +36,15 @@
         <activity android:name="StudyAbbreviationActivity"/>
         <activity android:name=".PracticeContentActivity"/>
         <activity android:name=".PracticeMainActivity"/>
+        <activity android:name=".StoryBookActivity"/>
+        <activity android:name=".StoryBookConstructionActivity"/>
+        <activity android:name=".StoryBookInventorActivity"/>
+        <activity android:name=".StoryBookJusticeHistoryActivity"/>
+        <activity android:name=".StoryBookTraitActivity"/>
+
+        <activity android:name=".SupplementActivity"/>
+        <activity android:name=".SupplementRuleActivity"/>
+        <activity android:name=".SupplementLifeActivity"/>
     </application>
 
 </manifest>

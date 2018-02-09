@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F7F7"
-    >
+    android:background="#F4F7F7">
 
     <LinearLayout
         android:layout_width="129dp"
@@ -165,10 +164,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/del"
                 android:clickable="true"
-                android:onClick="clickDel"
 
-                android:background="@drawable/del" />
+                android:onClick="clickDel" />
 
             <Button
                 android:layout_width="match_parent"
@@ -177,7 +176,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/space"
                 android:clickable="true"
-                android:onClick="clickSpace"/>
+                android:onClick="clickSpace" />
         </LinearLayout>
 
         <LinearLayout
@@ -246,5 +245,25 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="" />
+    </HorizontalScrollView>
 
 </android.support.constraint.ConstraintLayout>
