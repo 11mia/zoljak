@@ -16,5 +16,11 @@
         android:title=" 종료"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/action_settings3"
+        android:orderInCategory="50"
+        android:title=" 도움말"
+        app:showAsAction="never"/>
+
 
 </menu>

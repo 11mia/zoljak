@@ -1,5 +1,6 @@
 package com.example.miseon.braille;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -18,8 +19,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+public class TranslateActivity4 extends AppCompatActivity{
 
-public class TranslateActivity2 extends AppCompatActivity{
     int flag1=7;
     int flag2=7;
     int flag3=7;
@@ -37,7 +38,7 @@ public class TranslateActivity2 extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate2);
-        setTitle("변환(점자->한글)");
+        setTitle("변환(점자->영어)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mVibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
@@ -45,7 +46,6 @@ public class TranslateActivity2 extends AppCompatActivity{
 
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -62,14 +62,14 @@ public class TranslateActivity2 extends AppCompatActivity{
                 finish();
                 return true;
             case R.id.translateHangul:
-               // it=new Intent(this,TranslateActivity2.class);
-               // startActivity(it);
-               // finish();
-                break;
-            case R.id.translateEnglish:
-                it=new Intent(this,TranslateActivity4.class);
+                it=new Intent(this,TranslateActivity2.class);
                 startActivity(it);
                 finish();
+                break;
+            case R.id.translateEnglish:
+               // it=new Intent(this,TranslateActivity4.class);
+              //  startActivity(it);
+              //  finish();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -194,6 +194,7 @@ public class TranslateActivity2 extends AppCompatActivity{
         mVibe.vibrate(50);//0.05초
         initialization();
 
+
     }
 
     public void clickSpace(View v){
@@ -240,9 +241,6 @@ public class TranslateActivity2 extends AppCompatActivity{
             ivId--;
         }
         mVibe.vibrate(50);//0.05초
-
-
-        //Toast.makeText(this,"totalWidth = "+totalWidth,Toast.LENGTH_SHORT).show();
     }
 
     public void clickTranslate(View v){
@@ -271,6 +269,4 @@ public class TranslateActivity2 extends AppCompatActivity{
 
     }
 
-
 }
-

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         startActivity(new Intent(this, Splash_Activity.class));
 
 
@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if(id==R.id.action_settings2){
            finish();
+        }
+        if(id==R.id.action_settings3){
+            //도움말 추가하기!
         }
         return super.onOptionsItemSelected(item);
     }
@@ -159,20 +162,20 @@ public class MainActivity extends AppCompatActivity {
         alertDialogBuilder
                 .setMessage("진행할 변환을 선택하세요")
                 .setCancelable(false)
-                .setPositiveButton("한글->점자",
+                .setPositiveButton("글자->점자",
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {
-                                Intent it = new Intent(MainActivity.this,TranslateActivity1.class);
+                                Intent it = new Intent(MainActivity.this,TranslateMainActivity.class);
                                 it.putExtra("flag",1);
                                 startActivity(it);
                             }
                         })
-                .setNegativeButton("점자->한글",
+                .setNegativeButton("점자->글자",
                         new DialogInterface.OnClickListener() {
                             public void onClick(
                                     DialogInterface dialog, int id) {
-                                Intent it = new Intent(MainActivity.this,TranslateActivity2.class);
+                                Intent it = new Intent(MainActivity.this,TranslateMainActivity2.class);
                                 it.putExtra("flag",2);
                                 startActivity(it);
                             }

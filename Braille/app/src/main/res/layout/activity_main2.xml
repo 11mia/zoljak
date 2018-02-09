@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7F7"
+    android:orientation="vertical"
+    tools:context="com.example.miseon.braille.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+                android:id="@+id/b1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/shape1"
+                android:clickable="true"
+                android:onClick="aboutBraille"
+                android:scaleType="fitXY"
+                android:src="@drawable/o" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="점자이야기"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+                android:id="@+id/b2"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/shape1"
+                android:clickable="true"
+                android:onClick="studyBraille"
+                android:scaleType="fitXY"
+                android:src="@drawable/j" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="점자표"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/b3"
+
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/shape3"
+                android:clickable="true"
+                android:onClick="practiceBraille"
+                android:scaleType="fitXY"
+                android:src="@drawable/g" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="연습"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <ImageButton
+                android:id="@+id/b4"
+
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/shape3"
+                android:clickable="true"
+                android:onClick="GoToTest"
+                android:scaleType="fitXY"
+                android:src="@drawable/u" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="테스트"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageButton
+                android:id="@+id/b5"
+                android:layout_width="90dp"
+
+                android:layout_height="90dp"
+                android:background="@drawable/shape5"
+                android:clickable="true"
+                android:onClick="GoToTranslate"
+                android:scaleType="fitXY"
+                android:src="@drawable/d" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="변환"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageButton
+                android:id="@+id/b6"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/shape5"
+                android:clickable="true"
+                android:onClick="GoToSupplement"
+                android:scaleType="fitXY"
+                android:src="@drawable/s" />
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="부록"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

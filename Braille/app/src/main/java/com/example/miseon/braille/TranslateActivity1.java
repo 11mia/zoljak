@@ -1,32 +1,27 @@
 package com.example.miseon.braille;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
-
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -91,11 +86,22 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent it;
         switch (item.getItemId()) {
             case android.R.id.home:
                 //onBackPressed();
                 finish();
                 return true;
+            case R.id.translateHangul:
+               // it=new Intent(this,TranslateActivity1.class);
+               // startActivity(it);
+               // finish();
+                break;
+            case R.id.translateEnglish:
+                it=new Intent(this,TranslateActivity3.class);
+                startActivity(it);
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -1799,5 +1805,11 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         jeomjafont.setText("");
 
         imageView.removeAllViews();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_translate,menu);
+        return true;
     }
 }

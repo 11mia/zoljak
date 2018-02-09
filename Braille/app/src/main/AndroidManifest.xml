@@ -45,6 +45,13 @@
         <activity android:name=".SupplementActivity"/>
         <activity android:name=".SupplementRuleActivity"/>
         <activity android:name=".SupplementLifeActivity"/>
+
+        <activity android:name=".TranslateMainActivity"/>
+        <activity android:name=".TranslateMainActivity2"/>
+        <activity android:name=".TranslateActivity4"/>
+        <activity android:name=".TranslateActivity3"/>
+
+
     </application>
 
 </manifest>
