@@ -11,7 +11,7 @@ public class StudyMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_study_main);
+        setContentView(R.layout.activity_study_main2);
         setTitle("점자표");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

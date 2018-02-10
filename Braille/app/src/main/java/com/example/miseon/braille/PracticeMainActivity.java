@@ -12,7 +12,7 @@ public class PracticeMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_practice_main);
+        setContentView(R.layout.activity_practice_main2);
         setTitle("점자연습");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

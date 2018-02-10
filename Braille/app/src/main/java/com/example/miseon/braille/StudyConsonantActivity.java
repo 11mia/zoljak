@@ -89,8 +89,8 @@ public class StudyConsonantActivity extends AppCompatActivity {
 
         int id = v.getId(); //클릭한 버튼
         Resources res = getResources();
-        Drawable drawable1=res.getDrawable(R.drawable.shape_button);
-        Drawable drawable2 = res.getDrawable(R.drawable.shape_list);
+        Drawable drawable1=res.getDrawable(R.drawable.shape_button1);
+        Drawable drawable2 = res.getDrawable(R.drawable.shape_list1);
 
 
         switch(id){

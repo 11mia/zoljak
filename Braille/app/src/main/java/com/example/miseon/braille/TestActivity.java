@@ -13,7 +13,7 @@ public class TestActivity extends AppCompatActivity{
     int flag;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_test3);
 
         Intent it = getIntent();
         flag = it.getIntExtra("flag",1);

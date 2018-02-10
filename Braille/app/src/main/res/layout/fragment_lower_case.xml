@@ -20,7 +20,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a1"
                 android:tag="295">
@@ -47,7 +47,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a2"
                 android:tag="296">
@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a3"
                 android:tag="297">
@@ -104,7 +104,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a4"
                 android:tag="298">
@@ -128,7 +128,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a5"
                 android:tag="299">
@@ -152,7 +152,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a6"
                 android:tag="300">
@@ -183,7 +183,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a7"
                 android:tag="301">
@@ -207,7 +207,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a8"
                 android:tag="302">
@@ -232,7 +232,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a9"
                 android:tag="303">
@@ -265,7 +265,7 @@
                 android:orientation="vertical"
 
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a10"
                 android:tag="304">
@@ -289,7 +289,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a11"
                 android:tag="305">
@@ -313,7 +313,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a12"
                 android:tag="306">
@@ -344,7 +344,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a13"
                 android:tag="307">
@@ -368,7 +368,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a14"
                 android:tag="308">
@@ -392,7 +392,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a15"
                 android:tag="309">
@@ -423,7 +423,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a16"
                 android:tag="310">
@@ -447,7 +447,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a17"
                 android:tag="311">
@@ -471,7 +471,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a18"
                 android:tag="312">
@@ -502,7 +502,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a19"
                 android:tag="313">
@@ -526,7 +526,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a20"
                 android:tag="314">
@@ -550,7 +550,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a21"
                 android:tag="315">
@@ -581,7 +581,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a22"
                 android:tag="316">
@@ -605,7 +605,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a23"
                 android:tag="317">
@@ -629,7 +629,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:clickable="true"
                 android:id="@+id/a24"
                 android:tag="318">
@@ -662,7 +662,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:orientation="vertical"
                 android:clickable="true"
                 android:id="@+id/a25"
@@ -688,7 +688,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="7dp"
-                android:background="@drawable/shape_button"
+                android:background="@drawable/shape_button2"
                 android:orientation="vertical"
                 android:clickable="true"
                 android:id="@+id/a26"

@@ -2,21 +2,21 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F7F7"
-    android:orientation="vertical"
-    tools:context="com.example.miseon.braille.MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    android:background="#F4F7F7">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="300dp"
         android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,24 +28,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
-
             <ImageButton
                 android:id="@+id/b1"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:background="@drawable/shape1"
                 android:clickable="true"
-                android:onClick="aboutBraille"
-                android:scaleType="centerInside"
-                android:src="@drawable/o" />
+                android:onClick="Consonant"
 
+                android:src="@drawable/consonant1"
+                android:scaleType="centerInside"/>
             <TextView
-                android:layout_width="90dp"
-                android:layout_height="25dp"
-                android:gravity="center"
-                android:text="점자이야기"
-                android:textColor="#000000"
-                android:textSize="15sp" />
+            android:layout_width="90dp"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:text="한글자음"
+            android:textColor="#000000"
+            android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -65,15 +64,16 @@
                 android:layout_height="90dp"
                 android:background="@drawable/shape1"
                 android:clickable="true"
-                android:onClick="studyBraille"
+                android:onClick="vowel"
+
                 android:scaleType="centerInside"
-                android:src="@drawable/j" />
+                android:src="@drawable/vowel1" />
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="점자표"
+                android:text="한글모음"
                 android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -86,28 +86,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.15"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
 
             <ImageButton
                 android:id="@+id/b3"
-
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:background="@drawable/shape3"
                 android:clickable="true"
-                android:onClick="practiceBraille"
-                android:scaleType="centerInside"
-                android:src="@drawable/g" />
+
+                android:onClick="abbreviation"
+                android:src="@drawable/abb3"
+                android:scaleType="centerInside"/>
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="연습"
+                android:text="한글약어"
                 android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -122,20 +122,20 @@
 
             <ImageButton
                 android:id="@+id/b4"
-
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:background="@drawable/shape3"
                 android:clickable="true"
-                android:onClick="GoToTest"
+
+                android:onClick="alphabet"
                 android:scaleType="centerInside"
-                android:src="@drawable/u" />
+                android:src="@drawable/alph" />
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="테스트"
+                android:text="알파벳"
                 android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -155,19 +155,19 @@
             <ImageButton
                 android:id="@+id/b5"
                 android:layout_width="90dp"
-
                 android:layout_height="90dp"
                 android:background="@drawable/shape5"
                 android:clickable="true"
-                android:onClick="GoToTranslate"
+
+                android:onClick="number"
                 android:scaleType="centerInside"
-                android:src="@drawable/d" />
+                android:src="@drawable/num1" />
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="변환"
+                android:text="숫자"
                 android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -188,23 +188,25 @@
                 android:id="@+id/b6"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:adjustViewBounds="true"
                 android:background="@drawable/shape5"
                 android:clickable="true"
-                android:onClick="GoToSupplement"
+
+                android:onClick="symbol"
                 android:scaleType="centerInside"
-                android:src="@drawable/s" />
+                android:src="@drawable/sym5" />
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="부록"
+                android:text="문장부호"
                 android:textColor="#000000"
                 android:textSize="15sp" />
         </LinearLayout>
 
 
     </android.support.constraint.ConstraintLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

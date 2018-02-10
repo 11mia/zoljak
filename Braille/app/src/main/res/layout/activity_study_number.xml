@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -86,7 +86,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -123,7 +123,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -170,7 +170,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -207,7 +207,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -254,7 +254,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -291,7 +291,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -337,7 +337,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -374,7 +374,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -420,7 +420,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -458,7 +458,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="7dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
                     android:orientation="vertical">
 
                     <TextView
@@ -503,7 +503,7 @@
                 <LinearLayout
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/shape_button"
+                    android:background="@drawable/shape_button3"
 
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"

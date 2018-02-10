@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7F7"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="380dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape1"
+            android:clickable="true"
+            android:onClick="practiceConsonant"
+            android:text="한글자음"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:src="@drawable/consonant1"
+            android:scaleType="centerInside"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape1"
+            android:clickable="true"
+
+            android:onClick="practiceVowel"
+            android:text="한글모음"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.80"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:src="@drawable/vowel1"
+            android:scaleType="centerInside"/>
+
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape3"
+            android:clickable="true"
+
+            android:onClick="practiceAbbreviation"
+            android:text="한글약어"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33"
+            android:scaleType="centerInside"
+            android:src="@drawable/abb3"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape3"
+            android:clickable="true"
+
+            android:onClick="practiceAlphabet"
+            android:text="알파벳"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.80"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33"
+            android:scaleType="centerInside"
+            android:src="@drawable/alph"/>
+
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape5"
+            android:clickable="true"
+
+            android:onClick="practiceNumber"
+            android:text="숫자"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.66"
+            android:scaleType="centerInside"
+            android:src="@drawable/num1"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape5"
+            android:clickable="true"
+
+            android:onClick="practiceSymbol"
+            android:text="문장부호"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.80"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.66"
+            android:scaleType="centerInside"
+            android:src="@drawable/sym5"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape6"
+            android:clickable="true"
+            android:onClick="practiceRandom"
+            android:text="랜덤"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.98" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

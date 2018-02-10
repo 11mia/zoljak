@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7F7"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="380dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/tmbt1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape1"
+            android:clickable="true"
+            android:onClick="testConsonant"
+            android:text="한글자음"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:src="@drawable/consonant1"
+            android:scaleType="centerInside"/>
+
+        <ImageButton
+            android:id="@+id/b2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape1"
+
+            android:clickable="true"
+            android:onClick="testVowel"
+            android:text="한글모음"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:src="@drawable/vowel1"
+            android:scaleType="centerInside"/>
+
+
+        <ImageButton
+            android:id="@+id/b3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape3"
+            android:clickable="true"
+
+            android:onClick="testAbbreviation"
+            android:text="한글약어"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33"
+            android:src="@drawable/abb3"
+            android:scaleType="centerInside"/>
+
+        <ImageButton
+            android:id="@+id/b4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape3"
+            android:clickable="true"
+
+            android:onClick="testAlphabet"
+            android:text="알파벳"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33"
+            android:src="@drawable/alph"
+            android:scaleType="centerInside"/>
+
+
+        <ImageButton
+            android:id="@+id/b5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape5"
+            android:clickable="true"
+
+            android:onClick="testNumber"
+            android:text="숫자"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.66"
+            android:src="@drawable/num1"
+            android:scaleType="centerInside"/>
+
+        <ImageButton
+            android:id="@+id/b6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape5"
+            android:clickable="true"
+
+            android:onClick="testSymbol"
+            android:text="문장부호"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.66"
+            android:src="@drawable/sym5"
+            android:scaleType="centerInside"/>
+
+
+        <Button
+            android:id="@+id/b7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape6"
+            android:clickable="true"
+
+            android:onClick="testWord"
+            android:text="단어"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
+
+        <Button
+            android:id="@+id/b8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape6"
+            android:clickable="true"
+
+            android:onClick="testRandom"
+            android:text="랜덤"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.99" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
