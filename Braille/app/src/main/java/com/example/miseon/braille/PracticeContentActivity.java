@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PracticeContentActivity extends AppCompatActivity {
@@ -52,6 +56,11 @@ public class PracticeContentActivity extends AppCompatActivity {
 
     final Context context = this;
 
+    int[] total_number = new int[7];//연습&테스트에서 총 시도횟수*문제수
+    int[] incorrect_number = new int[7];//연습&테스트에서 틀린문제수->문제 하나당 딱 한번만 카운트.
+    List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
+    boolean incorrect = false;//오답일 경우 true가 됨. incorret_number는 incorrect가 false에서 true가 될 때 딱한번 +1된다.
+    int randomNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +72,17 @@ public class PracticeContentActivity extends AppCompatActivity {
         Intent it = getIntent();
         flag = it.getIntExtra("flag",1);
         count=it.getIntExtra("count",1);
+        total_number=it.getIntArrayExtra("total_number");
+        incorrect_number=it.getIntArrayExtra("incorrect_number");
+        incorrect_list=it.getIntegerArrayListExtra("incorrect_list");
+
+
+
+        //Toast.makeText(this,"total_number : "+total_number[0]+", "+total_number[1]+", "+total_number[2]+", "+total_number[3]+", "+total_number[4]+", "+total_number[5]+", "+total_number[6]+", "+total_number[7],Toast.LENGTH_LONG).show();
         TextView tv = (TextView)findViewById(R.id.practiceLetter);
-        int randomNum;
+        TextView tv1=(TextView)findViewById(R.id.practiceType);
         Cursor cursor;
+
 
         try {
             dbmanager = new DBManager(this);
@@ -73,8 +90,9 @@ public class PracticeContentActivity extends AppCompatActivity {
 
 
             switch (flag) {
-                case 1:
+                case 0:
                     setTitle("점자연습-한글자음");
+                    total_number[0] = total_number[0]+1;
                     randomNum = randomRange(1,35);
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
                     if(cursor.moveToNext()){
@@ -88,17 +106,17 @@ public class PracticeContentActivity extends AppCompatActivity {
                             dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                             dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                         }
-                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
-                        tv.setText(letter+" ("+type+")");
+                        tv.setText(letter);
+                        tv1.setText("("+type+")");
 
                     }
 
 
                     break;
-                case 2:
+                case 1:
                     setTitle("점자연습-한글모음");
+                    total_number[1] = total_number[1]+1;
 
                     randomNum = randomRange(36,56);
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
@@ -113,8 +131,6 @@ public class PracticeContentActivity extends AppCompatActivity {
                             dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                             dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                         }
-                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
                         tv.setText(letter);
 
@@ -122,8 +138,9 @@ public class PracticeContentActivity extends AppCompatActivity {
 
 
                     break;
-                case 3:
+                case 2:
                     setTitle("점자연습-한글약어");
+                    total_number[2] = total_number[2]+1;
 
                     randomNum = randomRange(57,89);
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
@@ -138,8 +155,6 @@ public class PracticeContentActivity extends AppCompatActivity {
                             dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                             dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                         }
-                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
                         tv.setText(letter);
 
@@ -148,8 +163,9 @@ public class PracticeContentActivity extends AppCompatActivity {
 
 
                     break;
-                case 4:
+                case 3:
                     setTitle("점자연습-알파벳");
+                    total_number[3] = total_number[3]+1;
 
                     randomNum = randomRange(90,141);
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
@@ -164,8 +180,6 @@ public class PracticeContentActivity extends AppCompatActivity {
                             dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                             dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                         }
-                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
 
                         tv.setText(letter);
@@ -175,8 +189,9 @@ public class PracticeContentActivity extends AppCompatActivity {
 
 
                     break;
-                case 5:
+                case 4:
                     setTitle("점자연습-숫자");
+                    total_number[4] = total_number[4]+1;
 
                     randomNum = randomRange(142,151);
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
@@ -191,8 +206,6 @@ public class PracticeContentActivity extends AppCompatActivity {
                             dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                             dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                         }
-                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
                         tv.setText(letter);
 
@@ -201,7 +214,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
 
                     break;
-                case 7:
+                case 6:
                     setTitle("점자연습-랜덤");
 
                     do {
@@ -220,12 +233,11 @@ public class PracticeContentActivity extends AppCompatActivity {
                             dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                             dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                         }
-                        //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
+                        tv.setText(letter);
+
                         if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
-                            tv.setText(letter+"("+type+")");
-                        else
-                            tv.setText(letter);
+                            tv1.setText("("+type+")");
+
 
 
 
@@ -236,8 +248,9 @@ public class PracticeContentActivity extends AppCompatActivity {
 
                     break;
 
-                  case 6:
+                  case 5:
                       setTitle("점자연습-문장부호");
+                      total_number[5] = total_number[5]+1;
 
                       randomNum = randomRange(153,180);
                       cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
@@ -252,8 +265,6 @@ public class PracticeContentActivity extends AppCompatActivity {
                               dot_1=cursor.getString(cursor.getColumnIndex("dot_1"));
                               dot_2=cursor.getString(cursor.getColumnIndex("dot_2"));
                           }
-                          //Toast.makeText(this,"num="+randomNum+", letter="+letter+", type="+type+", dot_num="+dot_num+", dot_1="+dot_1+", dot_2="+dot_2,Toast.LENGTH_LONG).show();
-                          //Toast.makeText(this,"count="+count,Toast.LENGTH_SHORT).show();
 
                           tv.setText(letter);
 
@@ -269,18 +280,38 @@ public class PracticeContentActivity extends AppCompatActivity {
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
         }
 
+        Log.v("randomNum",Integer.toString(randomNum));
+
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {//액션바의 뒤로가기버튼선택시
         switch (item.getItemId()) {
             case android.R.id.home:
                 //onBackPressed();
+                Intent it1 = new Intent();
+                it1.putExtra("total_number",total_number);
+                it1.putExtra("incorrect_number",incorrect_number);
+                it1.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                setResult(RESULT_OK, it1);
+                Log.v("setResult","ok");
                 finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override//뒤로가기버튼누를시
+    public void onBackPressed() {
+        Intent it2 = new Intent();
+        it2.putExtra("total_number",total_number);
+        it2.putExtra("incorrect_number",incorrect_number);
+        it2.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        setResult(RESULT_OK, it2);
+        finish();
+    }
+
+
 
     public void ClickDot(View v){
         int id = v.getId();
@@ -432,6 +463,10 @@ public class PracticeContentActivity extends AppCompatActivity {
                                     Intent it = new Intent(PracticeContentActivity.this,PracticeContentActivity.class);
                                     it.putExtra("flag",flag);
                                     it.putExtra("count",++count);
+                                    it.putExtra("total_number",total_number);
+                                    it.putExtra("incorrect_number",incorrect_number);
+                                    it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                                    it.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                                     startActivity(it);
                                     overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
                                     finish();
@@ -456,6 +491,11 @@ public class PracticeContentActivity extends AppCompatActivity {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(
                                         DialogInterface dialog, int id) {
+                                    Intent it3=new Intent();
+                                    it3.putExtra("total_number",total_number);
+                                    it3.putExtra("incorrect_number",incorrect_number);
+                                    it3.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                                    setResult(RESULT_OK, it3);
                                     finish();
                                 }
                             });
@@ -479,6 +519,16 @@ public class PracticeContentActivity extends AppCompatActivity {
                                 public void onClick(
                                         DialogInterface dialog, int id) {
                                     initialization();
+                                    if(!incorrect&&flag!=6){
+                                        incorrect=true;
+                                        incorrect_number[flag]=incorrect_number[flag]+1;
+                                        incorrect_list.add(randomNum);
+                                        if(incorrect_list.size()>50)
+                                            incorrect_list.remove(0);
+                                        Log.v("incorrect_number : ",Integer.toString(incorrect_number[flag]));
+                                        for(int i=0;i<incorrect_list.size();i++)
+                                           Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
+                                    }
                                 }
                             });
 

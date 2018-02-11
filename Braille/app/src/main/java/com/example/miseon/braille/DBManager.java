@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBManager extends SQLiteOpenHelper {
     ContentValues values = new ContentValues();
+
     public DBManager(Context context){
         super(context,"myDB",null,1);
     }
@@ -17,6 +18,11 @@ public class DBManager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         //db.execSQL("Drop table Braille;");
         db.execSQL("create table Braille(num INTEGER,letter text,type text,dot_num INTEGER,dot_1 text,dot_2 text,dot_3 text,dot_4 text);");
+        db.execSQL("create table Total(type text,num INTEGER);");
+        db.execSQL("create table IncorrectNum(type text,num INTEGER);");
+        db.execSQL("create table IncorrectList(rec_num INTEGER,num INTEGER);");
+
+
 
         db.beginTransaction();
         try{
@@ -588,6 +594,31 @@ public class DBManager extends SQLiteOpenHelper {
                 db.insert("Braille", null, values);
 
             }
+
+
+            String[] type = {"한글자음","한글모음","한글약어","알파벳","숫자","문장부호","단어"};
+            ContentValues values1 = new ContentValues();
+            ContentValues values2 = new ContentValues();
+            ContentValues values3 = new ContentValues();
+
+            for(int i=0;i<7;i++){
+                values1.put("type",type[i]);
+                values1.put("num",0);
+                db.insert("Total",null,values1);
+            }
+            for(int i=0;i<7;i++){
+                values2.put("type",type[i]);
+                values2.put("num",0);
+                db.insert("IncorrectNum",null,values2);
+            }
+            for(int i=0;i<50;i++){
+                values3.put("rec_num",i+1);
+                values3.put("num",0);
+                db.insert("IncorrectList",null,values3);
+            }
+
+
+
 
             db.setTransactionSuccessful();
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F7F7"
-    >
+    android:background="#F4F7F7">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="300dp"
@@ -16,7 +15,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39">
 
 
         <ImageButton
@@ -25,6 +25,8 @@
             android:background="@drawable/shape1"
             android:clickable="true"
             android:onClick="practiceConsonant"
+            android:scaleType="centerInside"
+            android:src="@drawable/consonant1"
             android:text="한글자음"
             android:textColor="#ffffff"
             android:textSize="20sp"
@@ -33,9 +35,7 @@
             app:layout_constraintHorizontal_bias="0.20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:src="@drawable/consonant1"
-            android:scaleType="centerInside"/>
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:layout_width="80dp"
@@ -44,6 +44,8 @@
             android:clickable="true"
 
             android:onClick="practiceVowel"
+            android:scaleType="centerInside"
+            android:src="@drawable/vowel1"
             android:text="한글모음"
             android:textColor="#ffffff"
             android:textSize="20sp"
@@ -52,9 +54,7 @@
             app:layout_constraintHorizontal_bias="0.80"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:src="@drawable/vowel1"
-            android:scaleType="centerInside"/>
+            app:layout_constraintVertical_bias="0.0" />
 
 
         <ImageButton
@@ -64,6 +64,8 @@
             android:clickable="true"
 
             android:onClick="practiceAbbreviation"
+            android:scaleType="centerInside"
+            android:src="@drawable/abb3"
             android:text="한글약어"
             android:textColor="#ffffffff"
             android:textSize="20sp"
@@ -72,9 +74,7 @@
             app:layout_constraintHorizontal_bias="0.20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.33"
-            android:scaleType="centerInside"
-            android:src="@drawable/abb3"/>
+            app:layout_constraintVertical_bias="0.33" />
 
         <ImageButton
             android:layout_width="80dp"
@@ -83,6 +83,8 @@
             android:clickable="true"
 
             android:onClick="practiceAlphabet"
+            android:scaleType="centerInside"
+            android:src="@drawable/alph"
             android:text="알파벳"
             android:textColor="#ffffffff"
             android:textSize="20sp"
@@ -91,9 +93,7 @@
             app:layout_constraintHorizontal_bias="0.80"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.33"
-            android:scaleType="centerInside"
-            android:src="@drawable/alph"/>
+            app:layout_constraintVertical_bias="0.33" />
 
 
         <ImageButton
@@ -103,6 +103,8 @@
             android:clickable="true"
 
             android:onClick="practiceNumber"
+            android:scaleType="centerInside"
+            android:src="@drawable/num1"
             android:text="숫자"
             android:textColor="#ffffffff"
             android:textSize="20sp"
@@ -111,9 +113,7 @@
             app:layout_constraintHorizontal_bias="0.20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.66"
-            android:scaleType="centerInside"
-            android:src="@drawable/num1"/>
+            app:layout_constraintVertical_bias="0.66" />
 
         <ImageButton
             android:layout_width="80dp"
@@ -122,6 +122,8 @@
             android:clickable="true"
 
             android:onClick="practiceSymbol"
+            android:scaleType="centerInside"
+            android:src="@drawable/sym5"
             android:text="문장부호"
             android:textColor="#ffffffff"
             android:textSize="20sp"
@@ -130,9 +132,7 @@
             app:layout_constraintHorizontal_bias="0.80"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.66"
-            android:scaleType="centerInside"
-            android:src="@drawable/sym5"/>
+            app:layout_constraintVertical_bias="0.66" />
 
         <Button
             android:layout_width="80dp"
@@ -153,6 +153,39 @@
 
 
     </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/recommend"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:lineSpacingExtra="8sp"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape6"
+        android:clickable="true"
+        android:onClick="clickDetail"
+        android:text="자세히"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
 
 
 </android.support.constraint.ConstraintLayout>
