@@ -48,10 +48,10 @@ public class WrongAnswerActivity extends AppCompatActivity {
         String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
         tv1.setText("타입");
         tv2.setText("오답");
-        tv3.setText("총 문제");
+        tv3.setText("전체");
         tv4.setText("타입");
         tv5.setText("오답");
-        tv6.setText("총 문제");
+        tv6.setText("전체");
         for(int i=0;i<7;i++){
             if(i%2==0) {
                 tv1.append("\n" + type[i]);
@@ -78,19 +78,26 @@ public class WrongAnswerActivity extends AppCompatActivity {
                 LinearLayout layout = new LinearLayout(this);
                 layout.setPadding(0,5,0,5);
                 layout.setOrientation(LinearLayout.HORIZONTAL);
+
+                final int width1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics());
+                final int width2 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 85, getResources().getDisplayMetrics());
+
+                final int height1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());
+                LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(width1, height1);//단위로 dp를 사용하기 위함.
+                LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(width2, height1);//단위로 dp를 사용하기 위함.
+
+                layoutParams1.gravity = Gravity.CENTER;
+
                 TextView tv = new TextView(this);//letter
-                tv.setHeight(150);
-                tv.setWidth(250);
+
+                tv.setLayoutParams(layoutParams1);
                 tv.setTextSize(20);
-                tv.setGravity(TextView.TEXT_ALIGNMENT_CENTER);
+                layoutParams1.setMargins(10,0,0,0);
+
                 TextView tv0 = new TextView(this);//type
-                tv0.setHeight(150);
-                tv0.setHeight(250);
+
+                tv0.setLayoutParams(layoutParams2);
                 tv0.setTextSize(20);
-                tv0.setGravity(TextView.TEXT_ALIGNMENT_CENTER);
-                TextView empty = new TextView(this);
-                empty.setHeight(70);
-                empty.setWidth(70);
 
                 String letter;
                 String str_type;
@@ -108,7 +115,7 @@ public class WrongAnswerActivity extends AppCompatActivity {
                     tv0.setText("("+str_type+")");
                     layout.addView(tv);
                     layout.addView(tv0);
-                    layout.addView(empty);
+                   // layout.addView(empty);
                     for(int j=1;j<=dot_num;j++){
 
                         ImageView iv = new ImageView(this); //추가할 이미지뷰
