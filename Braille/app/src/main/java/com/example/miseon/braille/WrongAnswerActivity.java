@@ -8,9 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +28,14 @@ public class WrongAnswerActivity extends AppCompatActivity {
     SQLiteDatabase sqlitedb;
     DBManager dbmanager;
 
+    TextView tv1;
+    TextView tv2;
+    TextView tv3;
+    TextView tv4;
+    TextView tv5;
+    TextView tv6;
+    LinearLayout layout_list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,19 +43,19 @@ public class WrongAnswerActivity extends AppCompatActivity {
         setTitle("오답 노트");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView tv1 = (TextView)findViewById(R.id.calulate1);
-        TextView tv2 = (TextView)findViewById(R.id.calulate2);
-        TextView tv3 = (TextView)findViewById(R.id.calulate3);
-        TextView tv4 = (TextView)findViewById(R.id.calulate4);
-        TextView tv5 = (TextView)findViewById(R.id.calulate5);
-        TextView tv6 = (TextView)findViewById(R.id.calulate6);
-        LinearLayout layout_list = (LinearLayout)findViewById(R.id.scroll);
+        tv1 = (TextView)findViewById(R.id.calulate1);
+        tv2 = (TextView)findViewById(R.id.calulate2);
+        tv3 = (TextView)findViewById(R.id.calulate3);
+        tv4 = (TextView)findViewById(R.id.calulate4);
+        tv5 = (TextView)findViewById(R.id.calulate5);
+        tv6 = (TextView)findViewById(R.id.calulate6);
+        layout_list = (LinearLayout)findViewById(R.id.scroll);
         Intent it=getIntent();
         total_number=it.getIntArrayExtra("total_number");
         incorrect_number=it.getIntArrayExtra("incorrect_number");
         incorrect_list = it.getIntegerArrayListExtra("incorrect_list");
 
-        String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
+        /*String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
         tv1.setText("타입");
         tv2.setText("오답");
         tv3.setText("전체");
@@ -65,7 +75,8 @@ public class WrongAnswerActivity extends AppCompatActivity {
         }
         tv4.append("\n");
         tv5.append("\n");
-        tv6.append("\n");
+        tv6.append("\n");*/
+        setTextView();
 
         //오답들 보이기
        int i=49;
@@ -89,15 +100,14 @@ public class WrongAnswerActivity extends AppCompatActivity {
                 layoutParams1.gravity = Gravity.CENTER;
 
                 TextView tv = new TextView(this);//letter
-
                 tv.setLayoutParams(layoutParams1);
                 tv.setTextSize(20);
                 layoutParams1.setMargins(10,0,0,0);
 
                 TextView tv0 = new TextView(this);//type
-
                 tv0.setLayoutParams(layoutParams2);
                 tv0.setTextSize(20);
+                layoutParams2.setMargins(0,0,10,0);
 
                 String letter;
                 String str_type;
@@ -168,11 +178,83 @@ public class WrongAnswerActivity extends AppCompatActivity {
                 it.putExtra("total_number",total_number);
                 it.putExtra("incorrect_number",incorrect_number);
                 it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
-                setResult(1, it);
+                setResult(RESULT_OK, it);
                 finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override//뒤로가기버튼누를시
+    public void onBackPressed() {
+        Intent it2 = new Intent();
+        it2.putExtra("total_number",total_number);
+        it2.putExtra("incorrect_number",incorrect_number);
+        it2.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        setResult(RESULT_OK, it2);
+        finish();
+    }
+
+    public void clickClear(View v){
+        for(int i=0;i<7;i++){
+            total_number[i]=0;
+            incorrect_number[i]=0;
+        }
+        incorrect_list.clear();
+        for(int i=0;i<50;i++) {
+            incorrect_list.add(0);
+            Log.v("incorrect_list " + i + " : ", Integer.toString(incorrect_list.get(i)));
+        }
+        /*
+        String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
+        tv1.setText("타입");
+        tv2.setText("오답");
+        tv3.setText("전체");
+        tv4.setText("타입");
+        tv5.setText("오답");
+        tv6.setText("전체");
+        for(int i=0;i<7;i++){
+            if(i%2==0) {
+                tv1.append("\n" + type[i]);
+                tv2.append("\n" + incorrect_number[i]);
+                tv3.append("\n" + total_number[i]);
+            }else{
+                tv4.append("\n" + type[i]);
+                tv5.append("\n" + incorrect_number[i]);
+                tv6.append("\n" + total_number[i]);
+            }
+        }
+        tv4.append("\n");
+        tv5.append("\n");
+        tv6.append("\n");*/
+        setTextView();
+
+        layout_list.removeAllViews();
+
+    }
+
+    public void setTextView(){
+        String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
+        tv1.setText("타입");
+        tv2.setText("오답");
+        tv3.setText("전체");
+        tv4.setText("타입");
+        tv5.setText("오답");
+        tv6.setText("전체");
+        for(int i=0;i<7;i++){
+            if(i%2==0) {
+                tv1.append("\n" + type[i]);
+                tv2.append("\n" + incorrect_number[i]);
+                tv3.append("\n" + total_number[i]);
+            }else{
+                tv4.append("\n" + type[i]);
+                tv5.append("\n" + incorrect_number[i]);
+                tv6.append("\n" + total_number[i]);
+            }
+        }
+        tv4.append("\n");
+        tv5.append("\n");
+        tv6.append("\n");
     }
 }
 
