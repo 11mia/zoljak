@@ -4,6 +4,9 @@ package com.example.miseon.braille;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -17,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TranslateActivity4 extends AppCompatActivity{
@@ -34,15 +38,52 @@ public class TranslateActivity4 extends AppCompatActivity{
 
     int totalWidth=0;
 
+
+    SQLiteDatabase sqlitedb;
+    DBManager dbmanager;
+    int dot_num;
+    String letter;
+
+    TextView translateToWord;
+    // TextView resultchang;
+
+    Button add;
+    Button change;
+    Button reset;
+
+    TextView inputwindow;
+    TextView outputwindow;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate2);
-        setTitle("변환(점자->영어)");
+        setTitle("변환(점자->글자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mVibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
 
+        translateToWord= (TextView) this.findViewById(R.id.translateToWord);
+        //    resultchang=(TextView) this.findViewById(R.id.resultchang);
+
+
+        add=(Button)this.findViewById(R.id.add);
+        change=(Button)this.findViewById(R.id.change);
+        reset =(Button)this.findViewById(R.id.reset);
+
+        add.setText("ADD");
+        change.setText("CHANGE");
+        reset.setText("RESET");
+
+
+        inputwindow=(TextView)this.findViewById(R.id.inputwindow);
+        outputwindow=(TextView)this.findViewById(R.id.outputwindow);
+
+        inputwindow.setText("Braille Window");
+        outputwindow.setText("Result Window");
 
 
     }
@@ -67,9 +108,9 @@ public class TranslateActivity4 extends AppCompatActivity{
                 finish();
                 break;
             case R.id.translateEnglish:
-               // it=new Intent(this,TranslateActivity4.class);
-              //  startActivity(it);
-              //  finish();
+                // it=new Intent(this,TranslateActivity4.class);
+                //  startActivity(it);
+                //  finish();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -192,6 +233,8 @@ public class TranslateActivity4 extends AppCompatActivity{
         ivId=-1;
         totalWidth=0;
         mVibe.vibrate(50);//0.05초
+        translateToWord.setText("");
+
         initialization();
 
 
@@ -243,8 +286,73 @@ public class TranslateActivity4 extends AppCompatActivity{
         mVibe.vibrate(50);//0.05초
     }
 
+
+
+
+
     public void clickTranslate(View v){
         mVibe.vibrate(50);//0.05초
+
+        String[] jeomjanum=new String[30];
+        String wordText="";
+        translateToWord.setText("");
+        int count=0;
+        int start=0;
+
+
+
+        char[] chos_2 = new char[20];
+        char[] juns_2 = new char[20];
+        char[] jong_2 = new char[20];
+
+
+
+        for(start=0; start<ivId+1; start++) {
+            jeomjanum[start]= "c"+input[start];
+        }
+
+
+        try {
+            dbmanager = new DBManager(this);
+            sqlitedb = dbmanager.getReadableDatabase();
+            sqlitedb.beginTransaction();
+
+            Cursor cursor;
+
+            for (start=0; start<ivId+1; start++) {
+                if (jeomjanum[start].equals("c777776")) {//대문자 처리부분
+                    cursor = sqlitedb.query("Braille", null, "dot_2=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "대문자"}, null, null, "letter");
+                    if(cursor.moveToNext()) {
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        wordText+=letter;
+                    }
+                    start++;
+                }
+                else if (jeomjanum[start].equals("c0")) {
+                    wordText+=" ";
+                }
+                else{
+
+                    cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "소문자"}, null, null, "letter");
+                    if(cursor.moveToNext()) {
+                        letter = cursor.getString(cursor.getColumnIndex("letter"));
+                        wordText+=letter;
+                    }
+
+                }
+
+            }
+
+            sqlitedb.setTransactionSuccessful();
+
+        }catch(SQLiteException e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }finally {
+            sqlitedb.endTransaction();
+            //     resultchang.setText("[변환 결과]");
+            translateToWord.setText(wordText);
+
+        }
 
     }
 
@@ -266,6 +374,7 @@ public class TranslateActivity4 extends AppCompatActivity{
         butn.setBackgroundDrawable(drawable);
         butn = (Button) findViewById(R.id.dot6);
         butn.setBackgroundDrawable(drawable);
+
 
     }
 

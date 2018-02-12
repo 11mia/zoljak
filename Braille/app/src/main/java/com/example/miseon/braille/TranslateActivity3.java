@@ -4,22 +4,74 @@ package com.example.miseon.braille;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 public class TranslateActivity3 extends AppCompatActivity {
+
+
+    EditText editText;
+    TextView textView;
+    LinearLayout imageView;
+    // char[]temp;
+    int count;
+
+    SQLiteDatabase sqlitedb;
+    DBManager dbmanager;
+
+    int dot_num;
+    String al1;
+
+    Button resultbutton;
+    Button resetbutton;
+
+    TextView inputwindow;
+    TextView outputwindow;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate1);
-        setTitle("변환(영어->점자)");
+        setTitle("변환(글자->점자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //키보드 올리기
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+
+
+
+        editText = (EditText) this.findViewById(R.id.inputtext);
+        textView = (TextView) this.findViewById(R.id.outputtext);
+        imageView = (LinearLayout) this.findViewById(R.id.imagelayout);
+        textView.setText("");
+
+        resultbutton=(Button) this.findViewById(R.id.resultbutton);
+        resetbutton=(Button) this.findViewById(R.id.resetbutton);
+        resultbutton.setText("change");
+        resetbutton.setText("reset");
+
+        inputwindow=(TextView)this.findViewById(R.id.inputwindow);
+        inputwindow.setText("Search Window");
+
+        outputwindow=(TextView)this.findViewById(R.id.outputwindow);
+        outputwindow.setText("Result Window");
 
     }
 
@@ -45,11 +97,151 @@ public class TranslateActivity3 extends AppCompatActivity {
                 finish();
                 break;
             case R.id.translateEnglish:
-               // it=new Intent(this,TranslateActivity3.class);
-               // startActivity(it);
-               // finish();
+                // it=new Intent(this,TranslateActivity3.class);
+                // startActivity(it);
+                // finish();
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    void goToTranslateToJeom(View v) throws IOException {
+
+        final InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        final EditText et = (EditText)findViewById(R.id.inputtext);
+        imm.hideSoftInputFromWindow(et.getWindowToken(),0);//변환 클릭하면 키보드 쫙 사라진다
+        al1="";
+
+        al1 = editText.getText().toString();
+
+
+        if (al1.length()>20) {
+            Toast.makeText(this, "20자 이내로 입력하세요.", Toast.LENGTH_SHORT).show();
+            editText.setText("");
+            textView.setText("");
+            imageView.removeAllViews();
+            return;
+        }
+
+        imageView.removeAllViews();
+        textView.setText("Result of '" + al1 + "'");
+        count=0;
+
+        char[] temp = new char[20];
+
+
+        for(int i=0; i < al1.length();i++) {
+
+            temp[i] = al1.charAt(i);
+            count++;
+        }
+
+
+
+
+        try {
+            dbmanager = new DBManager(this);
+            sqlitedb = dbmanager.getReadableDatabase();
+            sqlitedb.beginTransaction();
+
+            int id_img;
+            Resources res = getResources();
+            int start;
+            Cursor cursor;
+            for ( start = 0; start < count; start++) {
+                if(temp[start]=='A'||temp[start]=='B'||temp[start]=='C'||temp[start]=='D'||temp[start]=='E'||temp[start]=='F'||temp[start]=='G'||
+                        temp[start]=='H'||temp[start]=='I'||temp[start]=='J'||temp[start]=='K'||temp[start]=='L'||temp[start]=='M'||temp[start]=='N'||
+                        temp[start]=='O'||temp[start]=='P'||temp[start]=='Q'||temp[start]=='R'||temp[start]=='S'||temp[start]=='T'||temp[start]=='U'||
+                        temp[start]=='V'||temp[start]=='W'||temp[start]=='X'||temp[start]=='Y'||temp[start]=='Z') {
+                    cursor = sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(temp[start]), "대문자"}, null, null, "letter");
+                    if (cursor.moveToNext()) {
+
+                        dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        for (int i = 1; i <= dot_num; i++) {
+
+                            ImageView iv = new ImageView(this); //추가할 이미지뷰
+                            String str = cursor.getString(cursor.getColumnIndex("dot_" + i));
+                            id_img = res.getIdentifier(str, "drawable", getPackageName());
+                            iv.setImageResource(id_img);
+                            final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                            final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                            layoutParams.gravity = Gravity.CENTER;
+                            iv.setLayoutParams(layoutParams);
+                            iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                            imageView.setGravity(Gravity.CENTER);
+                            imageView.addView(iv);
+                        }
+
+                    }
+                }
+                else if (temp[start]=='a'||temp[start]=='b'||temp[start]=='c'||temp[start]=='d'||temp[start]=='e'||temp[start]=='f'||temp[start]=='g'||
+                        temp[start]=='h'||temp[start]=='i'||temp[start]=='j'||temp[start]=='k'||temp[start]=='l'||temp[start]=='m'||temp[start]=='n'||
+                        temp[start]=='o'||temp[start]=='p'||temp[start]=='q'||temp[start]=='r'||temp[start]=='s'||temp[start]=='t'||temp[start]=='u'||
+                        temp[start]=='v'||temp[start]=='w'||temp[start]=='x'||temp[start]=='y'||temp[start]=='z') {
+
+
+                    cursor = sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(temp[start]), "소문자"}, null, null, "letter");
+                    if (cursor.moveToNext()) {
+
+                        dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
+                        for (int i = 1; i <= dot_num; i++) {
+
+                            ImageView iv = new ImageView(this); //추가할 이미지뷰
+                            String str = cursor.getString(cursor.getColumnIndex("dot_" + i));
+                            id_img = res.getIdentifier(str, "drawable", getPackageName());
+                            iv.setImageResource(id_img);
+                            final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                            final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                            layoutParams.gravity = Gravity.CENTER;
+                            iv.setLayoutParams(layoutParams);
+                            iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                            imageView.setGravity(Gravity.CENTER);
+                            imageView.addView(iv);
+                        }
+
+                    }
+
+                }
+                else if (temp[start]==' ') {
+                    ImageView iv = new ImageView(this); //추가할 이미지뷰
+
+                    iv.setImageResource(R.drawable.backgroundcolor);
+                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 17, getResources().getDisplayMetrics());//30dp
+                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                    layoutParams.gravity = Gravity.CENTER;
+                    iv.setLayoutParams(layoutParams);
+                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                    imageView.setGravity(Gravity.CENTER);
+                    imageView.addView(iv);
+                }
+
+
+            }//for문
+            sqlitedb.setTransactionSuccessful();
+
+        }catch(SQLiteException e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }finally {
+            sqlitedb.endTransaction();
+        }
+    }
+
+
+    void goToReset(View v) {
+        editText.setText("");//영어 입력받는 곳 리셋
+        textView.setText("");//~의 점역 결과 리셋
+        imageView.removeAllViews();//점자 이미지 보여주는 거 리셋
+
+
+        //키보드 올리기
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 }

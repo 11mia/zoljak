@@ -62,18 +62,18 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translate1);
-        setTitle("변환(한글->점자)");
+        setTitle("변환(글자->점자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         editText = (EditText) this.findViewById(R.id.inputtext);
         textView = (TextView) this.findViewById(R.id.outputtext);
-        textView2=(TextView) this.findViewById(R.id.outputimagecho);
-        textView3=(TextView) this.findViewById(R.id.outputimagejun);
-        textView4=(TextView) this.findViewById(R.id.outputimagejong);
+        //    textView2=(TextView) this.findViewById(R.id.outputimagecho);
+        //  textView3=(TextView) this.findViewById(R.id.outputimagejun);
+        //textView4=(TextView) this.findViewById(R.id.outputimagejong);
         imageView = (LinearLayout) this.findViewById(R.id.imagelayout);
 
 
-        jeomjafont=(TextView)this.findViewById(R.id.resultjeomjafont);
+        //    jeomjafont=(TextView)this.findViewById(R.id.resultjeomjafont);
 
         //키보드 올리기
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -91,9 +91,9 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                 finish();
                 return true;
             case R.id.translateHangul:
-               // it=new Intent(this,TranslateActivity1.class);
-               // startActivity(it);
-               // finish();
+                // it=new Intent(this,TranslateActivity1.class);
+                // startActivity(it);
+                // finish();
                 break;
             case R.id.translateEnglish:
                 it=new Intent(this,TranslateActivity3.class);
@@ -125,7 +125,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         String al1 = editText.getText().toString();
 
         imageView.removeAllViews();
-        textView.setText("'" + al1 + "'" + "의 점역결과");
+        textView.setText("['" + al1 + "'" + "의 점역결과]");
 
 
         // ㄱ ㄲ ㄴ ㄷ ㄸ ㄹ ㅁ ㅂ ㅃ ㅅ ㅆ ㅇ ㅈ ㅉ ㅊ ㅋ ㅌ ㅍ ㅎ//19개
@@ -176,12 +176,12 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                 chos += CHO[cho];
                 chos_2[count] = CHO[cho];
 
-                   System.out.println("" + JUN[jun] + "// 0x"
-                           + Integer.toHexString((char) jun));
+                System.out.println("" + JUN[jun] + "// 0x"
+                        + Integer.toHexString((char) jun));
 
-                   arr += JUN[jun] + "";
-                   juns += JUN[jun];
-                   juns_2[count] = JUN[jun];
+                arr += JUN[jun] + "";
+                juns += JUN[jun];
+                juns_2[count] = JUN[jun];
 
 
                 if ((char) jon != 0x0000) {
@@ -1226,31 +1226,31 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                         int start1=start+1;
                         if(chos_2[start1]=='ㅇ') {//나 다 마 바 자 카 타 하  뒤에 초성에서 ㅇ이 나오면 ㅏ를 생략하면 안되기 때문에
                             cursor =sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(chos_2[start]), "변환초성"}, null, null, "letter");
-                             if(cursor.moveToNext()) {
-                                 ImageView iv = new ImageView(this);
-                                 String str = cursor.getString(cursor.getColumnIndex("dot_1"));
-                                 id_img = res.getIdentifier(str, "drawable", getPackageName());
-                                 iv.setImageResource(id_img);
-                                 final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
-                                 final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
-                                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
-                                 layoutParams.gravity = Gravity.CENTER;
-                                 iv.setLayoutParams(layoutParams);
-                                 iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                 imageView.setGravity(Gravity.CENTER);
-                                 imageView.addView(iv);
+                            if(cursor.moveToNext()) {
+                                ImageView iv = new ImageView(this);
+                                String str = cursor.getString(cursor.getColumnIndex("dot_1"));
+                                id_img = res.getIdentifier(str, "drawable", getPackageName());
+                                iv.setImageResource(id_img);
+                                final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                                final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
 
 
-                                 ImageView iv1 = new ImageView(this);
-                                 iv1.setImageResource(R.drawable.c127776);//중성의 ㅏ를 표현해줍니다.
-                                 layoutParams.gravity = Gravity.CENTER;
-                                 iv1.setLayoutParams(layoutParams);
-                                 iv1.setScaleType(ImageView.ScaleType.FIT_XY);
-                                 imageView.setGravity(Gravity.CENTER);
-                                 imageView.addView(iv1);
-                                  }
-                             }
-                             else if (chos_2[start1]!='ㅇ'){
+                                ImageView iv1 = new ImageView(this);
+                                iv1.setImageResource(R.drawable.c127776);//중성의 ㅏ를 표현해줍니다.
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv1.setLayoutParams(layoutParams);
+                                iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv1);
+                            }
+                        }
+                        else if (chos_2[start1]!='ㅇ'){
 
 
                             ImageView iv = new ImageView(this); //추가할 이미지뷰
@@ -1258,83 +1258,83 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                             final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
                             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
 
-                                if(chos_2[start]=='ㄴ') {
-                                    iv.setImageResource(R.drawable.c177477);
-                                   layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㄷ') {
-                                    iv.setImageResource(R.drawable.c727477);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㅁ') {
-                                    iv.setImageResource(R.drawable.c177757);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㅂ') {
-                                    iv.setImageResource(R.drawable.c777457);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㅈ') {
-                                    iv.setImageResource(R.drawable.c777476);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㅋ') {
-                                    iv.setImageResource(R.drawable.c127477);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㅌ') {
-                                    iv.setImageResource(R.drawable.c127757);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
-                                else if (chos_2[start]=='ㅎ') {
-                                    iv.setImageResource(R.drawable.c727457);
-                                    layoutParams.gravity = Gravity.CENTER;
-                                    iv.setLayoutParams(layoutParams);
-                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                    imageView.setGravity(Gravity.CENTER);
-                                    imageView.addView(iv);
-                                }
+                            if(chos_2[start]=='ㄴ') {
+                                iv.setImageResource(R.drawable.c177477);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㄷ') {
+                                iv.setImageResource(R.drawable.c727477);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㅁ') {
+                                iv.setImageResource(R.drawable.c177757);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㅂ') {
+                                iv.setImageResource(R.drawable.c777457);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㅈ') {
+                                iv.setImageResource(R.drawable.c777476);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㅋ') {
+                                iv.setImageResource(R.drawable.c127477);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㅌ') {
+                                iv.setImageResource(R.drawable.c127757);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
+                            else if (chos_2[start]=='ㅎ') {
+                                iv.setImageResource(R.drawable.c727457);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+                            }
 
-                                 //여기나다마바자카타하 뒤에 초성안나오면 나다마바자카타하 즉 ㅏ이부분 안보이게!
-
-                             }
-
+                            //여기나다마바자카타하 뒤에 초성안나오면 나다마바자카타하 즉 ㅏ이부분 안보이게!
 
                         }
 
 
+                    }
+
+
                     else if((chos_2[start]=='ㄱ'||chos_2[start]=='ㄲ')&&juns_2[start]=='ㅓ'&&jong_2[start]=='ㅅ'){//case2
                         if(chos_2[start]=='ㄲ') {//껏의 된소리 앞에 표현해주기
-                           ImageView iv = new ImageView(this);
-                           iv.setImageResource(R.drawable.c777776);
+                            ImageView iv = new ImageView(this);
+                            iv.setImageResource(R.drawable.c777776);
 
                             final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
                             final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
@@ -1790,9 +1790,9 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         }finally{
             sqlitedb.endTransaction();
 
-     Typeface typeFace= Typeface.createFromAsset(getAssets(),"HSBRL02.ttf");
+   /*  Typeface typeFace= Typeface.createFromAsset(getAssets(),"HSBRL02.ttf");
        jeomjafont.setTypeface(typeFace);
-            jeomjafont.setText(al1);
+            jeomjafont.setText(al1);*/
 
         }
     }
@@ -1800,7 +1800,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
     void goToReset(View v) {
         editText.setText("");
         textView.setText("");
-        jeomjafont.setText("");
+        //    jeomjafont.setText("");
 
         imageView.removeAllViews();
         //키보드 올리기

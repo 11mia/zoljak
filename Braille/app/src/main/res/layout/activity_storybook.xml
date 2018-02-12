@@ -1,117 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F4F7F7">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="129dp"
-        android:layout_height="108dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118"
-        app:srcCompat="@drawable/storybook_icon" />
-
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="65dp"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="goToJustice"
-        android:text="점자와 역사"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="140dp"
-        android:layout_height="65dp"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:gravity="center"
-        android:onClick="goToConstruction"
-        android:text="점자 구성"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
-
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="65dp"
+    <android.support.constraint.ConstraintLayout android:background="#F4F7F7" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="goToInventor"
-        android:text="훈맹정음 역사"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
+    -<android.support.constraint.ConstraintLayout android:layout_height="291dp" android:layout_width="300dp" app:layout_constraintVertical_bias="0.44" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.505" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="140dp"
-        android:layout_height="65dp"
 
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="0.155" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.15" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical">
 
-        android:background="@drawable/shape_list"
-        android:clickable="true"
-        android:onClick="goToTrait"
-        android:text="한글점자 특성"
-        android:textColor="#ffffffff"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
+    <ImageButton android:background="@drawable/shape3" android:layout_height="90dp" android:layout_width="90dp" android:src="@drawable/rule_icon" android:scaleType="fitXY" android:onClick="goToJustice" android:clickable="true" android:id="@+id/b3"/>
+
+    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="점자와 역사" android:gravity="center"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="0.155" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.85" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical">
+
+    <ImageButton android:background="@drawable/shape3" android:layout_height="90dp" android:layout_width="90dp" android:src="@drawable/u" android:scaleType="fitXY" android:onClick="goToConstruction" android:clickable="true" android:id="@+id/b4"/>
+
+    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="점자 구성" android:gravity="center"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="1.0" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.15" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical">
+
+    <ImageButton android:background="@drawable/shape5" android:layout_height="90dp" android:layout_width="90dp" android:src="@drawable/inventor_icon" android:scaleType="fitXY" android:onClick="goToInventor" android:clickable="true" android:id="@+id/b5"/>
+
+    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="훈맹정음 창시" android:gravity="center"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="1.0" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.85" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical">
+
+    <ImageButton android:background="@drawable/shape5" android:layout_height="90dp" android:layout_width="90dp" android:src="@drawable/trait_icon" android:scaleType="fitXY" android:onClick="goToTrait" android:clickable="true" android:id="@+id/b6" android:adjustViewBounds="true"/>
+
+    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="한글점자 특성" android:gravity="center"/>
+
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

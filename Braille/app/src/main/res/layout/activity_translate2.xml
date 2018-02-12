@@ -1,269 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F4F7F7">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <LinearLayout
-        android:layout_width="129dp"
-        android:layout_height="199dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/dot1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:clickable="true"
-                android:onClick="ClickDot"
-                android:tag="1"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-            <Button
-                android:id="@+id/dot4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:clickable="true"
-                android:onClick="ClickDot"
-                android:tag="4"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/dot2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:clickable="true"
-                android:onClick="ClickDot"
-                android:tag="2"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-            <Button
-                android:id="@+id/dot5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:clickable="true"
-                android:onClick="ClickDot"
-                android:tag="5"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/dot3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:clickable="true"
-                android:onClick="ClickDot"
-                android:tag="3"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-            <Button
-                android:id="@+id/dot6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/shape_dot"
-                android:clickable="true"
-                android:onClick="ClickDot"
-                android:tag="6"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="78dp" />
-
-        </LinearLayout>
-    </LinearLayout>
+    <android.support.constraint.ConstraintLayout android:background="#F4F7F7" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <LinearLayout
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82">
+    -<LinearLayout android:layout_height="199dp" android:layout_width="129dp" app:layout_constraintVertical_bias="0.879" app:layout_constraintTop_toTopOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintHorizontal_bias="0.25" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape_button"
-                android:clickable="true"
-                android:onClick="clickAdd"
-                android:text="추가" />
+    -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape_button"
-                android:clickable="true"
-                android:onClick="clickTranslate"
-                android:text="변환" />
-        </LinearLayout>
+    <Button android:background="@drawable/shape_dot" android:layout_height="50dp" android:layout_width="50dp" tools:layout_editor_absoluteY="78dp" tools:layout_editor_absoluteX="91dp" android:tag="1" android:onClick="ClickDot" android:clickable="true" android:layout_margin="5dp" android:id="@+id/dot1"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+    <Button android:background="@drawable/shape_dot" android:layout_height="50dp" android:layout_width="50dp" tools:layout_editor_absoluteY="78dp" tools:layout_editor_absoluteX="91dp" android:tag="4" android:onClick="ClickDot" android:clickable="true" android:layout_margin="5dp" android:id="@+id/dot4"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/del"
-                android:clickable="true"
+</LinearLayout>
 
-                android:onClick="clickDel" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/space"
-                android:clickable="true"
-                android:onClick="clickSpace" />
-        </LinearLayout>
+    -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+    <Button android:background="@drawable/shape_dot" android:layout_height="50dp" android:layout_width="50dp" tools:layout_editor_absoluteY="78dp" tools:layout_editor_absoluteX="91dp" android:tag="2" android:onClick="ClickDot" android:clickable="true" android:layout_margin="5dp" android:id="@+id/dot2"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape_button"
-                android:clickable="true"
-                android:onClick="clear"
-                android:text="초기화" />
-        </LinearLayout>
-    </LinearLayout>
+    <Button android:background="@drawable/shape_dot" android:layout_height="50dp" android:layout_width="50dp" tools:layout_editor_absoluteY="78dp" tools:layout_editor_absoluteX="91dp" android:tag="5" android:onClick="ClickDot" android:clickable="true" android:layout_margin="5dp" android:id="@+id/dot5"/>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="215dp" />
+</LinearLayout>
 
-    <ScrollView
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024">
 
-        <LinearLayout
-            android:id="@+id/input1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
 
-        </LinearLayout>
-    </ScrollView>
+    <Button android:background="@drawable/shape_dot" android:layout_height="50dp" android:layout_width="50dp" tools:layout_editor_absoluteY="78dp" tools:layout_editor_absoluteX="91dp" android:tag="3" android:onClick="ClickDot" android:clickable="true" android:layout_margin="5dp" android:id="@+id/dot3"/>
 
-    <ScrollView
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.229">
+    <Button android:background="@drawable/shape_dot" android:layout_height="50dp" android:layout_width="50dp" tools:layout_editor_absoluteY="78dp" tools:layout_editor_absoluteX="91dp" android:tag="6" android:onClick="ClickDot" android:clickable="true" android:layout_margin="5dp" android:id="@+id/dot6"/>
 
-        <LinearLayout
-            android:id="@+id/input2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+</LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
+</LinearLayout>
 
-    <HorizontalScrollView
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405">
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="" />
-    </HorizontalScrollView>
+    -<LinearLayout android:layout_height="150dp" android:layout_width="150dp" app:layout_constraintVertical_bias="0.82" app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.858" app:layout_constraintBottom_toBottomOf="parent" android:orientation="vertical" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+
+    -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
+
+    <Button android:background="@drawable/shape_button" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clickAdd" android:clickable="true" android:layout_margin="5dp" android:id="@+id/add" android:text="추가"/>
+
+    <Button android:background="@drawable/shape_button" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clickTranslate" android:clickable="true" android:layout_margin="5dp" android:id="@+id/change" android:text="변환"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
+
+    <Button android:background="@drawable/del" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clickDel" android:clickable="true" android:layout_margin="5dp"/>
+
+    <Button android:background="@drawable/space" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clickSpace" android:clickable="true" android:layout_margin="5dp"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
+
+    <Button android:background="@drawable/shape_button" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clear" android:clickable="true" android:layout_margin="5dp" android:id="@+id/reset" android:text="초기화"/>
+
+</LinearLayout>
+
+</LinearLayout>
+
+    <android.support.constraint.Guideline android:layout_height="wrap_content" android:layout_width="wrap_content" android:orientation="vertical" android:id="@+id/guideline3" app:layout_constraintGuide_begin="192dp"/>
+
+
+    -<ScrollView android:layout_height="50dp" android:layout_width="330dp" app:layout_constraintVertical_bias="0.100000024" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/scrollView2" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp" android:layout_marginEnd="16dp">
+
+    <LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/input1"> </LinearLayout>
+
+</ScrollView>
+
+
+    -<ScrollView android:layout_height="50dp" android:layout_width="330dp" app:layout_constraintVertical_bias="0.229" app:layout_constraintTop_toTopOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp" android:layout_marginEnd="16dp">
+
+    <LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="horizontal" android:id="@+id/input2"> </LinearLayout>
+
+</ScrollView>
+
+    <FrameLayout android:background="@drawable/shape_trans2" android:layout_height="134dp" android:layout_width="340dp" app:layout_constraintVertical_bias="0.07999998" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/frameLayout" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"> </FrameLayout>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="0.01999998" app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.501" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/inputwindow" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:text="점자창" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:gravity="center"/>
+
+    <FrameLayout android:background="@drawable/shape_trans2" android:layout_height="70dp" android:layout_width="340dp" app:layout_constraintVertical_bias="0.435" app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.48" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"> </FrameLayout>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="0.348" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/outputwindow" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:text="결과창" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+
+
+    -<HorizontalScrollView android:layout_height="37dp" android:layout_width="330dp" app:layout_constraintVertical_bias="0.441" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp">
+
+    <TextView android:layout_height="match_parent" android:layout_width="wrap_content" android:id="@+id/translateToWord" android:text="" android:textSize="25sp" android:layout_gravity="center"/>
+
+</HorizontalScrollView>
 
 </android.support.constraint.ConstraintLayout>
