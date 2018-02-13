@@ -51,6 +51,7 @@
         <activity android:name=".TranslateActivity4"/>
         <activity android:name=".TranslateActivity3"/>
         <activity android:name=".WrongAnswerActivity"/>
+        <activity android:name=".PracticeWrongAnswerActivity"/>
 
 
     </application>

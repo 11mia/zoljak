@@ -18,6 +18,7 @@ public class PracticeMainActivity extends AppCompatActivity {
     int[] incorrect_number = new int[7];//연습&테스트에서 틀린문제수->문제 하나당 딱 한번만 카운트.
     List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
     double[] percent = new double[7];
+    //int incorrect_list_count;
 
     SQLiteDatabase sqlitedb;
     DBManager dbmanager;
@@ -32,18 +33,19 @@ public class PracticeMainActivity extends AppCompatActivity {
         total_number=it.getIntArrayExtra("total_number");
         incorrect_number=it.getIntArrayExtra("incorrect_number");
         incorrect_list = it.getIntegerArrayListExtra("incorrect_list");
+       // incorrect_list_count=it.getIntExtra("incorrect_list_count",0);
         tv = (TextView)findViewById(R.id.recommend);
 
 
-        double min=0;
+        double max=0;
         int check=0;
         for(int i=0;i<7;i++){
             if(total_number[i]!=0) {
                 double temp;
-                temp = incorrect_number[i] / total_number[i];
+                temp = (double)incorrect_number[i] / total_number[i];
                 percent[i] = temp;
-                if(min>temp){
-                    min = temp;
+                if(max<temp){
+                    max = temp;
                     check = i;
                 }
 
@@ -87,6 +89,7 @@ public class PracticeMainActivity extends AppCompatActivity {
                 it.putExtra("total_number",total_number);
                 it.putExtra("incorrect_number",incorrect_number);
                 it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+               // it.putExtra("incorrect_list_count",incorrect_list_count);
                 setResult(1, it);
                 finish();
                 return true;
@@ -100,6 +103,8 @@ public class PracticeMainActivity extends AppCompatActivity {
         it.putExtra("total_number",total_number);
         it.putExtra("incorrect_number",incorrect_number);
         it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        //it.putExtra("incorrect_list_count",incorrect_list_count);
+
         setResult(1, it);
         finish();
     }
@@ -122,15 +127,15 @@ public class PracticeMainActivity extends AppCompatActivity {
                 Log.v("incorrect_list : ", Integer.toString(incorrect_list.get(i)));
 
 
-            double min=0;
+            double max=0;
             int check=0;
             for(int i=0;i<7;i++){
                 if(total_number[i]!=0) {
                     double temp;
-                    temp = incorrect_number[i] / total_number[i];
+                    temp = (double) incorrect_number[i] / total_number[i];
                     percent[i] = temp;
-                    if(min>temp){
-                        min = temp;
+                    if(max<temp){
+                        max = temp;
                         check = i;
                     }
 

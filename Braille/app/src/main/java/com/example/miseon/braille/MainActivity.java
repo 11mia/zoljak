@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     int[] total_number = new int[7];//연습&테스트에서 총 시도횟수*문제수
     int[] incorrect_number = new int[7];//연습&테스트에서 틀린문제수->문제 하나당 딱 한번만 카운트.
     List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
+   // int incorrect_list_count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("total_number",total_number);
         it.putExtra("incorrect_number",incorrect_number);
         it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        //it.putExtra("incorrect_list_count",incorrect_list_count);
         startActivityForResult(it,2);
 
 

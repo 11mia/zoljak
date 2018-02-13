@@ -35,6 +35,7 @@ public class WrongAnswerActivity extends AppCompatActivity {
     TextView tv5;
     TextView tv6;
     LinearLayout layout_list;
+    int incorrect_list_count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,32 +56,12 @@ public class WrongAnswerActivity extends AppCompatActivity {
         incorrect_number=it.getIntArrayExtra("incorrect_number");
         incorrect_list = it.getIntegerArrayListExtra("incorrect_list");
 
-        /*String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
-        tv1.setText("타입");
-        tv2.setText("오답");
-        tv3.setText("전체");
-        tv4.setText("타입");
-        tv5.setText("오답");
-        tv6.setText("전체");
-        for(int i=0;i<7;i++){
-            if(i%2==0) {
-                tv1.append("\n" + type[i]);
-                tv2.append("\n" + incorrect_number[i]);
-                tv3.append("\n" + total_number[i]);
-            }else{
-                tv4.append("\n" + type[i]);
-                tv5.append("\n" + incorrect_number[i]);
-                tv6.append("\n" + total_number[i]);
-            }
-        }
-        tv4.append("\n");
-        tv5.append("\n");
-        tv6.append("\n");*/
         setTextView();
 
         //오답들 보이기
        int i=49;
         while(incorrect_list.get(i)!=0){
+            incorrect_list_count++;
             try {
                 dbmanager = new DBManager(this);
                 sqlitedb = dbmanager.getReadableDatabase();
@@ -205,33 +186,35 @@ public class WrongAnswerActivity extends AppCompatActivity {
             incorrect_list.add(0);
             Log.v("incorrect_list " + i + " : ", Integer.toString(incorrect_list.get(i)));
         }
-        /*
-        String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
-        tv1.setText("타입");
-        tv2.setText("오답");
-        tv3.setText("전체");
-        tv4.setText("타입");
-        tv5.setText("오답");
-        tv6.setText("전체");
-        for(int i=0;i<7;i++){
-            if(i%2==0) {
-                tv1.append("\n" + type[i]);
-                tv2.append("\n" + incorrect_number[i]);
-                tv3.append("\n" + total_number[i]);
-            }else{
-                tv4.append("\n" + type[i]);
-                tv5.append("\n" + incorrect_number[i]);
-                tv6.append("\n" + total_number[i]);
-            }
-        }
-        tv4.append("\n");
-        tv5.append("\n");
-        tv6.append("\n");*/
+        incorrect_list_count=0;
+
         setTextView();
 
         layout_list.removeAllViews();
 
     }
+
+    public void clickPractice(View v){
+        if(incorrect_list_count==0) {
+            Toast.makeText(this, "오답노트가 비어있습니다. \n연습을 실행 할 수 없습니다.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent it = new Intent(this,PracticeWrongAnswerActivity.class);
+        it.putExtra("flag",9);
+        it.putExtra("count",1);
+        it.putExtra("total_number",total_number);
+        it.putExtra("incorrect_number",incorrect_number);
+        it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        it.putExtra("incorrect_list_count",incorrect_list_count);
+        //startActivityForResult(it,2);
+        startActivity(it);
+    }
+
+    public void clickTest(View v){
+
+    }
+
+
 
     public void setTextView(){
         String[] type = {"한글 자음","한글 모음","한글 약어","알파벳","숫자","문장부호","단어"};
