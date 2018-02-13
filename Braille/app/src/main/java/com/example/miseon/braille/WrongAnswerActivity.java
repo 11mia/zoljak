@@ -76,7 +76,7 @@ public class WrongAnswerActivity extends AppCompatActivity {
                 layout.setPadding(0,5,0,5);
                 layout.setOrientation(LinearLayout.HORIZONTAL);
 
-                final int width1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics());
+                final int width1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 65, getResources().getDisplayMetrics());
                 final int width2 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 85, getResources().getDisplayMetrics());
 
                 final int height1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());
@@ -88,7 +88,7 @@ public class WrongAnswerActivity extends AppCompatActivity {
                 TextView tv = new TextView(this);//letter
                 tv.setLayoutParams(layoutParams1);
                 tv.setTextSize(20);
-                layoutParams1.setMargins(10,0,0,0);
+                layoutParams1.setMargins(15,0,15,0);
 
                 TextView tv0 = new TextView(this);//type
                 tv0.setLayoutParams(layoutParams2);

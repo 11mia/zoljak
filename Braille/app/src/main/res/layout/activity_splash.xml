@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="51dp"
 
-        android:text="콕콕찍자"
+        android:text="콕콕 찍자"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
