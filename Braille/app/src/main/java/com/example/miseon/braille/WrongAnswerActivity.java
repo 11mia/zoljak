@@ -1,6 +1,9 @@
 package com.example.miseon.braille;
 
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -36,6 +39,8 @@ public class WrongAnswerActivity extends AppCompatActivity {
     TextView tv6;
     LinearLayout layout_list;
     int incorrect_list_count=0;
+    final Context context = this;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,9 +133,6 @@ public class WrongAnswerActivity extends AppCompatActivity {
 
                 }
 
-
-
-
                 sqlitedb.setTransactionSuccessful();
 
             } catch (SQLiteException e) {
@@ -142,10 +144,6 @@ public class WrongAnswerActivity extends AppCompatActivity {
             sqlitedb.close();
 
         }
-
-
-
-
 
 
     }
@@ -211,6 +209,64 @@ public class WrongAnswerActivity extends AppCompatActivity {
     }
 
     public void clickTest(View v){
+        if(incorrect_list_count==0) {
+            Toast.makeText(this, "오답노트가 비어있습니다. \n테스트를 실행 할 수 없습니다.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                context);
+
+        // 제목셋팅
+        alertDialogBuilder.setTitle("테스트 선택");
+
+        // AlertDialog 셋팅
+        alertDialogBuilder
+                .setMessage("진행할 테스트를 선택하세요")
+                .setCancelable(false)
+                .setPositiveButton("글자->점자",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialog, int id) {
+                                Intent it = new Intent(WrongAnswerActivity.this,TestWrongAnswerActivity1.class);
+                                it.putExtra("count",1);
+                                it.putExtra("total_number",total_number);
+                                it.putExtra("incorrect_number",incorrect_number);
+                                it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                                it.putExtra("incorrect_list_count",incorrect_list_count);
+                                startActivity(it);
+                            }
+                        })
+                .setNegativeButton("점자->글자",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialog, int id) {
+                                Intent it = new Intent(WrongAnswerActivity.this,TestWrongAnswerActivity2.class);
+                                it.putExtra("count",1);
+                                it.putExtra("total_number",total_number);
+                                it.putExtra("incorrect_number",incorrect_number);
+                                it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                                it.putExtra("incorrect_list_count",incorrect_list_count);
+
+                                startActivity(it);
+                            }
+                        })
+                .setNeutralButton("닫기",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(
+                                    DialogInterface dialog, int id) {
+                                // 다이얼로그를 취소한다
+                                dialog.cancel();
+                            }
+                        });
+
+        // 다이얼로그 생성
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setIcon(R.drawable.braille);
+
+        // 다이얼로그 보여주기
+        alertDialog.show();
+
+
 
     }
 

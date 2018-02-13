@@ -71,7 +71,7 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
         mVibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         Intent it = getIntent();
-        flag = it.getIntExtra("flag",1);
+        //flag = it.getIntExtra("flag",1);
         count=it.getIntExtra("count",1);
         total_number=it.getIntArrayExtra("total_number");
         incorrect_number=it.getIntArrayExtra("incorrect_number");
@@ -292,7 +292,7 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
                                 public void onClick(
                                         DialogInterface dialog, int id) {
                                     Intent it = new Intent(PracticeWrongAnswerActivity.this,PracticeWrongAnswerActivity.class);
-                                    it.putExtra("flag",flag);
+                                   // it.putExtra("flag",flag);
                                     it.putExtra("count",++count);
                                     it.putExtra("total_number",total_number);
                                     it.putExtra("incorrect_number",incorrect_number);

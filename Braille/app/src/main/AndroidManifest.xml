@@ -52,6 +52,8 @@
         <activity android:name=".TranslateActivity3"/>
         <activity android:name=".WrongAnswerActivity"/>
         <activity android:name=".PracticeWrongAnswerActivity"/>
+        <activity android:name=".TestWrongAnswerActivity1"/>
+        <activity android:name=".TestWrongAnswerActivity2"/>
 
 
     </application>

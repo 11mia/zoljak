@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
             Log.v("incorrect_number"+i+" : ", Integer.toString(incorrect_number[i]));
         }
         for(int i=0;i<incorrect_list.size();i++)
-            Log.v("incorrect_list : ",Integer.toString(incorrect_list.get(i)));
+            Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
     }
 
     @Override
