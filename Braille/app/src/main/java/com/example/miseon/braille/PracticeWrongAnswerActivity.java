@@ -100,7 +100,7 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
                     letter = cursor.getString(cursor.getColumnIndex("letter"));
                     type = cursor.getString(cursor.getColumnIndex("type"));
                     dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
-                    if(dot_num>=4)
+                    if(dot_num>=3)
                         continue;
                     else
                         run=false;

@@ -307,6 +307,8 @@ public class PracticeContentActivity extends AppCompatActivity {
         it2.putExtra("incorrect_number",incorrect_number);
         it2.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
         setResult(RESULT_OK, it2);
+        Log.v("setResult","ok");
+
         finish();
     }
 
@@ -494,6 +496,7 @@ public class PracticeContentActivity extends AppCompatActivity {
                                     it3.putExtra("total_number",total_number);
                                     it3.putExtra("incorrect_number",incorrect_number);
                                     it3.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+
                                     setResult(RESULT_OK, it3);
                                     finish();
                                 }

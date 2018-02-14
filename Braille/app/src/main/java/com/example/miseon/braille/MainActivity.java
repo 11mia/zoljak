@@ -220,7 +220,6 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("total_number",total_number);
         it.putExtra("incorrect_number",incorrect_number);
         it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
-        //it.putExtra("incorrect_list_count",incorrect_list_count);
         startActivityForResult(it,2);
 
 
@@ -246,7 +245,8 @@ public class MainActivity extends AppCompatActivity {
                                 it.putExtra("total_number",total_number);
                                 it.putExtra("incorrect_number",incorrect_number);
                                 it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
-                                startActivity(it);
+                                //startActivity(it);
+                                startActivityForResult(it,3);
                             }
                         })
                 .setNegativeButton("점자->글자",
@@ -258,7 +258,8 @@ public class MainActivity extends AppCompatActivity {
                                 it.putExtra("total_number",total_number);
                                 it.putExtra("incorrect_number",incorrect_number);
                                 it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
-                                startActivity(it);
+                                //startActivity(it);
+                                startActivityForResult(it,4);
                             }
                         })
                 .setNeutralButton("닫기",

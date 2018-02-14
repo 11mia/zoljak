@@ -18,7 +18,6 @@ public class PracticeMainActivity extends AppCompatActivity {
     int[] incorrect_number = new int[7];//연습&테스트에서 틀린문제수->문제 하나당 딱 한번만 카운트.
     List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
     double[] percent = new double[7];
-    //int incorrect_list_count;
 
     SQLiteDatabase sqlitedb;
     DBManager dbmanager;
@@ -33,10 +32,10 @@ public class PracticeMainActivity extends AppCompatActivity {
         total_number=it.getIntArrayExtra("total_number");
         incorrect_number=it.getIntArrayExtra("incorrect_number");
         incorrect_list = it.getIntegerArrayListExtra("incorrect_list");
-       // incorrect_list_count=it.getIntExtra("incorrect_list_count",0);
         tv = (TextView)findViewById(R.id.recommend);
+        calculateMax();
 
-
+/*
         double max=0;
         int check=0;
         for(int i=0;i<7;i++){
@@ -75,7 +74,7 @@ public class PracticeMainActivity extends AppCompatActivity {
                 tv.setText("단어");
                 break;
         }
-        tv.append("이(가) 취약합니다\n학습을 권장합니다.");
+        tv.append("이(가) 취약합니다\n학습을 권장합니다.");*/
 
 
     }
@@ -89,8 +88,8 @@ public class PracticeMainActivity extends AppCompatActivity {
                 it.putExtra("total_number",total_number);
                 it.putExtra("incorrect_number",incorrect_number);
                 it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
-               // it.putExtra("incorrect_list_count",incorrect_list_count);
-                setResult(1, it);
+                setResult(RESULT_OK, it);
+                Log.v("PracticeMainsetResult","ok");
                 finish();
                 return true;
         }
@@ -103,9 +102,9 @@ public class PracticeMainActivity extends AppCompatActivity {
         it.putExtra("total_number",total_number);
         it.putExtra("incorrect_number",incorrect_number);
         it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
-        //it.putExtra("incorrect_list_count",incorrect_list_count);
+        setResult(RESULT_OK, it);
+        Log.v("PracticeMainsetResult","ok");
 
-        setResult(1, it);
         finish();
     }
 
@@ -126,8 +125,9 @@ public class PracticeMainActivity extends AppCompatActivity {
             for (int i = 0; i < incorrect_list.size(); i++)
                 Log.v("incorrect_list : ", Integer.toString(incorrect_list.get(i)));
 
+            calculateMax();
 
-            double max=0;
+           /* double max=0;
             int check=0;
             for(int i=0;i<7;i++){
                 if(total_number[i]!=0) {
@@ -165,7 +165,7 @@ public class PracticeMainActivity extends AppCompatActivity {
                     tv.setText("단어");
                     break;
             }
-            tv.append("이(가) 취약합니다\n학습을 권장합니다.");
+            tv.append("이(가) 취약합니다\n학습을 권장합니다.");*/
         }
     }
 
@@ -262,4 +262,46 @@ public class PracticeMainActivity extends AppCompatActivity {
         startActivityForResult(it,2);//혹시나 초기화할 경우를 대비.
     }
 
+    public void calculateMax(){
+
+        double max=0;
+        int check=0;
+        for(int i=0;i<7;i++){
+            if(total_number[i]!=0) {
+                double temp;
+                temp = (double)incorrect_number[i] / total_number[i];
+                percent[i] = temp;
+                if(max<temp){
+                    max = temp;
+                    check = i;
+                }
+
+            }
+        }
+
+        switch(check){
+            case 0:
+                tv.setText("한글 자음");
+                break;
+            case 1:
+                tv.setText("한글 모음");
+                break;
+            case 2:
+                tv.setText("한글 약어");
+                break;
+            case 3:
+                tv.setText("알파벳");
+                break;
+            case 4:
+                tv.setText("숫자");
+                break;
+            case 5:
+                tv.setText("문장부호");
+                break;
+            case 6:
+                tv.setText("단어");
+                break;
+        }
+        tv.append("이(가) 취약합니다\n학습을 권장합니다.");
+    }
 }

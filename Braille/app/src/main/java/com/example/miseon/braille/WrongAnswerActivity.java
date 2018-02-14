@@ -108,7 +108,11 @@ public class WrongAnswerActivity extends AppCompatActivity {
                     str_type = cursor.getString(cursor.getColumnIndex("type"));
                     dot_num=cursor.getInt(cursor.getColumnIndex("dot_num"));
                     tv.setText(letter);
-                    tv0.setText("("+str_type+")");
+
+                    if(str_type.equals("단어중성")||str_type.equals("단어초성")||str_type.equals("단어종성")||str_type.equals("단어쌍자음초성")||str_type.equals("단어쌍자음종성")||str_type.equals("단어알파벳"))
+                        tv0.setText("(단어)");
+                    else
+                        tv0.setText("("+str_type+")");
                     layout.addView(tv);
                     layout.addView(tv0);
                    // layout.addView(empty);

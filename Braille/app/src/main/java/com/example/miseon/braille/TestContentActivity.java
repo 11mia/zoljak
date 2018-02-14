@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TestContentActivity extends AppCompatActivity {
@@ -50,6 +54,10 @@ public class TestContentActivity extends AppCompatActivity {
     LinearLayout layout3;
     LinearLayout layout4;
 
+    int[] total_number = new int[7];//연습&테스트에서 총 시도횟수*문제수
+    int[] incorrect_number = new int[7];//연습&테스트에서 틀린문제수->문제 하나당 딱 한번만 카운트.
+    List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
+    boolean incorrect = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +68,9 @@ public class TestContentActivity extends AppCompatActivity {
         Intent it = getIntent();
         flag = it.getIntExtra("case", 1);
         count = it.getIntExtra("count", 1);
+        total_number=it.getIntArrayExtra("total_number");
+        incorrect_number=it.getIntArrayExtra("incorrect_number");
+        incorrect_list = it.getIntegerArrayListExtra("incorrect_list");
 
         testTv1 = (TextView) findViewById(R.id.testTv1);
         testTv2 = (TextView) findViewById(R.id.testTv2);
@@ -68,6 +79,9 @@ public class TestContentActivity extends AppCompatActivity {
         layout2 = (LinearLayout) findViewById(R.id.testView2);
         layout3 = (LinearLayout) findViewById(R.id.testView3);
         layout4 = (LinearLayout) findViewById(R.id.testView4);
+
+        //layout0 = (LinearLayout)findViewById(R.id.Testttt);
+
 
 
         int randomNum;
@@ -83,8 +97,10 @@ public class TestContentActivity extends AppCompatActivity {
             Resources res = getResources();
 
             switch (flag) {
-                case 1:
+                case 0:
                     setTitle("테스트-한글자음");
+                    total_number[flag] = total_number[flag]+1;
+
                     for (int i = 0; i < 4; i++) {
 
                         randomNum = randomRange(1, 35);
@@ -180,8 +196,9 @@ public class TestContentActivity extends AppCompatActivity {
 
                     }//layout4
                     break;
-                case 2:
+                case 1:
                     setTitle("테스트-한글모음");
+                    total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
 
@@ -277,8 +294,9 @@ public class TestContentActivity extends AppCompatActivity {
 
                     }//layout4
                     break;
-                case 3:
+                case 2:
                     setTitle("테스트-한글약어");
+                    total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
 
@@ -374,7 +392,8 @@ public class TestContentActivity extends AppCompatActivity {
                     }//layout4
 
                     break;
-                case 4:setTitle("테스트-알파벳");
+                case 3:setTitle("테스트-알파벳");
+                    total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
 
@@ -472,8 +491,9 @@ public class TestContentActivity extends AppCompatActivity {
                     }//layout4
 
                     break;
-                case 5:
+                case 4:
                     setTitle("테스트-숫자");
+                    total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
 
@@ -570,8 +590,9 @@ public class TestContentActivity extends AppCompatActivity {
                     }//layout4
 
                     break;
-                case 6:
+                case 5:
                     setTitle("테스트-문장부호");
+                    total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
                         randomNum=randomRange(153,180);
@@ -763,8 +784,9 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
 
-                case 8:
+                case 6:
                     setTitle("테스트-단어");
+                    total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
                         randomNum=randomRange(183,320);
@@ -862,7 +884,7 @@ public class TestContentActivity extends AppCompatActivity {
             }
 
             answerNum = randomRange(0,3);
-
+            Log.v("question Num : ",Integer.toString(randomNumList[answerNum]));
             cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[answerNum]},null,null,"num");
             if(cursor.moveToNext()){
                 letter = cursor.getString(cursor.getColumnIndex("letter"));
@@ -906,7 +928,6 @@ public class TestContentActivity extends AppCompatActivity {
                 letter = cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
                 dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
-
                 switch (dot_num) {
                     case 1:
                         dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
@@ -931,6 +952,7 @@ public class TestContentActivity extends AppCompatActivity {
             }
             LayoutInflater inflater;
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
             View layout = inflater.inflate(R.layout.dialog_test_content2, null);
 
 
@@ -941,11 +963,25 @@ public class TestContentActivity extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(
                                             DialogInterface dialog, int id) {
+                                        /*layout1.removeAllViews();
+                                        layout2.removeAllViews();
+                                        layout3.removeAllViews();
+                                        layout4.removeAllViews();*/
+
                                         Intent it = new Intent(TestContentActivity.this, TestContentActivity.class);
                                         it.putExtra("case", flag);
                                         it.putExtra("count", ++count);
+                                        it.putExtra("total_number",total_number);
+                                        it.putExtra("incorrect_number",incorrect_number);
+                                        it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                                        it.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                                         startActivity(it);
                                         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                                        layout1.removeAllViews();
+                                        layout2.removeAllViews();
+                                        layout3.removeAllViews();
+                                        layout4.removeAllViews();
+
                                         finish();
                                     }
                                 });
@@ -959,6 +995,21 @@ public class TestContentActivity extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(
                                             DialogInterface dialog, int id) {
+                                       /* layout1.removeAllViews();
+                                        layout2.removeAllViews();
+                                        layout3.removeAllViews();
+                                        layout4.removeAllViews();*/
+
+                                        Intent it3=new Intent();
+                                        it3.putExtra("total_number",total_number);
+                                        it3.putExtra("incorrect_number",incorrect_number);
+                                        it3.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                                        setResult(RESULT_OK, it3);
+                                        layout1.removeAllViews();
+                                        layout2.removeAllViews();
+                                        layout3.removeAllViews();
+                                        layout4.removeAllViews();
+
                                         finish();
                                     }
                                 });
@@ -970,6 +1021,16 @@ public class TestContentActivity extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(
                                             DialogInterface dialog, int id) {
+                                        if(!incorrect&&flag!=7){
+                                            incorrect=true;
+                                            incorrect_number[flag]=incorrect_number[flag]+1;
+                                            incorrect_list.add(randomNumList[answerNum]);
+                                            if(incorrect_list.size()>50)
+                                                incorrect_list.remove(0);
+                                            Log.v("incorrect_number : ",Integer.toString(incorrect_number[flag]));
+                                            for(int i=0;i<incorrect_list.size();i++)
+                                                Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
+                                        }
                                     }
                                 });
                 alertDialogBuilder.setTitle("오답입니다. 다시 시도하세요.");
@@ -985,6 +1046,7 @@ public class TestContentActivity extends AppCompatActivity {
 
             Resources res = getResources();
             int id_img;
+
 
             if (dot_num == 1) {
                 ImageView image = (ImageView) layout.findViewById(R.id.testImage0);
@@ -1036,11 +1098,13 @@ public class TestContentActivity extends AppCompatActivity {
             }
 
 
+
             alertDialogBuilder.setView(layout);
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.setIcon(R.drawable.braille);
             alertDialog.show();
+
 
             sqlitedb.setTransactionSuccessful();
 
@@ -1057,10 +1121,28 @@ public class TestContentActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 //onBackPressed();
+                Intent it1 = new Intent();
+                it1.putExtra("total_number",total_number);
+                it1.putExtra("incorrect_number",incorrect_number);
+                it1.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+                setResult(RESULT_OK, it1);
+                Log.v("TestContentsetResult","ok");
                 finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override//뒤로가기버튼누를시
+    public void onBackPressed() {
+        Intent it2 = new Intent();
+        it2.putExtra("total_number", total_number);
+        it2.putExtra("incorrect_number", incorrect_number);
+        it2.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        setResult(RESULT_OK, it2);
+        Log.v("TestContentsetResult", "ok");
+
+        finish();
     }
 
     public int randomRange(int n1, int n2) {
