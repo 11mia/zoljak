@@ -55,6 +55,8 @@ public class TranslateActivity2 extends AppCompatActivity{
     int count=0;
     int start;
 
+    int happy;
+
 
 
     @Override
@@ -317,7 +319,7 @@ public class TranslateActivity2 extends AppCompatActivity{
         char[] jong_2 = new char[20];
 
 
-
+        happy=0;
 
 
 
@@ -325,6 +327,8 @@ public class TranslateActivity2 extends AppCompatActivity{
         for(start=0; start<ivId+1; start++) {
             jeomjanum[start]= "c"+input[start];
         }
+
+
 
 
         try {
@@ -336,54 +340,1961 @@ public class TranslateActivity2 extends AppCompatActivity{
 
             for (start=0; start<ivId+1; start++) {
                 //초성처리부분
-                if (jeomjanum[start].equals("c777776")) {//
-                    cursor = sqlitedb.query("Braille", null, "dot_2=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "변환초성"}, null, null, "letter");
-                    if(cursor.moveToNext()) {
-                        letter = cursor.getString(cursor.getColumnIndex("letter"));
-                        chos_2[count]=letter.charAt(0);
 
-                    }
-                    start++;
-                    start++;
-                }
+                if (jeomjanum[start].equals("c0")) {chos_2[count]=' ';juns_2[count]=' '; jong_2[count]=' '; count++;}//스페이스바 처리부분
+
                 else {
-                    cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "변환초성"}, null, null, "letter");
 
-                    if(cursor.moveToNext()) {
-                        letter = cursor.getString(cursor.getColumnIndex("letter"));
-                        chos_2[count]=letter.charAt(0);
+
+                    if((start+2<ivId+1)&&ivId!=0&&jeomjanum[start].equals("c177457")&&jeomjanum[start+1].equals("c127776")&&jeomjanum[start+2].equals("c773477")) {//팠일 경우
+                        chos_2[count]='ㅍ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]='ㅆ';
+
+                        start++;
+                        start++;
+                        count++;
+
+                    }
+                    else if(ivId==0&&start==0&&jeomjanum[start].equals(("c777776"))||((ivId==start)&&jeomjanum[start].equals("c777776"))) {
+                        count++;
+                        happy=1;
+                        break;
+
+                    }
+
+                    else if(ivId!=0&&(start+1<ivId+1)&&jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c127456")) {//제16항 '성'일 경우
+                        chos_2[count]='ㅅ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅇ';
+                        start++;
+                        count++;
+                    }
+
+                    else if (ivId!=0&&(start+2<ivId+1)&&jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c777776")&&jeomjanum[start+2].equals("c127456")) {//제16항 '썽'일 경우
+                        chos_2[count]='ㅆ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅇ';
+                        start++;
+                        start++;
+                        count++;
+                    }
+
+                    else if((start+1<ivId+1)&&ivId!=0&&jeomjanum[start].equals("c777476")&&jeomjanum[start+1].equals("c127456")) {//제 16항 '정'일 경우
+                        chos_2[count]='ㅈ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅇ';
+                        start++;
+                        count++;
+                    }
+
+
+                    else if ((start+2<ivId+1)&&ivId!=0&&jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c777476")&&jeomjanum[start+2].equals("c127456")) {//제16항 '쩡'일 경우
+                        chos_2[count]='ㅉ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅇ';
+                        start++;
+                        start++;
+                        count++;
+                    }
+
+                    else if((start+1<ivId+1)&&ivId!=0&&jeomjanum[start].equals("c777756")&&jeomjanum[start+1].equals("c127456")) {//제 16항 '청'일 경우
+                        chos_2[count]='ㅊ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅇ';
+                        start++;
+                        count++;
+                    }
+
+                    else if(jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c777477")&&jeomjanum[start+2].equals("c723477")&&jeomjanum[start+3].equals("c773477")&&(start+3<ivId+1)) {//껏
+                        chos_2[count]='ㄲ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅆ';
+                        start++; start++; start++;
+                        count++;
+
+                    }
+
+                    else if(jeomjanum[start].equals(("c773776"))) {
+
+                        ;//붙임표 넘겨 그냥!제 5절 모음 연쇄 제 10항 제 11항
+                    }
+
+                    else if (((start==0)&&(ivId==0)&&jeomjanum[start].equals("c777776"))||(start==ivId&&jeomjanum[start].equals("c777776"))) {
+                        happy=1;
+                        chos_2[count]='b';
+                        juns_2[count]='b';
+                        jong_2[count]='b';
+                        count++;
+                        break;
+                    }
+
+
+
+                    else if(((ivId==0)&&jeomjanum[start].equals("c177477"))||((start==ivId)&&jeomjanum[start].equals("c177477"))) {//그냥 단어 딸랑 '나'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㄴ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+
+                    else if((ivId==0&&jeomjanum[start].equals("c727477"))||((start==ivId)&&jeomjanum[start].equals("c727477"))) {//그냥 단어 딸랑 '다'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㄷ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+
+                    else if((ivId==0&&jeomjanum[start].equals("c177757"))||((start==ivId)&&jeomjanum[start].equals("c177757"))) {//그냥 단어 딸랑 '마'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅁ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+
+                    else if((ivId==0&&jeomjanum[start].equals("c777457"))||((start==ivId)&&jeomjanum[start].equals("c777457"))) {//그냥 단어 딸랑 '바'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅂ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+
+                    else if((ivId==0&&jeomjanum[start].equals("c777476"))||((start==ivId)&&jeomjanum[start].equals("c777476"))) {//그냥 단어 딸랑 '자'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅈ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+                    else if((ivId==0&&jeomjanum[start].equals("c127477"))||((start==ivId)&&jeomjanum[start].equals("c127477"))) {//그냥 단어 딸랑 '카'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅋ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+                    else if((ivId==0&&jeomjanum[start].equals("c127757"))||((start==ivId)&&jeomjanum[start].equals("c127757"))) {//그냥 단어 딸랑 '타'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅌ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+                    else if((ivId==0&&jeomjanum[start].equals("c177457"))||((start==ivId)&&jeomjanum[start].equals("c177457"))) {//그냥 단어 딸랑 '파'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅍ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+                    else if((ivId==0&&jeomjanum[start].equals("c727457"))||((start==ivId)&&jeomjanum[start].equals("c727457"))) {//그냥 단어 딸랑 '하'이거 하나 점자 입력받은 경우
+
+                        chos_2[count] = 'ㅎ';
+                        juns_2[count] = 'ㅏ';
+                        jong_2[count] = 0x0000;
+                        count++;
+
+                    }
+
+
+
+
+
+
+
+                    else if (jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c127476")&&(start+1<ivId+1)) {//까
+                        chos_2[count]='ㄲ'; juns_2[count]='ㅏ';
+                        if(start+2<ivId+1) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start+2]), "변환종성"}, null, null, "letter");
+                            if(cursor.moveToNext()) {
+                                letter=cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count]=letter.charAt(0);
+                                start++;
+                            }
+                            else jong_2[count]=0x0000;
+                        }
+                        else jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+
+                    else if (jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c123777")&&(start+1<ivId+1)) {//까
+                        chos_2[count]='ㅆ'; juns_2[count]='ㅏ';
+                        if(start+2<ivId+1) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start+2]), "변환종성"}, null, null, "letter");
+                            if(cursor.moveToNext()) {
+                                letter=cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count]=letter.charAt(0);
+                                start++;
+                            }
+                            else jong_2[count]=0x0000;
+                        }
+                        else jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+
+                    else if (jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals(("c777456"))&&jeomjanum[start+2].equals("c723477")) {//껏
+                        chos_2[count]='ㄲ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅅ';
+
+                        start++;
+                        start++;
+                        count++;
+                    }
+
+
+
+
+
+                    else if(jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c777477")||jeomjanum[start+1].equals("c727477")||jeomjanum[start+1].equals("c777457")||jeomjanum[start+1].equals("c777776")||jeomjanum[start+1].equals(("c777476")))
+                            &&( (jeomjanum[start+2].equals("c177456")||jeomjanum[start+2].equals("c723456")||jeomjanum[start+2].equals("c723457")||jeomjanum[start+2].equals("c177776")||
+                            jeomjanum[start+2].equals("c127756")||jeomjanum[start+2].equals("c127456")||jeomjanum[start+2].equals("c173476")||jeomjanum[start+2].equals("c123756")||jeomjanum[start+2].equals("c123456")||
+                            jeomjanum[start+2].equals("c127457")||jeomjanum[start+2].equals("c123476")||jeomjanum[start+2].equals("c173756")||jeomjanum[start+2].equals("c723476")||
+                            jeomjanum[start+2].equals("c123457")))&&(start+2<ivId+1)) {
+
+                        if (jeomjanum[start+1].equals("c777477")&&(start+1<ivId+1)) {
+                            chos_2[count]='ㄲ';
+                        }
+                        else if (jeomjanum[start+1].equals("c727477")&&(start+1<ivId+1)) {
+                            chos_2[count]='ㄸ';
+                        }
+                        else if (jeomjanum[start+1].equals("c777457")&&(start+1<ivId+1)) {
+                            chos_2[count]='ㅃ';
+                        }
+                        else if (jeomjanum[start+1].equals("c777776")&&(start+1<ivId+1)) {
+                            chos_2[count]='ㅆ';
+                        }
+                        else if (jeomjanum[start+1].equals("c777476")&&(start+1<ivId+1)) {
+                            chos_2[count]='ㅉ';
+                        }
+
+            if(start+2<ivId+1) {
+                if (jeomjanum[start + 2].equals("c177456") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅓ';
+                    jong_2[count] = 'ㄱ';
+
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c177777") && (start + 3 < ivId + 1)) {
+                            juns_2[count] = 'ㅓ';
+                            jong_2[count] = 'ㄲ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773777") && (start + 3 < ivId + 1)) {
+                            juns_2[count] = 'ㅓ';
+                            jong_2[count] = 'ㄳ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+                } else if (jeomjanum[start + 2].equals("c723456") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅓ';
+                    jong_2[count] = 'ㄴ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c173777") && (start + 3 < ivId + 1)) {
+                            juns_2[count] = 'ㅓ';
+                            jong_2[count] = 'ㄵ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            juns_2[count] = 'ㅓ';
+                            jong_2[count] = 'ㄶ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+
+
+                } else if (jeomjanum[start + 2].equals("c723457") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅓ';
+                    jong_2[count] = 'ㄹ';
+
+                    if ((start + 3 < ivId + 1)) {
+
+                        if (jeomjanum[start + 3].equals("c177777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄺ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄻ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c127777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄼ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄽ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c723776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄾ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄿ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㅀ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+
+
+                } else if (jeomjanum[start + 2].equals("c177776") && (start + 2 < ivId + 1)) {//연
+                    juns_2[count] = 'ㅕ';
+                    jong_2[count] = 'ㄴ';
+
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c173777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄵ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄶ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+
+                } else if (jeomjanum[start + 2].equals("c127756") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅕ';
+                    jong_2[count] = 'ㄹ';
+
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c177777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄺ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄻ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c127777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄼ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄽ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c723776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄾ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄿ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㅀ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+                } else if (jeomjanum[start + 2].equals("c177456") && (start + 2 < ivId + 1)) {
+                    if (jeomjanum[start + 1].equals("c777776") || jeomjanum[start + 1].equals("c777476") && (start + 1 < ivId + 1)) {//성정청일 경우
+                        juns_2[count] = 'ㅓ';
+                        jong_2[count] = 'ㅇ';
+                    } else {
+                        juns_2[count] = 'ㅕ';
+                        jong_2[count] = 'ㅇ';
+                    }
+                } else if (jeomjanum[start + 2].equals("c173476") && (start + 2 < ivId + 1)) {//옥
+                    juns_2[count] = 'ㅗ';
+                    jong_2[count] = 'ㄱ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c177777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄲ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄳ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+                } else if (jeomjanum[start + 2].equals("c123756") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅗ';
+                    jong_2[count] = 'ㄴ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c173777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄵ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄶ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+
+                } else if (jeomjanum[start + 2].equals("c123456") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅗ';
+                    jong_2[count] = 'ㅇ';
+                } else if (jeomjanum[start + 2].equals("c127457") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅜ';
+                    jong_2[count] = 'ㄴ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c173777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄵ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄶ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+                } else if (jeomjanum[start + 2].equals("c123476") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅜ';
+                    jong_2[count] = 'ㄹ';
+
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c177777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄺ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄻ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c127777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄼ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄽ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c723776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄾ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄿ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㅀ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+                } else if (jeomjanum[start + 2].equals("c173756") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅡ';
+                    jong_2[count] = 'ㄴ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c173777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄵ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄶ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+
+                } else if (jeomjanum[start + 2].equals("c723476") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅡ';
+                    jong_2[count] = 'ㄹ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c177777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄺ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄻ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c127777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄼ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄽ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c723776") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄾ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c727756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄿ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㅀ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+                } else if (jeomjanum[start + 2].equals("c123457") && (start + 2 < ivId + 1)) {
+                    juns_2[count] = 'ㅣ';
+                    jong_2[count] = 'ㄴ';
+                    if ((start + 3 < ivId + 1)) {
+                        if (jeomjanum[start + 3].equals("c173777") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄵ';
+                            start++;
+                        } else if (jeomjanum[start + 3].equals("c773756") && (start + 3 < ivId + 1)) {
+                            jong_2[count] = 'ㄶ';
+                            start++;
+                        } else {
+                            ;
+                        }
+                    }
+
+                }
+
+
+            }
+            else {
+                            happy=1; chos_2[count]='b'; juns_2[count]='b'; jong_2[count]='b';count++; break;}
+
+                        start++;
+                        start++;
+                        count++;
+
+                    }
+
+
+                    else if((start+1<ivId+1)&&(jeomjanum[start].equals("c777477")||jeomjanum[start].equals("c177477")||jeomjanum[start].equals("c727477")||jeomjanum[start].equals("c777757")||//기본 초성에 약자 붙는거 제 6절 제 12항 관련
+                            jeomjanum[start].equals("c177757")||jeomjanum[start].equals("c777457")||jeomjanum[start].equals("c777776")||jeomjanum[start].equals("c777476")||
+                            jeomjanum[start].equals("c777756")||jeomjanum[start].equals("c127477")||jeomjanum[start].equals("c127757")||jeomjanum[start].equals("c177457")||
+                            jeomjanum[start].equals("c727457"))
+                            &&(jeomjanum[start+1].equals("c177456")||jeomjanum[start+1].equals("c723456")||jeomjanum[start+1].equals("c723457")||jeomjanum[start+1].equals("c177776")||
+                            jeomjanum[start+1].equals("c127756")||jeomjanum[start+1].equals("c127456")||jeomjanum[start+1].equals("c173476")||jeomjanum[start+1].equals("c123756")||jeomjanum[start+1].equals("c123456")||
+                            jeomjanum[start+1].equals("c127457")||jeomjanum[start+1].equals("c123476")||jeomjanum[start+1].equals("c173756")||jeomjanum[start+1].equals("c723476")||
+                            jeomjanum[start+1].equals("c123457"))) {
+
+                        if (jeomjanum[start].equals("c777477")) {
+                            chos_2[count]='ㄱ';
+                        }
+                        else if (jeomjanum[start].equals("c177477")) {
+                            chos_2[count]='ㄴ';
+                        }
+                        else if (jeomjanum[start].equals("c727477")) {
+                            chos_2[count]='ㄷ';
+                        }
+                        else if (jeomjanum[start].equals("c777757")) {
+                            chos_2[count]='ㄹ';
+                        }
+                        else if (jeomjanum[start].equals("c177757")) {
+                            chos_2[count]='ㅁ';
+                        }
+                        else if (jeomjanum[start].equals("c777457")) {
+                            chos_2[count]='ㅂ';
+                        }
+                        else if (jeomjanum[start].equals("c777776")) {
+                            chos_2[count]='ㅅ';
+                        }
+                        else if (jeomjanum[start].equals("c777476")) {
+                            chos_2[count]='ㅈ';
+                        }
+                        else if (jeomjanum[start].equals("c777756")) {
+                            chos_2[count]='ㅊ';
+                        }
+                        else if (jeomjanum[start].equals("c127477")) {
+                            chos_2[count]='ㅋ';
+                        }
+                        else if (jeomjanum[start].equals("c127757")) {
+                            chos_2[count]='ㅌ';
+                        }
+                        else if (jeomjanum[start].equals("c177457")) {
+                            chos_2[count]='ㅍ';
+                        }
+                        else if (jeomjanum[start].equals("c727457")) {
+                            chos_2[count]='ㅎ';
+                        }
+                        else {;}
+
+
+
+                        if(jeomjanum[start+1].equals("c177456")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅓ';
+                            jong_2[count]='ㄱ';
+
+                            if((start+2<ivId+1)) {
+                           if(jeomjanum[start+2].equals("c177777")&&(start+2<ivId+1)) {
+                                jong_2[count]='ㄲ';
+                                start++;
+                            }
+                            else if( jeomjanum[start+2].equals("c773777")&&(start+2<ivId+1)) {
+                                jong_2[count]='ㄳ';
+                                start++;
+                            }
+                            else{;}
+                            }
+                        }
+                        else if(jeomjanum[start+1].equals("c723456")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅓ';
+                            jong_2[count]='ㄴ';
+
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c173777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+
+                        }
+                        else if(jeomjanum[start+1].equals("c723457")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅓ';
+                            jong_2[count]='ㄹ';
+
+                            if((start+2<ivId+1)) {
+                                    if (jeomjanum[start + 2].equals("c177777") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㄺ';
+                                        start++;
+                                    } else if (jeomjanum[start + 2].equals("c727776") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㄻ';
+                                        start++;
+                                    } else if (jeomjanum[start + 2].equals("c127777") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㄼ';
+                                        start++;
+                                    } else if (jeomjanum[start + 2].equals("c773777") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㄽ';
+                                        start++;
+                                    } else if (jeomjanum[start + 2].equals("c723776") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㄾ';
+                                        start++;
+                                    } else if (jeomjanum[start + 2].equals("c727756") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㄿ';
+                                        start++;
+                                    } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                        jong_2[count] = 'ㅀ';
+                                        start++;
+                                    } else {
+                                        ;
+                                    }
+                            }
+
+                        }
+
+
+
+                        else if(jeomjanum[start+1].equals("c177776")&&(start+1<ivId+1)) {//연
+                            juns_2[count]='ㅕ';
+                            jong_2[count]='ㄴ';
+
+                            if((start+2<ivId+1)) {
+                            if(jeomjanum[start+2].equals("c173777")&&(start+2<ivId+1)) {
+                                jong_2[count]='ㄵ';
+                                start++;
+                            }
+                            else if( jeomjanum[start+2].equals("c773756")&&(start+2<ivId+1)) {
+                                jong_2[count]='ㄶ';
+                                start++;
+                            }
+                            else {;}
+
+                            }
+                        }
+                        else if(jeomjanum[start+1].equals("c127756")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅕ';
+                            jong_2[count]='ㄹ';
+
+
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c177777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄺ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c727776") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄻ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c127777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄼ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄽ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c723776") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄾ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c727756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄿ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㅀ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+                        else if(jeomjanum[start+1].equals("c127456")&&(start+1<ivId+1)) {
+                            if (jeomjanum[start].equals("c777776")||jeomjanum[start].equals("c777476")||jeomjanum[start].equals("c777756")) {//성정청일 경우
+                                juns_2[count]='ㅓ';
+                                jong_2[count]='ㅇ';
+                            }
+                            else {
+                                juns_2[count] = 'ㅕ';
+                                jong_2[count] = 'ㅇ';
+                            }
+                        }
+
+                        else if(jeomjanum[start+1].equals("c173476")&&(start+1<ivId+1)) {//옥
+                            juns_2[count]='ㅗ';
+                            jong_2[count]='ㄱ';
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c177777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄲ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄳ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+
+                        else if(jeomjanum[start+1].equals("c123756")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅗ';
+                            jong_2[count]='ㄴ';
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c173777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+
+
+                        else if(jeomjanum[start+1].equals("c123456")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅗ';
+                            jong_2[count]='ㅇ';
+                        }
+                        else if(jeomjanum[start+1].equals("c127457")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅜ';
+                            jong_2[count]='ㄴ';
+
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c173777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+
+                        }
+                        else if(jeomjanum[start+1].equals("c123476")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅜ';
+                            jong_2[count]='ㄹ';
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c177777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄺ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c727776") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄻ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c127777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄼ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄽ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c723776") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄾ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c727756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄿ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㅀ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+
+
+                        else if(jeomjanum[start+1].equals("c173756")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅡ';
+                            jong_2[count]='ㄴ';
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c173777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+
+                        else if(jeomjanum[start+1].equals("c723476")&&(start+1<ivId+1)) {
+                            juns_2[count] = 'ㅡ';
+                            jong_2[count] = 'ㄹ';
+                            if((start+2<ivId+1)) {
+                            if (jeomjanum[start + 2].equals("c177777") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㄺ';
+                                start++;
+                            } else if (jeomjanum[start + 2].equals("c727776") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㄻ';
+                                start++;
+                            } else if (jeomjanum[start + 2].equals("c127777") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㄼ';
+                                start++;
+                            } else if (jeomjanum[start + 2].equals("c773777") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㄽ';
+                                start++;
+                            } else if (jeomjanum[start + 2].equals("c723776") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㄾ';
+                                start++;
+                            } else if (jeomjanum[start + 2].equals("c727756") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㄿ';
+                                start++;
+                            } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                jong_2[count] = 'ㅀ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+                        else if(jeomjanum[start+1].equals("c123457")&&(start+1<ivId+1)) {
+                            juns_2[count]='ㅣ';
+                            jong_2[count]='ㄴ';
+                            if((start+2<ivId+1)) {
+                                if (jeomjanum[start + 2].equals("c173777") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 2].equals("c773756") && (start + 2 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+
+                        start++;
+                        count++;
+
+                    }
+
+
+
+                    else if((jeomjanum[start].equals("c177456")||jeomjanum[start].equals("c723456")||jeomjanum[start].equals("c723457")||jeomjanum[start].equals("c177776")||
+                            jeomjanum[start].equals("c127756")||jeomjanum[start].equals("c127456")||jeomjanum[start].equals("c173476")||jeomjanum[start].equals("c123756")||jeomjanum[start].equals("c123456")||
+                            jeomjanum[start].equals("c127457")||jeomjanum[start].equals("c123476")||jeomjanum[start].equals("c173756")||jeomjanum[start].equals("c723476")||
+                            jeomjanum[start].equals("c123457"))) {
+
+                        chos_2[count]='ㅇ';
+
+                        if(jeomjanum[start].equals("c177456")) {
+                            juns_2[count]='ㅓ';
+                            jong_2[count]='ㄱ';
+
+
+                            if((start+1<ivId+1) ) {
+
+                                if (jeomjanum[start + 1].equals("c177777") && (start + 1 < ivId + 1)) {
+                                    juns_2[count] = 'ㅓ';
+                                    jong_2[count] = 'ㄲ';
+                                    start++;
+                                } else if (jeomjanum[start + 1].equals("c773777") && (start + 1 < ivId + 1)) {
+                                    juns_2[count] = 'ㅓ';
+                                    jong_2[count] = 'ㄳ';
+                                    start++;
+                                }
+                               else {;}
+                            }
+
+                        }
+                        else if(jeomjanum[start].equals("c723456")) {
+                            juns_2[count]='ㅓ';
+                            jong_2[count]='ㄴ';
+                            if((start+1<ivId+1) ) {
+                                if (jeomjanum[start + 1].equals("c173777") && (start + 1 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                }
+                                else{;}
+                            }
+                        }
+                        else if(jeomjanum[start].equals("c723457")) {
+                            juns_2[count] = 'ㅓ';
+                            jong_2[count] = 'ㄹ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c177777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄺ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄻ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c127777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄼ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄽ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c723776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄾ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄿ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㅀ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+                        else if(jeomjanum[start].equals("c177776")) {//연
+                            juns_2[count]='ㅕ';
+                            jong_2[count]='ㄴ';
+                            if((start+1<ivId+1) ) {
+                                if (jeomjanum[start + 1].equals("c173777") && (start + 1 < ivId + 1)) {
+                                    jong_2[count] = 'ㄵ';
+                                    start++;
+                                } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                    jong_2[count] = 'ㄶ';
+                                    start++;
+                                } else {
+                                    ;
+                                }
+                            }
+                        }
+                        else if(jeomjanum[start].equals("c127756")) {
+                            juns_2[count] = 'ㅕ';
+                            jong_2[count] = 'ㄹ';
+
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c177777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄺ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄻ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c127777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄼ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄽ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c723776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄾ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄿ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㅀ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+
+                        else if(jeomjanum[start].equals("c127456")) {
+
+                            juns_2[count] = 'ㅕ';
+                            jong_2[count] = 'ㅇ';
+
+                        }
+
+                        else if(jeomjanum[start].equals("c173476")) {//옥
+                            juns_2[count] = 'ㅗ';
+                            jong_2[count] = 'ㄱ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c177777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄲ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄳ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+
+                        else if(jeomjanum[start].equals("c123756")) {
+                            juns_2[count] = 'ㅗ';
+                            jong_2[count] = 'ㄴ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c173777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄵ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄶ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+
+                        else if(jeomjanum[start].equals("c123456")) {
+                            juns_2[count]='ㅗ';
+                            jong_2[count]='ㅇ';
+                        }
+                        else if(jeomjanum[start].equals("c127457")) {
+                            juns_2[count] = 'ㅜ';
+                            jong_2[count] = 'ㄴ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c173777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄵ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄶ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+                        else if(jeomjanum[start].equals("c123476")) {
+                            juns_2[count] = 'ㅜ';
+                            jong_2[count] = 'ㄹ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c177777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄺ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄻ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c127777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄼ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄽ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c723776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄾ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄿ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㅀ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+                        else if(jeomjanum[start].equals("c173756")) {
+                            juns_2[count] = 'ㅡ';
+                            jong_2[count] = 'ㄴ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c173777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄵ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄶ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+                        else if(jeomjanum[start].equals("c723476")) {
+                            juns_2[count] = 'ㅡ';
+                            jong_2[count] = 'ㄹ';
+
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c177777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄺ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄻ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c127777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄼ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄽ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c723776") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄾ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c727756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄿ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㅀ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+                        else if(jeomjanum[start].equals("c123457")) {
+                            juns_2[count] = 'ㅣ';
+                            jong_2[count] = 'ㄴ';
+                            if((start+1<ivId+1) ) {
+                            if (jeomjanum[start + 1].equals("c173777") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄵ';
+                                start++;
+                            } else if (jeomjanum[start + 1].equals("c773756") && (start + 1 < ivId + 1)) {
+                                jong_2[count] = 'ㄶ';
+                                start++;
+                            } else {
+                                ;
+                            }
+                        }
+                        }
+
+                        count++;
+
+                    }
+                    //
+
+
+
+
+
+
+
+                    else if(((ivId!=0)&&(start+1<ivId+1)&&((jeomjanum[start].equals("c727477"))||jeomjanum[start].equals("c177477")||jeomjanum[start].equals("c177757")
+                            ||jeomjanum[start].equals("c777457")||jeomjanum[start].equals("c777476")||jeomjanum[start].equals("c127477")||jeomjanum[start].equals("c127757")
+                            ||jeomjanum[start].equals("c177457")||jeomjanum[start].equals("c727457"))&&!(jeomjanum[start+1].equals("c127776")))) {
+
+
+                        if(jeomjanum[start].equals("c727477")) {//ㄷ
+                            chos_2[count] = 'ㄷ';
+                        }
+                        else if (jeomjanum[start].equals("c177477")) {
+                            chos_2[count]='ㄴ';
+                        }
+                        else if (jeomjanum[start].equals("c177757")) {
+                            chos_2[count]='ㅁ';
+                        }
+                        else if (jeomjanum[start].equals("c777457")) {
+                            chos_2[count]='ㅂ';
+                        }
+                        else if (jeomjanum[start].equals("c777476")) {
+                            chos_2[count]='ㅈ';
+                        }
+                        else if (jeomjanum[start].equals("c127477")) {
+                            chos_2[count]='ㅋ';
+                        }
+                        else if (jeomjanum[start].equals("c127757")) {
+                            chos_2[count]='ㅌ';
+                        }
+                        else if (jeomjanum[start].equals("c177457")) {
+                            chos_2[count]='ㅍ';
+                        }
+                        else if (jeomjanum[start].equals("c727457")) {
+                            chos_2[count]='ㅎ';
+                        }
+
+                        cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "중성"}, null, null, "letter");
+                        if (cursor.moveToNext()) {//중성 있으면
+
+
+
+
+
+                            letter = cursor.getString((cursor.getColumnIndex("letter")));
+
+
+                            juns_2[count] = letter.charAt(0);
+
+
+
+
+
+
+
+                            if((start+2)<(ivId+1)) {
+                                cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 2]), "변환종성"}, null, null, "letter");
+                                if (cursor.moveToNext()) {
+                                    letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                    jong_2[count] = letter.charAt(0);
+                                    start++;
+                                } else jong_2[count] = 0x0000;
+                            }
+                            else {
+                                jong_2[count]=0x0000;
+                            }
+                            start++;
+                            count++;
+
+                        } else {//중성 없으면
+                            juns_2[count] = 'ㅏ';
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "변환종성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString((cursor.getColumnIndex("letter")));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+
+                            } else jong_2[count] = 0x0000;
+                            count++;
+
+                        }
+
+                    }
+
+
+
+
+
+
+                    else if (jeomjanum[start].equals("c177477")&&jeomjanum[start+1].equals("c127776")) {//제 17항 나에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㄴ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+
+                    else if (jeomjanum[start].equals("c727477")&&jeomjanum[start+1].equals("c127776")) {//제 17항 다에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㄷ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+
+                    else if (jeomjanum[start].equals("c177757")&&jeomjanum[start+1].equals("c127776")) {//제 17항 마에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅁ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+                    else if (jeomjanum[start].equals("c777457")&&jeomjanum[start+1].equals("c127776")) {//제 17항 바에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅂ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+                    else if (jeomjanum[start].equals("c777476")&&jeomjanum[start+1].equals("c127776")) {//제 17항 자에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅈ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }   else if (jeomjanum[start].equals("c127477")&&jeomjanum[start+1].equals("c127776")) {//제 17항 카에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅋ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }   else if (jeomjanum[start].equals("c127757")&&jeomjanum[start+1].equals("c127776")) {//제 17항 타에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅌ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }   else if (jeomjanum[start].equals("c177457")&&jeomjanum[start+1].equals("c127776")) {//제 17항 파에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅍ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }   else if (jeomjanum[start].equals("c727457")&&jeomjanum[start+1].equals("c127776")) {//제 17항 하에 모음이 이어나올 때에는 ㅏ를 생략하지 않는다.
+                        chos_2[count]='ㅎ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+
+
+
+                    else if (jeomjanum[start].equals("c777456")&&jeomjanum[start+1].equals("c723477")&&(start+1<ivId+1)){//제 6절 제 12항 것
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅓ';
+                        jong_2[count]='ㅅ';
+
+                        start++;
+                        count++;
+                    }
+
+
+
+
+
+
+                    else if((start+1<ivId+2)&&start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c723477"))) {//약어 그래서1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅐ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅅ';
+                        juns_2[count+2]='ㅓ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c723477"))) {//약어 그래서2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅐ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅅ';
+                        juns_2[count+2]='ㅓ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;//그
+                        count++;//래
+                        count++;//서
+
+                    }
+
+
+
+
+
+                    else if((start+1<ivId+2)&&start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c177477"))) {//약어 그러나1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㄴ';
+                        juns_2[count+2]='ㅏ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c177477"))) {//약어 그러나2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㄴ';
+                        juns_2[count+2]='ㅏ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;//그
+                        count++;//러
+                        count++;//나
+
+                    }
+
+                    else if((start+1<ivId+2)&&start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c727757"))) {//약어 그러면1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅁ';
+                        juns_2[count+2]='ㅕ';
+                        jong_2[count+2]='ㄴ';
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c727757"))) {//약어 그러면2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅁ';
+                        juns_2[count+2]='ㅕ';
+                        jong_2[count+2]='ㄴ';
+
+                        start++;
+
+                        count++;//그
+                        count++;//러
+                        count++;//면
+
+                    }
+
+
+                    else if((start+1<ivId+2)&&start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c727776"))) {//약어 그러므로1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅁ';
+                        juns_2[count+2]='ㅡ';
+                        jong_2[count+2]=0x0000;
+
+                        chos_2[count+3]='ㄹ';
+                        juns_2[count+3]='ㅗ';
+                        jong_2[count+3]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c727776"))) {//약어 그러므로2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅁ';
+                        juns_2[count+2]='ㅡ';
+                        jong_2[count+2]=0x0000;
+
+                        chos_2[count+3]='ㄹ';
+                        juns_2[count+3]='ㅗ';
+                        jong_2[count+3]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+
+
+
+
+                    else if((start+1<ivId+2)&&start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c173457"))) {//약어 그런데1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]='ㄴ';
+
+                        chos_2[count+2]='ㄷ';
+                        juns_2[count+2]='ㅔ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c173457"))) {//약어 그런데2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅓ';
+                        jong_2[count+1]='ㄴ';
+
+                        chos_2[count+2]='ㄷ';
+                        juns_2[count+2]='ㅔ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+
+                    else if((start+1<ivId+2)&&(start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c173776")))) {//약어 그리고1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅣ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㄱ';
+                        juns_2[count+2]='ㅗ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c173776"))) {//약어 그리고2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅣ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㄱ';
+                        juns_2[count+2]='ㅗ';
+                        jong_2[count+2]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+
+
+                    else if((start+1<ivId+2)&&start>0&&jeomjanum[start-1].equals("c0")&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c177756"))) {//약어 그리하여1
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅣ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅎ';
+                        juns_2[count+2]='ㅏ';
+                        jong_2[count+2]=0x0000;
+
+                        chos_2[count+3]='ㅇ';
+                        juns_2[count+3]='ㅕ';
+                        jong_2[count+3]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+                    else if((start+1<ivId+1)&&start==0&&jeomjanum[start].equals("c177777")&&jeomjanum[start+1].equals(("c177756"))) {//약어 그리하여2
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅡ';
+                        jong_2[count]=0x0000;
+
+                        chos_2[count+1]='ㄹ';
+                        juns_2[count+1]='ㅣ';
+                        jong_2[count+1]=0x0000;
+
+                        chos_2[count+2]='ㅎ';
+                        juns_2[count+2]='ㅏ';
+                        jong_2[count+2]=0x0000;
+
+                        chos_2[count+3]='ㅇ';
+                        juns_2[count+3]='ㅕ';
+                        jong_2[count+3]=0x0000;
+
+                        start++;
+
+                        count++;
+                        count++;
+                        count++;
+                        count++;
+
+                    }
+
+
+                    else if (ivId!=0&&jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c777776")||jeomjanum[start+1].equals("c777477")||jeomjanum[start+1].equals("c727477")||
+                            jeomjanum[start+1].equals("c777457")||jeomjanum[start+1].equals("c777476"))&&(start+1<ivId+1)&&ivId!=1) {//case1
+                        cursor = sqlitedb.query("Braille", null, "dot_2=?AND type=?", new String[]{String.valueOf(jeomjanum[start+1]), "변환초성"}, null, null, "letter");
+
+
+                        if (cursor.moveToNext()) {//된소리이면 case1_1
+                            letter = cursor.getString(cursor.getColumnIndex("letter"));
+                            chos_2[count] = letter.charAt(0);
+                            // start++;
+
+                            if(start+2<ivId+1) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start+2]), "중성"}, null, null, "letter");
+
+                                if (cursor.moveToNext()) {
+                                    letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                    juns_2[count] = letter.charAt(0);
+
+
+                                }
+                                else {
+                                    chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b';count++;break;
+                                }
+                                }
+                            else {
+                                chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b'; count++;break;
+                            }
+
+                        if (start+3<ivId+1 ) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 3]), "종성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+
+                            } else jong_2[count] = 0x0000;
+                        }else jong_2[count]=0x0000;
+
+                          start++;
+                          start++;
+                            count++;
+
+
+                        }
+
 
 
                     }
-                    start++;
-                }
+
+                    else if (ivId!=0&&jeomjanum[start].equals("c777776")&&(start+1<ivId+1)){//된소리가 아니고 그냥 ㅅ이면 case1_1
+
+                        chos_2[count]='ㅅ';
+                        cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start+1]), "중성"}, null, null, "letter");
+
+                        if (cursor.moveToNext()) {
+                            letter=cursor.getString(cursor.getColumnIndex("letter"));
+                            juns_2[count]=letter.charAt(0);
+                        }
+                        else { chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b'; count++;break;}
 
 
-                // 중성처리부분
-                cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "중성"}, null, null, "letter");
 
-                if(cursor.moveToNext()) {
-                    letter = cursor.getString(cursor.getColumnIndex("letter"));
-                    juns_2[count]=letter.charAt(0);
-                    start++;
-                }
+                        if(start+2<ivId+1) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 2]), "변환종성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+                            } else
+                            {
+                                jong_2[count]=0x0000;
+                            }
+
+                        }else jong_2[count]=0x0000;
+
+                        start++;
+                        count++;
+
+                    }
+
+                /*    else if (ivId!=0&&jeomjanum[start].equals("c777776")) {//case1
+                        cursor = sqlitedb.query("Braille", null, "dot_2=?AND type=?", new String[]{String.valueOf(jeomjanum[++start]), "변환초성"}, null, null, "letter");
+
+
+                        if (cursor.moveToNext()) {//된소리이면 case1_1
+                            letter = cursor.getString(cursor.getColumnIndex("letter"));
+                            chos_2[count] = letter.charAt(0);
+                            // start++;
+
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[++start]), "중성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                juns_2[count] = letter.charAt(0);
 
 
 
-                //종성처리부분
 
-                cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "변환종성"}, null, null, "letter");
+                            }
 
-                if(cursor.moveToNext()) {
-                    letter = cursor.getString(cursor.getColumnIndex("letter"));
-                    jong_2[count] = letter.charAt(0);
-                    start++;
-                    start--;
-                }
-                else {jong_2[count]=0x0000;start--;}
 
-                //  start--;
-                count++;
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[++start]), "종성"}, null, null, "letter");
+
+                            if(cursor.moveToNext()) {
+                                letter=cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count]=letter.charAt(0);
+                            }
+                            else start--;
+
+                            count++;
+
+
+                        }
+                        else {//된소리가 아니고 그냥 ㅅ이면 case1_1
+                            start--;
+                            chos_2[count]='ㅅ';
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[++start]), "중성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter=cursor.getString(cursor.getColumnIndex("letter"));
+                                juns_2[count]=letter.charAt(0);
+                            }
+
+
+
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[++start]), "변환종성"}, null, null, "letter");
+
+                            if(cursor.moveToNext()) {
+                                letter=cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count]=letter.charAt(0);
+                            }
+                            else start--;
+
+
+                            count++;
+
+                        }
+
+
+                    }//한단어 끝나요*/
+
+                    else if((ivId==0&&jeomjanum[start].equals("c127476"))||((start==ivId)&&jeomjanum[start].equals("c127476"))) {
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+                        count++;
+                    }
+
+                    else if(jeomjanum[start].equals("c127476")&&(start<ivId+1)) {//case2 약어 처리 약어 '가'인경우
+                        chos_2[count]='ㄱ';
+                        juns_2[count]='ㅏ';
+                        if(start+1<ivId+1) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "변환종성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+                            } else jong_2[count] = 0x0000;
+
+                        }
+                        else jong_2[count]=0x0000;
+
+                        count++;
+
+
+                    }//한단어 끝나요
+
+                    else if ((ivId==0&&jeomjanum[start].equals(("c123777"))||(start==ivId)&&jeomjanum[start].equals("c123777"))) {
+                        chos_2[count]='ㅅ';
+                        juns_2[count]='ㅏ';
+                        jong_2[count]=0x0000;
+                        count++;
+                    }
+
+                    else if(jeomjanum[start].equals("c123777")&&(start<ivId+1)) {//case2 약어 처리 약어 '사'인경우
+                        chos_2[count]='ㅅ';
+                        juns_2[count]='ㅏ';
+                        if(start+1<ivId+1) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "종성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+                            } else jong_2[count] = 0x0000;
+
+                        }
+                        else jong_2[count]=0x0000;
+                        count++;
+
+
+                    }//한단어 끝나요(한단어 끝날때마다 count++ 이거 꼭 해주세요 바로 위에 코드 한 줄 보이죠??
+
+
+
+
+
+                    else {//오리지널
+
+                        cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "변환초성"}, null, null, "letter");
+
+                        if (cursor.moveToNext()) {
+
+                            if (start == 0 && ivId == 0) {
+                                chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b';
+                                happy = 1;
+                                count++;
+                                break;
+                            }
+                            else {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                chos_2[count] = letter.charAt(0);
+
+                            }
+
+                            //   start++;
+                        }
+                        else {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "중성"}, null, null, "letter");
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                juns_2[count] = letter.charAt(0);
+                                chos_2[count] = 'ㅇ';
+                            } else {
+                                happy = 1;
+                                chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b';
+                                count++;
+                                break;
+
+                            }
+
+                        }//ㅇ없으면 chos_2[count]여기다가 ㅇ 저장
+
+
+                        // 중성처리부분
+
+
+                        if (chos_2[count] == 'ㅇ') {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start]), "중성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                juns_2[count] = letter.charAt(0);
+                                //      start++;
+                            } else {
+                                happy = 1;
+                                chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b';
+                                count++;
+                                break;
+                            }
+                        } else {
+                            if (start + 1 < ivId + 1) {
+                                cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "중성"}, null, null, "letter");
+
+
+                                if (cursor.moveToNext()) {
+                                    letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                    juns_2[count] = letter.charAt(0);
+                                    //      start++;
+                                } else {
+                                    happy = 1;
+                                    chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b';
+                                    count++;
+                                    break;
+                                }
+
+
+                            } else {
+                                happy = 1;
+                                chos_2[count]='b';juns_2[count]='b'; jong_2[count]='b';
+                                count++;
+                                break;
+                            }
+
+                        }
+
+
+
+
+
+                        //종성처리부분
+                        if ((start + 1 < ivId+1) && (chos_2[count] == 'ㅇ')) {
+
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "변환종성"}, null, null, "letter");
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+
+                            } else jong_2[count] = 0x0000;
+                        }
+
+                        else if( chos_2[count]=='ㅇ'&&(start==ivId)) {
+                            jong_2[count]=0x0000;
+
+                        }
+
+
+                        else if ((start + 2 < ivId+1)) {
+                            cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 2]), "변환종성"}, null, null, "letter");
+
+
+                            if (cursor.moveToNext()) {
+                                letter = cursor.getString(cursor.getColumnIndex("letter"));
+                                jong_2[count] = letter.charAt(0);
+                                start++;
+                                start++;
+                            } else {jong_2[count] = 0x0000;start++;}
+
+                        }
+                        else {jong_2[count]=0x0000; start++;}
+
+
+
+
+                        count++;
+
+
+                    }//기본적인 처리부분 끝나는것
+
+                }//스페이스바아닌부분
 
             }
 
@@ -395,6 +2306,9 @@ public class TranslateActivity2 extends AppCompatActivity{
             sqlitedb.endTransaction();
 
             String lastStr = "";
+
+
+
 
 
 
@@ -438,8 +2352,12 @@ public class TranslateActivity2 extends AppCompatActivity{
                     a = 17;
                 } else if (chos_2[i] == 'ㅎ') {
                     a = 18;
-                } else {
+                } else if (chos_2[i]== ' ') {
                     ;
+                }
+                else {
+                    happy=1;
+                    break;
                 }
 
                 //  ㅏㅐㅑㅒㅓㅔㅕㅖ ㅗ ㅘ ㅙ ㅚ ㅛ ㅜ ㅝ ㅞ ㅟ ㅠ ㅡ ㅢ ㅣ
@@ -483,10 +2401,14 @@ public class TranslateActivity2 extends AppCompatActivity{
                     b = 18;
                 } else if (juns_2[i] == 'ㅢ') {
                     b = 19;
-                } else if (juns_2[i] == 'l') {
+                } else if (juns_2[i] == 'ㅣ') {
                     b = 20;
-                } else {
+                }
+                else if (juns_2[i]== ' ') {
                     ;
+                }else {
+                    happy=1;
+                    break;
                 }
 
 
@@ -547,15 +2469,37 @@ public class TranslateActivity2 extends AppCompatActivity{
                 } else if (jong_2[i] == 'ㅎ') {
                     c = 27;
                 }
+                else if (jong_2[i]== ' ') {
+                    ;
+                }
+                else {happy=1; break;}
 
 
-                temp = (char) (0xAC00 + 28 * 21 * a + 28 * b + c);
 
-                lastStr = lastStr.concat(String.valueOf(temp));
+                if (happy==1||juns_2[i]=='b'||chos_2[i]=='b'||jong_2[i]=='b') {  happy = 1;break;
+                }
+                else {
+                    temp = (char) (0xAC00 + 28 * 21 * a + 28 * b + c);
+
+                    if (chos_2[i] == ' ') {
+                        lastStr = lastStr.concat((String.valueOf(' ')));
+                    } else {
+                        lastStr = lastStr.concat(String.valueOf(temp));
+                    }
+
+                }
 
             }
 
-            translateToWord.setText(lastStr);
+
+
+            if (happy==1){
+
+                translateToWord.setText("다시입력하세요.");
+            }
+            else {
+                translateToWord.setText(lastStr);
+            }
             initialization();
 
         }
@@ -566,6 +2510,7 @@ public class TranslateActivity2 extends AppCompatActivity{
     public void initialization(){
 
         Resources res = getResources();
+
 
         flag1 = flag2 = flag3 = flag4 = flag5 = flag6 = 7;
         Drawable drawable = res.getDrawable(R.drawable.shape_dot);
