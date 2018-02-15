@@ -213,8 +213,8 @@ public class WrongAnswerActivity extends AppCompatActivity {
     }
 
     public void clickTest(View v){
-        if(incorrect_list_count==0) {
-            Toast.makeText(this, "오답노트가 비어있습니다. \n테스트를 실행 할 수 없습니다.", Toast.LENGTH_LONG).show();
+        if(incorrect_list_count<4) {
+            Toast.makeText(this, "오답노트 항목이 4개이상 필요합니다.\n테스트를 실행 할 수 없습니다.", Toast.LENGTH_LONG).show();
             return;
         }
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(

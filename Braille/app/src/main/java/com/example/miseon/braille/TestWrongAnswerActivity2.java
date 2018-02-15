@@ -115,26 +115,36 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                tv1.setText(letter+"\n("+type+")");
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                    tv1.setText(letter);
+                else
+                    tv1.setText(letter+"\n("+type+")");
             }
             cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[1]},null,null,"num");
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                tv2.setText(letter+"\n("+type+")");
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                    tv2.setText(letter);
+                else
+                    tv2.setText(letter+"\n("+type+")");
             }
             cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[2]},null,null,"num");
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                tv3.setText(letter+"\n("+type+")");
-            }
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                    tv3.setText(letter);
+                else
+                    tv3.setText(letter+"\n("+type+")");            }
             cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[3]},null,null,"num");
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                tv4.setText(letter+"\n("+type+")");
-            }
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                    tv4.setText(letter);
+                else
+                    tv4.setText(letter+"\n("+type+")");            }
 
             answerNum = randomRange(0,3);
             cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNumList[answerNum]},null,null,"num");

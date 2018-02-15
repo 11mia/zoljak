@@ -1,5 +1,6 @@
 package com.example.miseon.braille;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -41,6 +42,8 @@ public class PracticeContentActivity extends AppCompatActivity {
     int flag=0;
     Vibrator mVibe;
     int count;
+
+    int semiFlag;//랜덤에서 카운트에 사용.
 
     String letter;
     String type;
@@ -220,6 +223,23 @@ public class PracticeContentActivity extends AppCompatActivity {
                     do {
                         randomNum = randomRange(1, 180);
                     }while((randomNum==152));
+
+                    if(randomNum<=35)//자음
+                        semiFlag=0;
+                    else if(randomNum<=56)//모음
+                        semiFlag=1;
+                    else if(randomNum<=89)//약어
+                        semiFlag=2;
+                    else if(randomNum<=141)//알파벳
+                        semiFlag=3;
+                    else if(randomNum<=151)//숫자
+                        semiFlag=4;
+                    else
+                        semiFlag=5;
+
+                    total_number[semiFlag] = total_number[semiFlag]+1;
+
+
 
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
                     if(cursor.moveToNext()){
@@ -510,26 +530,45 @@ public class PracticeContentActivity extends AppCompatActivity {
             alertDialog.show();
 
         }else{
-            // Toast.makeText(this,"오답입니다. 다시 시도하세요.",Toast.LENGTH_SHORT).show();
-
             // AlertDialog 셋팅
             alertDialogBuilder
                     .setMessage("    오답입니다.\n\n    다시 시도하세요.")
                     .setCancelable(false)
                     .setPositiveButton("확인",
                             new DialogInterface.OnClickListener() {
+                                @SuppressLint("LongLogTag")
                                 public void onClick(
                                         DialogInterface dialog, int id) {
                                     initialization();
-                                    if(!incorrect&&flag!=6){
+
+                                    if(!incorrect){
                                         incorrect=true;
-                                        incorrect_number[flag]=incorrect_number[flag]+1;
+                                        Log.v("--------incorrect_number----------","업데이트 전");
+                                        Log.v("flag : ",Integer.toString(flag));
+                                        Log.v("semiFlag : ",Integer.toString(semiFlag));
+                                        Log.v("incorrect_number[flag] : ",Integer.toString(incorrect_number[flag]));
+                                        Log.v("incorrect_number[semiFlag] : ",Integer.toString(incorrect_number[semiFlag]));
+                                        if(flag!=6) {
+                                            incorrect_number[flag] = incorrect_number[flag] + 1;
+                                            Log.v("if : ", "true");
+                                        }
+                                        else {
+                                            incorrect_number[semiFlag] = incorrect_number[semiFlag] + 1;
+                                            Log.v("if : ", "false");
+                                        }
+                                        Log.v("--------incorrect_number----------","업데이트 후");
+
+                                        Log.v("flag : ",Integer.toString(flag));
+                                        Log.v("semiFlag : ",Integer.toString(semiFlag));
+                                        Log.v("incorrect_number[flag] : ",Integer.toString(incorrect_number[flag]));
+                                        Log.v("incorrect_number[semiFlag] : ",Integer.toString(incorrect_number[semiFlag]));
+
                                         incorrect_list.add(randomNum);
                                         if(incorrect_list.size()>50)
                                             incorrect_list.remove(0);
                                         Log.v("incorrect_number : ",Integer.toString(incorrect_number[flag]));
                                         for(int i=0;i<incorrect_list.size();i++)
-                                           Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
+                                            Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
                                     }
                                 }
                             });

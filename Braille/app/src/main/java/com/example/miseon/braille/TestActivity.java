@@ -57,12 +57,12 @@ public class TestActivity extends AppCompatActivity{
             total_number = data.getIntArrayExtra("total_number");
             incorrect_number = data.getIntArrayExtra("incorrect_number");
             incorrect_list = data.getIntegerArrayListExtra("incorrect_list");
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 7; i++) {
                 Log.v("TestActivitytotal_number" + i + " : ", Integer.toString(total_number[i]));
                 Log.v("TestActivityincorrect_number" + i + " : ", Integer.toString(incorrect_number[i]));
             }
             for (int i = 0; i < incorrect_list.size(); i++)
-                Log.v("Testincorrect_list : ", Integer.toString(incorrect_list.get(i)));
+                Log.v("Testincorrect_list"+i+" : ", Integer.toString(incorrect_list.get(i)));
 
             calculateMax();
 

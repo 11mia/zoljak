@@ -30,6 +30,7 @@ public class TestContentActivity2 extends AppCompatActivity {
 
     int flag=0;
     int count;
+    int semiFlag;
 
     String letter;
     String type;
@@ -480,6 +481,27 @@ public class TestContentActivity2 extends AppCompatActivity {
 
             }
 
+            if(flag==7){
+
+                if(randomNumList[answerNum]<=35)//자음
+                    semiFlag=0;
+                else if(randomNumList[answerNum]<=56)//모음
+                    semiFlag=1;
+                else if(randomNumList[answerNum]<=89)//약어
+                    semiFlag=2;
+                else if(randomNumList[answerNum]<=141)//알파벳
+                    semiFlag=3;
+                else if(randomNumList[answerNum]<=151)//숫자
+                    semiFlag=4;
+                else if(randomNumList[answerNum]<=182)//문장기호
+                    semiFlag=5;
+                else
+                    semiFlag=6;//단어
+
+                total_number[semiFlag] = total_number[semiFlag]+1;
+
+            }
+
             sqlitedb.setTransactionSuccessful();
 
         }catch(SQLiteException e){
@@ -569,7 +591,7 @@ public class TestContentActivity2 extends AppCompatActivity {
             View layout = inflater.inflate(R.layout.dialog_test_content2, null);
 
 
-            if (input == answerNum && count < 7) {
+            if (input == answerNum && count < 3) {
                 alertDialogBuilder
                         .setCancelable(false)
                         .setPositiveButton("확인",
@@ -590,7 +612,7 @@ public class TestContentActivity2 extends AppCompatActivity {
                                 });
                 alertDialogBuilder.setTitle("정답입니다. 다음문제로 넘어갑니다.");
 
-            } else if (input == answerNum && count == 7) {
+            } else if (input == answerNum && count == 3) {
 
                 alertDialogBuilder
                         .setCancelable(false)
@@ -614,13 +636,15 @@ public class TestContentActivity2 extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(
                                             DialogInterface dialog, int id) {
-                                        if(!incorrect&&flag!=7){
+                                        if(!incorrect){
                                             incorrect=true;
-                                            incorrect_number[flag]=incorrect_number[flag]+1;
+                                            if(flag!=7)
+                                                incorrect_number[flag] = incorrect_number[flag] + 1;
+                                            else
+                                                incorrect_number[semiFlag] = incorrect_number[semiFlag] + 1;
                                             incorrect_list.add(randomNumList[answerNum]);
                                             if(incorrect_list.size()>50)
                                                 incorrect_list.remove(0);
-                                            Log.v("incorrect_number : ",Integer.toString(incorrect_number[flag]));
                                             for(int i=0;i<incorrect_list.size();i++)
                                                 Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
                                         }
