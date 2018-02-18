@@ -33,10 +33,6 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
     String letter;
     String type;
     int dot_num;
-    String dot_1;
-    String dot_2;
-    String dot_3;
-    String dot_4;
 
     int answerNum;
 
@@ -52,6 +48,9 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
     TextView tv2;
     TextView tv3;
     TextView tv4;
+
+    LinearLayout dialog_layout;
+
 
     LinearLayout testLayout;
 
@@ -115,7 +114,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호")||type.equals("대문자")||type.equals("소문자"))
                     tv1.setText(letter);
                 else
                     tv1.setText(letter+"\n("+type+")");
@@ -124,7 +123,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호")||type.equals("대문자")||type.equals("소문자"))
                     tv2.setText(letter);
                 else
                     tv2.setText(letter+"\n("+type+")");
@@ -133,7 +132,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호")||type.equals("대문자")||type.equals("소문자"))
                     tv3.setText(letter);
                 else
                     tv3.setText(letter+"\n("+type+")");            }
@@ -141,7 +140,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             if(cursor.moveToNext()){
                 letter=cursor.getString(cursor.getColumnIndex("letter"));
                 type = cursor.getString(cursor.getColumnIndex("type"));
-                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호"))
+                if(type.equals("단어초성")||type.equals("단어중성")||type.equals("단어종성")||type.equals("단어쌍자음초성")||type.equals("단어쌍자음종성")||type.equals("단어알파벳")||type.equals("한글약어")|type.equals("문장부호")||type.equals("대문자")||type.equals("소문자"))
                     tv4.setText(letter);
                 else
                     tv4.setText(letter+"\n("+type+")");            }
@@ -198,6 +197,10 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
+        LayoutInflater inflater;
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.dialog_test_content3, null);
+        dialog_layout = (LinearLayout)layout.findViewById(R.id.Testttt);
 
         try {
             dbmanager = new DBManager(this);
@@ -212,32 +215,26 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
                 type = cursor.getString(cursor.getColumnIndex("type"));
                 dot_num = cursor.getInt(cursor.getColumnIndex("dot_num"));
 
-                switch (dot_num) {
-                    case 1:
-                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
-                        break;
-                    case 2:
-                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
-                        dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
-                        break;
-                    case 3:
-                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
-                        dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
-                        dot_3 = cursor.getString(cursor.getColumnIndex("dot_3"));
-                        break;
-                    case 4:
-                        dot_1 = cursor.getString(cursor.getColumnIndex("dot_1"));
-                        dot_2 = cursor.getString(cursor.getColumnIndex("dot_2"));
-                        dot_3 = cursor.getString(cursor.getColumnIndex("dot_3"));
-                        dot_4 = cursor.getString(cursor.getColumnIndex("dot_4"));
-                        break;
+                Resources res = getResources();
+                int id_img;
 
+                for(int i=1;i<=dot_num;i++){
+
+                    ImageView iv = new ImageView(this); //추가할 이미지뷰
+                    String str = cursor.getString(cursor.getColumnIndex("dot_"+i));
+                    id_img = res.getIdentifier(str, "drawable", getPackageName());
+                    iv.setImageResource(id_img);
+                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                    layoutParams.gravity = Gravity.CENTER;
+                    iv.setLayoutParams(layoutParams);
+                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                    dialog_layout.setGravity(Gravity.CENTER);
+                    dialog_layout.addView(iv);
                 }
             }
-            LayoutInflater inflater;
-            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View layout = inflater.inflate(R.layout.dialog_test_content2, null);
-
 
             if (input == answerNum && count < Test_count) {
                 alertDialogBuilder
@@ -254,6 +251,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
                                         it.putExtra("incorrect_list_count",incorrect_list_count);
                                         startActivity(it);
                                         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
+                                        dialog_layout.removeAllViews();
                                         finish();
                                     }
                                 });
@@ -267,6 +265,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(
                                             DialogInterface dialog, int id) {
+                                        dialog_layout.removeAllViews();
                                         finish();
                                     }
                                 });
@@ -278,6 +277,7 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(
                                             DialogInterface dialog, int id) {
+                                        dialog_layout.removeAllViews();
                                     }
                                 });
                 alertDialogBuilder.setTitle("오답입니다. 다시 시도하세요.");
@@ -291,57 +291,6 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             else
                 text.setText(letter);
 
-            Resources res = getResources();
-            int id_img;
-
-            if (dot_num == 1) {
-                ImageView image = (ImageView) layout.findViewById(R.id.testImage0);
-                id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-            } else if (dot_num == 2) {
-                ImageView image = (ImageView) layout.findViewById(R.id.testImage1);
-                id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-                image = (ImageView) layout.findViewById(R.id.testImage2);
-                id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-            } else if (dot_num == 3) {
-                ImageView image = (ImageView) layout.findViewById(R.id.testImage3);
-                id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-                image = (ImageView) layout.findViewById(R.id.testImage4);
-                id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-                image = (ImageView) layout.findViewById(R.id.testImage5);
-                id_img = res.getIdentifier(dot_3, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-
-            } else if (dot_num == 4) {
-                ImageView image = (ImageView) layout.findViewById(R.id.testImage6);
-                id_img = res.getIdentifier(dot_1, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-                image = (ImageView) layout.findViewById(R.id.testImage7);
-                id_img = res.getIdentifier(dot_2, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-                image = (ImageView) layout.findViewById(R.id.testImage8);
-                id_img = res.getIdentifier(dot_3, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-                image = (ImageView) layout.findViewById(R.id.testImage9);
-                id_img = res.getIdentifier(dot_4, "drawable", getPackageName());
-                image.setImageResource(id_img);
-                image.setScaleType(ImageView.ScaleType.FIT_XY);
-
-
-            }
 
             alertDialogBuilder.setView(layout);
 
@@ -356,8 +305,6 @@ public class TestWrongAnswerActivity2 extends AppCompatActivity {
             sqlitedb.endTransaction();
         }
     }
-
-
 
 
     public int randomRange(int n1, int n2) {

@@ -38,7 +38,6 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
     int flag24=7;
     int flag25=7;
     int flag26=7;
-    int flag=0;
     Vibrator mVibe;
     int count;
 
@@ -71,7 +70,6 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
         mVibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
         Intent it = getIntent();
-        //flag = it.getIntExtra("flag",1);
         count=it.getIntExtra("count",1);
         total_number=it.getIntArrayExtra("total_number");
         incorrect_number=it.getIntArrayExtra("incorrect_number");
@@ -269,7 +267,6 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
     }
 
     public void checkAnswer(View v){
-//정답&&count==10일 경우 토스트로 연습이 종료됨을 알리고 PracticeMainActivity로 돌아간다.
         int num1;int num2;
         num1 = flag11*100000+flag12*10000+flag13*1000+flag14*100+flag15*10+flag16;
         num2 = flag21*100000+flag22*10000+flag23*1000+flag24*100+flag25*10+flag26;
@@ -281,9 +278,6 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
         alertDialogBuilder.setTitle("정답 확인");
 
         if(input1.equals(dot_1)&&input2.equals(dot_2)&&(count!=Practice_count)){
-            // Toast.makeText(this,"정답입니다.",Toast.LENGTH_SHORT).show();
-
-            // AlertDialog 셋팅
             alertDialogBuilder
                     .setMessage("    정답입니다.\n\n    다음문제로 넘어갑니다.")
                     .setCancelable(false)
@@ -292,31 +286,24 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
                                 public void onClick(
                                         DialogInterface dialog, int id) {
                                     Intent it = new Intent(PracticeWrongAnswerActivity.this,PracticeWrongAnswerActivity.class);
-                                   // it.putExtra("flag",flag);
                                     it.putExtra("count",++count);
                                     it.putExtra("total_number",total_number);
                                     it.putExtra("incorrect_number",incorrect_number);
                                     it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
                                     it.putExtra("incorrect_list_count",incorrect_list_count);
-/*
-                                    it.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-*/
                                     startActivity(it);
                                     overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
                                     finish();
                                 }
                             });
 
-            // 다이얼로그 생성
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.setIcon(R.drawable.braille);
 
-            // 다이얼로그 보여주기
             alertDialog.show();
 
 
         }else if(input1.equals(dot_1)&&input2.equals(dot_2)&&(count==Practice_count)){
-            // Toast.makeText(this,"정답입니다. 연습을 종료합니다.",Toast.LENGTH_SHORT).show();
 
             alertDialogBuilder
                     .setMessage("    정답입니다.\n\n    연습을 종료합니다.")
@@ -329,11 +316,9 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
                                 }
                             });
 
-            // 다이얼로그 생성
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.setIcon(R.drawable.braille);
 
-            // 다이얼로그 보여주기
             alertDialog.show();
 
         }else{
@@ -349,11 +334,9 @@ public class PracticeWrongAnswerActivity extends AppCompatActivity {
                                 }
                             });
 
-            // 다이얼로그 생성
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.setIcon(R.drawable.braille);
 
-            // 다이얼로그 보여주기
             alertDialog.show();
 
 
