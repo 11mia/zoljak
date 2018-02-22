@@ -36,10 +36,6 @@ public class SupplementActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToTrait(View v){
-
-
-    }
     public void goToRule(View v){
 
         try {
@@ -122,7 +118,8 @@ public class SupplementActivity extends AppCompatActivity {
         startActivity(it);
 
     }
-    public void goToManual(View v){
+
+    public void goToLibrary(View v){
 
     }
 
