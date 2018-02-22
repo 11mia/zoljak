@@ -24,7 +24,7 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/shape_list"
+            android:background="@drawable/shape_list1"
             android:text="점자"
             android:textColor="#ffffff"
             android:textSize="30sp" />
@@ -60,7 +60,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shape_button"
+        android:background="@drawable/shape_button1"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"

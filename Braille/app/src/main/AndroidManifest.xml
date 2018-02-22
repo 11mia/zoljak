@@ -45,6 +45,7 @@
         <activity android:name=".SupplementActivity"/>
         <activity android:name=".SupplementRuleActivity"/>
         <activity android:name=".SupplementLifeActivity"/>
+        <activity android:name=".SupplementLifeActivity2"/>
 
         <activity android:name=".TranslateMainActivity"/>
         <activity android:name=".TranslateMainActivity2"/>
@@ -54,6 +55,7 @@
         <activity android:name=".PracticeWrongAnswerActivity"/>
         <activity android:name=".TestWrongAnswerActivity1"/>
         <activity android:name=".TestWrongAnswerActivity2"/>
+
 
 
     </application>

@@ -24,7 +24,7 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/shape_button"
+            android:background="@drawable/shape_button3"
 
             android:text="송암 박두성"
             android:textSize="20sp" />
