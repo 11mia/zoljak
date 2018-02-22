@@ -1,5 +1,8 @@
 package com.example.miseon.braille;
 
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -9,10 +12,13 @@ import android.view.MenuItem;
  */
 
 public class StoryBookTraitActivity extends AppCompatActivity {
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storybook_trait);
         setTitle("한글점자특성");
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+       ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D6B676")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public boolean onOptionsItemSelected(MenuItem item) {

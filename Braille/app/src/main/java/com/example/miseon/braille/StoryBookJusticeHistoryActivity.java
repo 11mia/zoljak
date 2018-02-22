@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.app.TabActivity;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,9 @@ public class StoryBookJusticeHistoryActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_storybook_justice_history);
         setTitle("점자 정의 및 역사");
+
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A1C1C1")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -63,8 +67,8 @@ public class StoryBookJusticeHistoryActivity extends AppCompatActivity {
 
         int id = v.getId(); //클릭한 버튼
         Resources res = getResources();
-        Drawable drawable1=res.getDrawable(R.drawable.shape_button);
-        Drawable drawable2 = res.getDrawable(R.drawable.shape_list);
+        Drawable drawable1=res.getDrawable(R.drawable.shape_button1);
+        Drawable drawable2 = res.getDrawable(R.drawable.shape_list1);
 
 
         switch(id){
