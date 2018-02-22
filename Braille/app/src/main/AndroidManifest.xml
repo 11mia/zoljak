@@ -45,7 +45,6 @@
         <activity android:name=".StoryBookTraitActivity"/>
 
         <activity android:name=".SupplementActivity"/>
-        <activity android:name=".SupplementRuleActivity"/>
         <activity android:name=".SupplementLifeActivity"/>
         <activity android:name=".SupplementLifeActivity2"/>
 

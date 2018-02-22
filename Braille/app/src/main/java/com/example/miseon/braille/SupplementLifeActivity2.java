@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -110,18 +107,6 @@ public class SupplementLifeActivity2  extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    void goToLife(View v) {
-        int id = v.getId();
-        Button button=(Button)v.findViewById(id);
-        int tag=(int)button.getTag();
-
-
-        Intent it = new Intent(this,SupplementLifeActivity2.class);
-        it.putExtra("it_tag", tag);
-        startActivity(it);
-
     }
 
 

@@ -20,199 +20,205 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
-            android:layout_width="340dp"
-            android:layout_height="620dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <LinearLayout
-                android:layout_width="335dp"
-                android:layout_height="650dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
                 android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/orangefillsq"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
 
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/shape_button4"
+                    android:gravity="start"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="10dp"
+                    android:text="한국 점자 규정에서 정한 것을 표준으로 한다."
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/orangefillsq"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/shape_button4"
+                    android:gravity="start"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="10dp"
+                    android:text="한국 점자는 풀어쓰기 방식으로 적는 것을 원칙으로 한다."
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp" />
+            </LinearLayout>
                 <LinearLayout
-                    android:layout_width="70dp"
-                    android:layout_height="620dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
                     <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/orangefillsq"
-                        android:gravity="center"
-                        android:text="1"
-                        android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
-
-                    <TextView
-                        android:id="@+id/textView21"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/orangefillsq"
-                        android:gravity="center"
-                        android:text="2"
-                        android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
-
-                    <TextView
-                        android:id="@+id/textView31"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
                         android:background="@drawable/orangefillsq"
                         android:gravity="center"
                         android:text="3"
                         android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
+                        android:textSize="30sp"/>
 
                     <TextView
-                        android:id="@+id/textView41"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
+                        android:layout_width="270dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/shape_button4"
+                        android:gravity="start"
+                        android:lineSpacingExtra="2dp"
+                        android:padding="10dp"
+                        android:text="초성 자음과 종성 자음이 다르게 제작되었다."
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
                         android:background="@drawable/orangefillsq"
                         android:gravity="center"
                         android:text="4"
                         android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
-
-                    <TextView
-                        android:id="@+id/textView51"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/orangefillsq"
-                        android:gravity="center"
-                        android:text="5"
-                        android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
+                        android:textSize="30sp" />
 
                     <TextView
-                        android:id="@+id/textView61"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/orangefillsq"
-                        android:gravity="center"
-                        android:text="6"
-                        android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
-
-                    <TextView
-                        android:id="@+id/textView71"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/orangefillsq"
-                        android:gravity="center"
-                        android:text="7"
-                        android:textColor="#ffffffff"
-
-                        android:textSize="50sp" />
-
+                        android:layout_width="270dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/shape_button4"
+                        android:gravity="start"
+                        android:lineSpacingExtra="2dp"
+                        android:padding="10dp"
+                        android:text="'ㅇ'이 초성으로 쓰일 때에는 이를 표기하지 않는다."
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="620dp"
-                    android:layout_weight="6"
-                    android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="초성 자음과 종성 자음이 다르게 제자되었다."
-                        android:textSize="20sp" />
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/orangefillsq"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
 
-                    <TextView
-                        android:id="@+id/textView22"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="점자에서는 초성 'ㅇ'을 사용하지 않는다."
-                        android:textSize="20sp" />
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/shape_button4"
+                    android:gravity="start"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="10dp"
+                    android:text="27개의 약자와 7개의 약어를 사용한다."
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView32"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="초성 'ㄲ, ㄸ, ㅃ, ㅆ, ㅉ'을 적을 때에는 앞의 'ㄱ,ㄷ,ㅂ,ㅅ,ㅈ'대신 된소리표를 적는다."
-                        android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView42"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="27개의 약자와 7개의 약어를 사용한다."
-                        android:textSize="20sp" />
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/orangefillsq"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
 
-                    <TextView
-                        android:id="@+id/textView52"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="약자 '영'은 그 앞에 'ㅅ, ㅆ, ㅈ, ㅉ, ㅊ'이 올때에는 '성, 썽, 정, 쩡, 청'이 된다."
-                        android:textSize="20sp" />
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/shape_button4"
+                    android:gravity="start"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="10dp"
+                    android:text="약자는 앞뒤에 다른 자음자가 함께 쓰일 때에도 풀어 쓰지 않는다."
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView62"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="모음 겹글자 '얘'는 '야+애'로, '위'는 '우+애'로 쓰고, 모음 겹글자 '왜'는 '와+왜'로, '웨'는 '워+애'로 쓴다."
-                        android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView72"
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_weight="6"
-                        android:background="@drawable/shape_button4"
-                        android:gravity="center"
-                        android:text="점자는 모아쓰지 않고 풀어쓴다. 예를 들면 '국'을 'ㄱ,ㅜ,ㄱ'으로 적는다."
-                        android:textSize="20sp" />
-                </LinearLayout>
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/orangefillsq"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/shape_button4"
+                    android:gravity="start"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="10dp"
+                    android:text="약어는 뒤에 다른 음절이 함께 쓰일 때만 풀어 쓰지 않는다."
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
 
             </LinearLayout>
-
-        </FrameLayout>
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

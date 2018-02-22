@@ -41,8 +41,7 @@ public class SupplementActivity extends AppCompatActivity {
 
     }
     public void goToRule(View v){
-       /* Intent it = new Intent(this,SupplementRuleActivity.class);
-        startActivity(it);*/
+
         try {
             boolean bResult = exist("brailleRule.pdf");
             Log.d("checkFile", "file Check="+bResult);
