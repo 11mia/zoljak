@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.miseon.braille">
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,51 +26,44 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Splash_Activity" />
+        <activity android:name=".StudyMainActivity" />
+        <activity android:name=".StudyConsonantActivity" />
+        <activity android:name=".DeveloperActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".TestContentActivity" />
+        <activity android:name=".TestContentActivity2" />
+        <activity android:name=".TranslateActivity1" />
+        <activity android:name=".TranslateActivity2" />
+        <activity android:name=".StudyVowelActivity" />
+        <activity android:name=".StudyAlphabetActivity" />
+        <activity android:name=".StudyNumberActivity" />
+        <activity android:name=".StudySymbolActivity" />
+        <activity android:name=".StudyAbbreviationActivity" />
+        <activity android:name=".PracticeContentActivity" />
+        <activity android:name=".PracticeMainActivity" />
+        <activity android:name=".StoryBookActivity" />
+        <activity android:name=".StoryBookConstructionActivity" />
+        <activity android:name=".StoryBookInventorActivity" />
+        <activity android:name=".StoryBookJusticeHistoryActivity" />
+        <activity android:name=".StoryBookTraitActivity" />
+        <activity android:name=".SupplementActivity" />
+        <activity android:name=".SupplementLifeActivity" />
+        <activity android:name=".SupplementLifeActivity2" />
+        <activity android:name=".TranslateMainActivity" />
+        <activity android:name=".TranslateMainActivity2" />
+        <activity android:name=".TranslateActivity4" />
+        <activity android:name=".TranslateActivity3" />
+        <activity android:name=".WrongAnswerActivity" />
+        <activity android:name=".PracticeWrongAnswerActivity" />
+        <activity android:name=".TestWrongAnswerActivity1" />
+        <activity android:name=".TestWrongAnswerActivity2" />
+        <activity android:name=".supplementLibraryActivity" />
+        <activity android:name=".supplementLibraryMapActivity" />
 
-        <activity android:name=".Splash_Activity"/>
-        <activity android:name=".StudyMainActivity"/>
-        <activity android:name=".StudyConsonantActivity"/>
-        <activity android:name=".DeveloperActivity"/>
-
-        <activity android:name=".TestActivity"/>
-        <activity android:name=".TestContentActivity"/>
-        <activity android:name=".TestContentActivity2"/>
-
-        <activity android:name=".TranslateActivity1"/>
-        <activity android:name=".TranslateActivity2"/>
-        <activity android:name=".StudyVowelActivity"/>
-        <activity android:name=".StudyAlphabetActivity"/>
-        <activity android:name=".StudyNumberActivity"/>
-        <activity android:name=".StudySymbolActivity"/>
-        <activity android:name="StudyAbbreviationActivity"/>
-        <activity android:name=".PracticeContentActivity"/>
-        <activity android:name=".PracticeMainActivity"/>
-        <activity android:name=".StoryBookActivity"/>
-        <activity android:name=".StoryBookConstructionActivity"/>
-        <activity android:name=".StoryBookInventorActivity"/>
-        <activity android:name=".StoryBookJusticeHistoryActivity"/>
-        <activity android:name=".StoryBookTraitActivity"/>
-
-        <activity android:name=".SupplementActivity"/>
-        <activity android:name=".SupplementLifeActivity"/>
-        <activity android:name=".SupplementLifeActivity2"/>
-
-        <activity android:name=".TranslateMainActivity"/>
-        <activity android:name=".TranslateMainActivity2"/>
-        <activity android:name=".TranslateActivity4"/>
-        <activity android:name=".TranslateActivity3"/>
-        <activity android:name=".WrongAnswerActivity"/>
-        <activity android:name=".PracticeWrongAnswerActivity"/>
-        <activity android:name=".TestWrongAnswerActivity1"/>
-        <activity android:name=".TestWrongAnswerActivity2"/>
-        <activity android:name=".supplementLibraryActivity"/>
-        <activity android:name=".supplementLibraryMapActivity"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyASQS420GK_FuL9kpSjGtQE5fV5jmqwhqM" />
-
-
-
+            android:value="AIzaSyB4Wki1F2dkk0hYUASACJbN-qGnR4oHXK8" />
 
     </application>
 

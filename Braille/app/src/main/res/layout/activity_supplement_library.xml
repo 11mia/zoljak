@@ -6,26 +6,33 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_height="480dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:fillViewport="true">
+        app:layout_constraintVertical_bias="0.74">
 
-       <!-- <LinearLayout
-            android:id="@+id/librarylayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-           >
 
-        </LinearLayout>-->
         <ListView
+            android:id="@+id/List_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/List_view"></ListView>
+            android:layout_height="match_parent"></ListView>
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="상세 정보를 원하시는 도서관을 선택하세요."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04000002" />
 
 </android.support.constraint.ConstraintLayout>

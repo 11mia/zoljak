@@ -23,6 +23,8 @@ public class supplementLibraryActivity extends AppCompatActivity {
     private ListViewAdapter adapter;
     private String[] name=new String[39];
     private String[] address=new String[39];
+    private String[] detail=new String[39];
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement_library);
@@ -41,8 +43,10 @@ public class supplementLibraryActivity extends AppCompatActivity {
                 ListVO item = (ListVO) adapter.getItem(position);
                 String name = item.getname();
                 String address = item.getaddress();
+                String detail = item.getdetail();
                 intent.putExtra("name",name);
                 intent.putExtra("address",address);
+                intent.putExtra("detail",detail);
                 startActivity(intent);
 
             }
@@ -58,6 +62,7 @@ public class supplementLibraryActivity extends AppCompatActivity {
             sqlitedb.beginTransaction();
             String str_name;
             String str_address;
+            String address_detail;
             int i=-1;
 
             cursor = sqlitedb.query("Library",null,null,null,null,null,"num");
@@ -66,9 +71,11 @@ public class supplementLibraryActivity extends AppCompatActivity {
 
                 str_name =cursor.getString(cursor.getColumnIndex("name"));
                 str_address=cursor.getString(cursor.getColumnIndex("address"));
+                address_detail=cursor.getString(cursor.getColumnIndex("detail"));
                 name[i]=str_name;
                 address[i]=str_address;
-                adapter.addVO(name[i],address[i]);
+                detail[i]=address_detail;
+                adapter.addVO(name[i],address[i],detail[i]);
 
             }
 
