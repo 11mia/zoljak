@@ -15,6 +15,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,6 +73,9 @@ public class TranslateActivity3 extends AppCompatActivity {
 
         outputwindow=(TextView)this.findViewById(R.id.outputwindow);
         outputwindow.setText("Result Window");
+
+        editText.setPrivateImeOptions("defaultInputmode=english;"); //기본키패드를 영어로 설정
+        editText.setImeOptions(EditorInfo.IME_NULL); //키보드에서 엔터 터치시 '완료'의미
 
     }
 

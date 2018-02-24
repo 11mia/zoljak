@@ -101,10 +101,15 @@ public class SupplementActivity extends AppCompatActivity {
 
     public void openPDF(){
         Intent intent = new Intent(Intent.ACTION_VIEW);
+        File file = new File(getFilesDir(), "brailleRule.pdf");
+/*
+
         intent.setDataAndType(
                 Uri.parse("file://" + getFilesDir() + "/brailleRule.pdf"),"application/pdf");
+*/
+        Uri path  = Uri.fromFile(file);
+        intent.setDataAndType(path,"application/pdf");
 
-        startActivity(intent);
         try{
             startActivity(intent);
         }catch(ActivityNotFoundException ex){
@@ -120,6 +125,8 @@ public class SupplementActivity extends AppCompatActivity {
     }
 
     public void goToLibrary(View v){
+        Intent it = new Intent(this,supplementLibraryActivity.class);
+        startActivity(it);
 
     }
 

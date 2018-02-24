@@ -56,6 +56,12 @@
         <activity android:name=".PracticeWrongAnswerActivity"/>
         <activity android:name=".TestWrongAnswerActivity1"/>
         <activity android:name=".TestWrongAnswerActivity2"/>
+        <activity android:name=".supplementLibraryActivity"/>
+        <activity android:name=".supplementLibraryMapActivity"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyASQS420GK_FuL9kpSjGtQE5fV5jmqwhqM" />
+
 
 
 
