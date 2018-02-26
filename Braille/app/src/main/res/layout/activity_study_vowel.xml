@@ -6,7 +6,18 @@
     android:background="#F4F7F7"
     >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="점자를 클릭하면 예시 단어가 나옵니다."
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="327dp"
         android:layout_height="460dp"
         android:layout_centerHorizontal="true"
@@ -16,6 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,27 +37,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v1"
+                    android:orientation="vertical"
                     android:tag="211">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅏ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
-                        android:textSize="30sp"
-                        />
+
+                        android:textColor="#000000"
+                        android:textSize="30sp" />
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -55,149 +67,155 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/v2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v2"
+                    android:orientation="vertical"
                     android:tag="213">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅑ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
-                        android:textSize="30sp"
-                        />
+
+                        android:textColor="#000000"
+                        android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c773457"/>
+                        android:background="@drawable/c773457" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v3"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v3"
+                    android:orientation="vertical"
                     android:tag="215">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅓ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c723477"/>
+                        android:background="@drawable/c723477" />
                 </LinearLayout>
             </LinearLayout>
-
-
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v4"
+                    android:orientation="vertical"
                     android:tag="217">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅕ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c177756"/>
+                        android:background="@drawable/c177756" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v5"
+                    android:orientation="vertical"
                     android:tag="219">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅗ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c173776"/>
+                        android:background="@drawable/c173776" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v6"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v6"
+                    android:orientation="vertical"
                     android:tag="221">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅛ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c773476"/>
+                        android:background="@drawable/c773476" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -206,84 +224,89 @@
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v7"
+                    android:orientation="vertical"
                     android:tag="223">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅜ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:layout_margin="2dp"
-                        android:background="@drawable/c173477"/>
+                        android:background="@drawable/c173477" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v8"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v8"
+                    android:orientation="vertical"
                     android:tag="225">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅠ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:layout_margin="2dp"
-                        android:background="@drawable/c177476"/>
+                        android:background="@drawable/c177476" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/v9"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v9"
+                    android:orientation="vertical"
                     android:tag="227">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅡ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:layout_margin="2dp"
-                        android:background="@drawable/c727476"/>
+                        android:background="@drawable/c727476" />
                 </LinearLayout>
 
 
@@ -293,86 +316,92 @@
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v10"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v10"
+                    android:orientation="vertical"
                     android:tag="229">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅣ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:layout_margin="2dp"
 
-                        android:background="@drawable/c173757"/>
+                        android:background="@drawable/c173757" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v11"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v11"
+                    android:orientation="vertical"
                     android:tag="231">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅐ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c123757"/>
+                        android:background="@drawable/c123757" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v12"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v12"
+                    android:orientation="vertical"
                     android:tag="235">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅔ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c173457"/>
+                        android:background="@drawable/c173457" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -380,86 +409,92 @@
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v13"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v13"
+                    android:orientation="vertical"
                     android:tag="237">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅖ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:layout_margin="2dp"
 
-                        android:background="@drawable/c773477"/>
+                        android:background="@drawable/c773477" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v14"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v14"
+                    android:orientation="vertical"
                     android:tag="239">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅘ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c123776"/>
+                        android:background="@drawable/c123776" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v15"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v15"
+                    android:orientation="vertical"
                     android:tag="251">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅚ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c173456"/>
+                        android:background="@drawable/c173456" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -467,67 +502,71 @@
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v17"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v17"
+                    android:orientation="vertical"
                     android:tag="243">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅝ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:layout_margin="2dp"
 
-                        android:background="@drawable/c123477"/>
+                        android:background="@drawable/c123477" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v18"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v18"
+                    android:orientation="vertical"
                     android:tag="249">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅢ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
                         android:layout_margin="2dp"
-                        android:background="@drawable/c727456"/>
+                        android:background="@drawable/c727456" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
-                    >
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -535,180 +574,189 @@
 
                         android:textAlignment="center"
                         android:textSize="30sp" />
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
 
-                        android:layout_margin="2dp"
-                        />
+                        android:layout_margin="2dp" />
                 </LinearLayout>
             </LinearLayout>
-
-
-
-
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v19"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v19"
+                    android:orientation="vertical"
                     android:tag="233">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅒ"
-                        android:textColor="#000000"
                         android:textAlignment="center"
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
-                        android:orientation="horizontal"
-                        android:layout_margin="2dp">
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c773457"/>
+                            android:background="@drawable/c773457" />
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c123757"/>
+                            android:background="@drawable/c123757" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v20"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v20"
+                    android:orientation="vertical"
                     android:tag="241">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅙ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
-                        android:orientation="horizontal"
-                        android:layout_margin="2dp">
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c123776"/>
+                            android:background="@drawable/c123776" />
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c123757"/>
+                            android:background="@drawable/c123757" />
                     </LinearLayout>
                 </LinearLayout>
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
+                    android:id="@+id/v21"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v21"
+                    android:orientation="vertical"
                     android:tag="245">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅞ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
-                        android:orientation="horizontal"
-                        android:layout_margin="2dp">
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c123477"/>
+                            android:background="@drawable/c123477" />
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c123757"/>
+                            android:background="@drawable/c123757" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/v22"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_margin="7dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_button1"
                     android:clickable="true"
                     android:onClick="clickVowel"
-                    android:id="@+id/v22"
+                    android:orientation="vertical"
                     android:tag="247">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:text="ㅟ"
-                        android:textColor="#000000"
-
                         android:textAlignment="center"
+
+                        android:textColor="#000000"
                         android:textSize="30sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
-                        android:orientation="horizontal"
-                        android:layout_margin="2dp">
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c173477"/>
+                            android:background="@drawable/c173477" />
+
                         <ImageView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/c123757"/>
+                            android:background="@drawable/c123757" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -716,10 +764,7 @@
             </LinearLayout>
 
 
-
         </LinearLayout>
-
-
 
 
     </ScrollView>
