@@ -1,7 +1,5 @@
 package com.example.miseon.braille;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -18,7 +16,6 @@ public class StoryBookInventorActivity  extends AppCompatActivity {
 
 
         android.support.v7.app.ActionBar ab = getSupportActionBar();
-        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#8D82AF")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }

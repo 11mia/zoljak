@@ -10,7 +10,13 @@
 
     <ImageButton android:background="@drawable/shape1" android:layout_height="90dp" android:layout_width="90dp" android:src="@drawable/rule_icon" android:scaleType="fitXY" android:onClick="goToJustice" android:clickable="true" android:id="@+id/b3"/>
 
-    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="점자와 역사" android:gravity="center"/>
+    <TextView
+        android:layout_width="90dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="점자란?"
+        android:textColor="#000000"
+        android:textSize="15sp" />
 
 </LinearLayout>
 

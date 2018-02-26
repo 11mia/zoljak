@@ -3,17 +3,14 @@ package com.example.miseon.braille;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.TabActivity;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TabHost;
 
 /**
  * Created by vdsym on 2018-01-31.
@@ -36,7 +33,6 @@ public class StoryBookJusticeHistoryActivity extends AppCompatActivity {
         setTitle("점자 정의 및 역사");
 
         android.support.v7.app.ActionBar ab = getSupportActionBar();
-        ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A1C1C1")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
