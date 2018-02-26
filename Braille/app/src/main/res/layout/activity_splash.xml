@@ -47,4 +47,19 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.100000024" />
 
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="이 앱은 한국 점자 규정(문화체육관광부고시 제2017-15호)을 따릅니다."
+        android:textAlignment="center"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.878" />
+
 </android.support.constraint.ConstraintLayout>

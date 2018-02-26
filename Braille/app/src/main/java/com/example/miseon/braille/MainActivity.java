@@ -195,6 +195,10 @@ public class MainActivity extends AppCompatActivity {
         }
         if(id==R.id.action_settings3){
             //도움말 추가하기!
+            Intent it = new Intent(this,ManualActivity.class);
+            it.putExtra("page",1);
+            startActivity(it);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

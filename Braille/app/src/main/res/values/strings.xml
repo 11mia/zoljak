@@ -58,7 +58,7 @@
     <string name="vo24">c123757</string>
     <string name="action_setting">개발</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="source">점자란?/점자의 역사\nhttp://www.braillekorea.org/02_meaning/history.asp\n한국 점자 규정(2017년 개정)\nhttp://www.korean.go.kr/front/etcData/etcDataView.do?etc_seq=542&amp;mn_id=46\n장애인도서관 및 기관정보\nhttp://nld.nl.go.kr/ableFront/lib_internal/list.jsp</string>
 
 </resources>
 
