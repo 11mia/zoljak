@@ -18,13 +18,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024">
+        app:layout_constraintVertical_bias="0.050000012">
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/shape_button3"
+            android:background="@drawable/shape_button1"
 
             android:text="송암 박두성"
             android:textSize="20sp" />
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286">
+        app:layout_constraintVertical_bias="0.28">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -54,7 +54,7 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="340dp"
+        android:layout_width="310dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
@@ -65,20 +65,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918">
+        app:layout_constraintVertical_bias="0.93"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:layout_width="320dp"
-            android:layout_height="270dp"
-            android:layout_gravity="center"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="310dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text="교육의 기본 자료인 점자 교과서의 필요성을 주장하여 1913년 8월 14일, 일본에서 점자인쇄기를 들여와 비록 일어이기는 하나 한국 최초로 점자 교과서를 출판.\n한글 점자가 없음을 안타까워하던 중 1920년 훈맹정음 연구 시작, 제자인 이종덕, 전태환등 8명을 규합하여 ‘조선어 점자연구위원회’(육화사)를 비밀리에 조직.\n1926년 11월 4일 훈민정음과 음이 비슷한 ‘훈맹정음’이라 이름지어 세상에 반포. "
+                android:lineSpacingExtra="3sp"
+                android:text="교육의 기본 자료인 점자 교과서의 필요성을 주장하여 1913년 8월 14일, 일본에서 점자인쇄기를 들여와 비록 일어이기는 하나 한국 최초로 점자 교과서를 출판하였다.\n\n한글 점자가 없음을 안타까워하던 중(최초의 한글점자는 1894년에 미국인 로제타 셔우드 홀(Rosetta Sherwood Hall)이 만든 4점 점자이나 초성과 종성의 구분이 명확하지 않다는 불편함으로 인해 이후 발표된 6점과 함께 폐기되었다.) 1920년 훈맹정음 연구 시작, 제자인 이종덕, 전태환등 8명을 규합하여 ‘조선어 점자연구위원회’(육화사)를 비밀리에 조직하였다.\n\n1926년 11월 4일 ‘훈맹정음’이라 이름지어 세상에 발표하였으며 이는 현재 한글점자의 기반이 되고있다. "
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>

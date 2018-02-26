@@ -34,7 +34,7 @@
 
     <ImageButton android:background="@drawable/shape5" android:layout_height="90dp" android:layout_width="90dp" android:src="@drawable/inventor_icon" android:scaleType="fitXY" android:onClick="goToInventor" android:clickable="true" android:id="@+id/b5"/>
 
-    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="훈맹정음 창시" android:gravity="center"/>
+    <TextView android:layout_height="25dp" android:layout_width="90dp" android:textSize="15sp" android:textColor="#000000" android:text="점자 역사" android:gravity="center"/>
 
 </LinearLayout>
 

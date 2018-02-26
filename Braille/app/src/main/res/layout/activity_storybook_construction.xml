@@ -7,7 +7,8 @@
     android:background="#F4F7F7">
 
     <LinearLayout
-        android:layout_width="340dp"
+        android:id="@+id/linearLayout4"
+        android:layout_width="320dp"
         android:layout_height="220dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -19,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225">
+        app:layout_constraintVertical_bias="0.18">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -31,32 +32,39 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="340dp"
-        android:layout_height="130dp"
+    <ScrollView
+        android:layout_width="320dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
         android:background="@drawable/shape_button2"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.38">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="320dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="\t1) 6점(세로로 3점, 가로로 2점)으로 구성\n\n\t2) 여섯 개의 점을 조합하여 64개의 점형 생성(묵자 포함)"
-            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:lineSpacingExtra="3sp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="15dp"
+                android:text="점자는 6개의 점(세로로 3점, 가로로 2점)이 모여 한 칸을 구성하고 각 점에 1에서 6까지의 번호를 붙여 사용한다.\n6개의 점을 조합하여 64개의 점형을 생성(묵자 포함)하며 이 점형에 의미를 부여하여 사용한다."
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
