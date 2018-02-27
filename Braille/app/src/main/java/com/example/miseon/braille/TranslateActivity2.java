@@ -56,6 +56,7 @@ public class TranslateActivity2 extends AppCompatActivity{
     int start;
 
     int happy;
+    int happy1;
 
 
 
@@ -320,6 +321,7 @@ public class TranslateActivity2 extends AppCompatActivity{
 
 
         happy=0;
+        happy1=0;
 
 
 
@@ -408,6 +410,8 @@ public class TranslateActivity2 extends AppCompatActivity{
                         start++;
                         count++;
                     }
+
+
 
 
                     else if(jeomjanum[start].equals(("c773776"))) {
@@ -3110,8 +3114,9 @@ public class TranslateActivity2 extends AppCompatActivity{
 
             sqlitedb.setTransactionSuccessful();
 
-        }catch(SQLiteException e){
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }catch(/*SQLite*/Exception e){
+            /*Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();*/
+            happy1 = 1;
         }finally {
             sqlitedb.endTransaction();
 
@@ -3302,10 +3307,15 @@ public class TranslateActivity2 extends AppCompatActivity{
             }
 
 
-
-            if (happy==1){
-
-                translateToWord.setText("-변환 결과가 없습니다-");
+            if(happy1==1) {
+                translateToWord.setText("");
+                /*translateToWord.setText("-변환 결과가 없습니다-");*/
+                Toast.makeText(this, "변환 결과가 없습니다.", Toast.LENGTH_LONG).show();
+            }
+            else if (happy==1){
+                translateToWord.setText("");
+                /*translateToWord.setText("-변환 결과가 없습니다-");*/
+                Toast.makeText(this, "변환 결과가 없습니다.", Toast.LENGTH_LONG).show();
             }
             else {
                 translateToWord.setText(lastStr);
