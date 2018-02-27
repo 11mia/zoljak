@@ -2292,9 +2292,33 @@ public class TranslateActivity2 extends AppCompatActivity{
                     }
 
 /////////////////////////////////////////////////////////
+
+
+                    else if (jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c727477")||jeomjanum[start+1].equals("c777457")
+                            ||jeomjanum[start+1].equals("c777476"))&&(start+1<ivId+1)){
+                        if(start+1==ivId) {
+
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
                     else if (!(jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c777456")&&jeomjanum[start+2].equals("c723477")&&(start+2==ivId)
                     )&&ivId!=0&&jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c777776")||jeomjanum[start+1].equals("c777477")||jeomjanum[start+1].equals("c727477")||
-                            jeomjanum[start+1].equals("c777457")||jeomjanum[start+1].equals("c777476"))&&(start+1<ivId+1)&&ivId!=1) {//case1
+                            jeomjanum[start+1].equals("c777457")||jeomjanum[start+1].equals("c777476"))&&(start+1<ivId+1)&&ivId!=1&&!(jeomjanum[start+2].equals("c127776"))&&(start+2<ivId+1)) {//case1
                         cursor = sqlitedb.query("Braille", null, "dot_2=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "변환초성"}, null, null, "letter");
 
 
@@ -2335,14 +2359,23 @@ public class TranslateActivity2 extends AppCompatActivity{
                                     }
 
 
-                                } else {
+                                }
+
+                                else {
                                     chos_2[count] = 'b';
                                     juns_2[count] = 'b';
                                     jong_2[count] = 'b';
                                     count++;
                                     break;
                                 }
-                            } else {
+                            }
+                         /*   else if (jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c727477")||jeomjanum[start+1].equals("c777457")
+                            ||jeomjanum[start+1].equals("c777476"))&&(start+1<ivId+1)){
+
+
+                            }*/
+
+                            else {
                                 chos_2[count] = 'b';
                                 juns_2[count] = 'b';
                                 jong_2[count] = 'b';

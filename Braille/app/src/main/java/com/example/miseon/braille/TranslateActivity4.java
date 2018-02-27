@@ -54,6 +54,8 @@ public class TranslateActivity4 extends AppCompatActivity{
     TextView inputwindow;
     TextView outputwindow;
 
+    int happy1;
+
 
 
 
@@ -298,6 +300,7 @@ public class TranslateActivity4 extends AppCompatActivity{
         translateToWord.setText("");
         int count=0;
         int start=0;
+        happy1=0;
 
 
 
@@ -326,6 +329,10 @@ public class TranslateActivity4 extends AppCompatActivity{
                         letter = cursor.getString(cursor.getColumnIndex("letter"));
                         wordText+=letter;
                     }
+                    else {
+                        happy1=1;
+                        break;
+                    }
                     start++;
                 }
                 else if (jeomjanum[start].equals("c0")) {
@@ -337,6 +344,10 @@ public class TranslateActivity4 extends AppCompatActivity{
                     if(cursor.moveToNext()) {
                         letter = cursor.getString(cursor.getColumnIndex("letter"));
                         wordText+=letter;
+                    }
+                    else {
+                        happy1=1;
+                        break;
                     }
 
                 }
@@ -350,7 +361,10 @@ public class TranslateActivity4 extends AppCompatActivity{
         }finally {
             sqlitedb.endTransaction();
             //     resultchang.setText("[변환 결과]");
-            translateToWord.setText(wordText);
+            if (happy1==1) {
+                Toast.makeText(this, "No Result", Toast.LENGTH_LONG).show();
+            }
+            else translateToWord.setText(wordText);
 
         }
 
