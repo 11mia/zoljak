@@ -409,14 +409,6 @@ public class TranslateActivity2 extends AppCompatActivity{
                         count++;
                     }
 
-                    else if(jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c777477")&&jeomjanum[start+2].equals("c723477")&&jeomjanum[start+3].equals("c773477")&&(start+3<ivId+1)) {//껏
-                        chos_2[count]='ㄲ';
-                        juns_2[count]='ㅓ';
-                        jong_2[count]='ㅆ';
-                        start++; start++; start++;
-                        count++;
-
-                    }
 
                     else if(jeomjanum[start].equals(("c773776"))) {
 
@@ -1608,10 +1600,6 @@ public class TranslateActivity2 extends AppCompatActivity{
 
 
 
-
-
-
-
                     else if(((ivId!=0)&&(start+1<ivId+1)&&(jeomjanum[start].equals("c727477")||jeomjanum[start].equals("c177477")||jeomjanum[start].equals("c177757")
                             ||jeomjanum[start].equals("c777457")||jeomjanum[start].equals("c777476")||jeomjanum[start].equals("c127477")||jeomjanum[start].equals("c127757")
                             ||jeomjanum[start].equals("c177457")||jeomjanum[start].equals("c727457")))) {
@@ -1697,7 +1685,6 @@ public class TranslateActivity2 extends AppCompatActivity{
 
 
 
-
                                 cursor = sqlitedb.query("Braille", null, "dot_1=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 2]), "변환종성"}, null, null, "letter");
                                 if (cursor.moveToNext()) {
                                     letter = cursor.getString(cursor.getColumnIndex("letter"));
@@ -1752,7 +1739,6 @@ public class TranslateActivity2 extends AppCompatActivity{
                                     } else {
                                         jong_2[count] = letter.charAt(0);
                                     }
-
 
                                     start++;
 
@@ -2301,8 +2287,9 @@ public class TranslateActivity2 extends AppCompatActivity{
 
                     }
 
-
-                    else if (ivId!=0&&jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c777776")||jeomjanum[start+1].equals("c777477")||jeomjanum[start+1].equals("c727477")||
+/////////////////////////////////////////////////////////
+                    else if (!(jeomjanum[start].equals("c777776")&&jeomjanum[start+1].equals("c777456")&&jeomjanum[start+2].equals("c723477")&&(start+2==ivId)
+                    )&&ivId!=0&&jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c777776")||jeomjanum[start+1].equals("c777477")||jeomjanum[start+1].equals("c727477")||
                             jeomjanum[start+1].equals("c777457")||jeomjanum[start+1].equals("c777476"))&&(start+1<ivId+1)&&ivId!=1) {//case1
                         cursor = sqlitedb.query("Braille", null, "dot_2=?AND type=?", new String[]{String.valueOf(jeomjanum[start + 1]), "변환초성"}, null, null, "letter");
 
@@ -2785,8 +2772,6 @@ public class TranslateActivity2 extends AppCompatActivity{
 
 
                     }//한단어 끝나요(한단어 끝날때마다 count++ 이거 꼭 해주세요 바로 위에 코드 한 줄 보이죠??
-
-
 
 
 
