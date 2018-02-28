@@ -16,7 +16,6 @@ public class ManualActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
-        setTitle("도움말");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent it = getIntent();
         page =it.getIntExtra("page",1);
@@ -25,6 +24,8 @@ public class ManualActivity extends AppCompatActivity {
         String str = "p"+page;
         int id_img = res.getIdentifier(str, "drawable", getPackageName());
         im.setImageResource(id_img);
+        setTitle("도움말("+page+"/13)");
+
 
     }
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -45,6 +46,7 @@ public class ManualActivity extends AppCompatActivity {
             Intent it = new Intent(this,ManualActivity.class);
             it.putExtra("page",--page);
             startActivity(it);
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
             finish();
         }
 
@@ -58,6 +60,7 @@ public class ManualActivity extends AppCompatActivity {
             Intent it = new Intent(this,ManualActivity.class);
             it.putExtra("page",++page);
             startActivity(it);
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
             finish();
         }
 

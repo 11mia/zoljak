@@ -64,7 +64,6 @@ public class PracticeContentActivity extends AppCompatActivity {
     List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
     boolean incorrect = false;//오답일 경우 true가 됨. incorret_number는 incorrect가 false에서 true가 될 때 딱한번 +1된다.
     int randomNum;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +93,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
             switch (flag) {
                 case 0:
-                    setTitle("점자연습-한글자음");
+                    setTitle("점자연습-한글자음("+count+"/7)");
                     total_number[0] = total_number[0]+1;
                     randomNum = randomRange(1,35);
                     cursor = sqlitedb.query("Braille",null,"num=?",new String[]{""+randomNum},null,null,"num");
@@ -118,7 +117,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
                     break;
                 case 1:
-                    setTitle("점자연습-한글모음");
+                    setTitle("점자연습-한글모음("+count+"/7)");
                     total_number[1] = total_number[1]+1;
 
                     randomNum = randomRange(36,56);
@@ -142,7 +141,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
                     break;
                 case 2:
-                    setTitle("점자연습-한글약어");
+                    setTitle("점자연습-한글약어("+count+"/7)");
                     total_number[2] = total_number[2]+1;
 
                     randomNum = randomRange(57,89);
@@ -167,7 +166,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
                     break;
                 case 3:
-                    setTitle("점자연습-알파벳");
+                    setTitle("점자연습-알파벳("+count+"/7)");
                     total_number[3] = total_number[3]+1;
 
                     randomNum = randomRange(90,141);
@@ -193,7 +192,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
                     break;
                 case 4:
-                    setTitle("점자연습-숫자");
+                    setTitle("점자연습-숫자("+count+"/7)");
                     total_number[4] = total_number[4]+1;
 
                     randomNum = randomRange(142,151);
@@ -218,7 +217,7 @@ public class PracticeContentActivity extends AppCompatActivity {
 
                     break;
                 case 6:
-                    setTitle("점자연습-랜덤");
+                    setTitle("점자연습-랜덤("+count+"/7)");
 
                     do {
                         randomNum = randomRange(1, 180);

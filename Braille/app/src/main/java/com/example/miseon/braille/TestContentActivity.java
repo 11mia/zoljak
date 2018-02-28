@@ -55,6 +55,7 @@ public class TestContentActivity extends AppCompatActivity {
     int[] incorrect_number = new int[7];//연습&테스트에서 틀린문제수->문제 하나당 딱 한번만 카운트.
     List<Integer> incorrect_list = new ArrayList<Integer>();//오답리스트->db의 num값을 저장.최대 50개.
     boolean incorrect = false;
+    int incorrect_num;
 
     LinearLayout dialog_layout;
 
@@ -70,7 +71,7 @@ public class TestContentActivity extends AppCompatActivity {
         total_number=it.getIntArrayExtra("total_number");
         incorrect_number=it.getIntArrayExtra("incorrect_number");
         incorrect_list = it.getIntegerArrayListExtra("incorrect_list");
-
+        incorrect_num=it.getIntExtra("incorrect_num",0);
         testTv1 = (TextView) findViewById(R.id.testTv1);
         testTv2 = (TextView) findViewById(R.id.testTv2);
 
@@ -93,7 +94,7 @@ public class TestContentActivity extends AppCompatActivity {
 
             switch (flag) {
                 case 0:
-                    setTitle("테스트-한글자음");
+                    setTitle("테스트-한글자음("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for (int i = 0; i < 4; i++) {
@@ -106,7 +107,7 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
                 case 1:
-                    setTitle("테스트-한글모음");
+                    setTitle("테스트-한글모음("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
@@ -119,7 +120,7 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
                 case 2:
-                    setTitle("테스트-한글약어");
+                    setTitle("테스트-한글약어("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
@@ -131,7 +132,7 @@ public class TestContentActivity extends AppCompatActivity {
                     }
                     break;
 
-                case 3:setTitle("테스트-알파벳");
+                case 3:setTitle("테스트-알파벳("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
@@ -144,7 +145,7 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
                 case 4:
-                    setTitle("테스트-숫자");
+                    setTitle("테스트-숫자("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
@@ -157,7 +158,7 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
                 case 5:
-                    setTitle("테스트-문장부호");
+                    setTitle("테스트-문장부호("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
@@ -170,7 +171,7 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
                 case 7:
-                    setTitle("테스트-랜덤");
+                    setTitle("테스트-랜덤("+count+"/7)");
 
                     for(int i=0;i<4;i++) {
                         randomNum=randomRange(1,320);
@@ -182,7 +183,7 @@ public class TestContentActivity extends AppCompatActivity {
                     break;
 
                 case 6:
-                    setTitle("테스트-단어");
+                    setTitle("테스트-단어("+count+"/7)");
                     total_number[flag] = total_number[flag]+1;
 
                     for(int i=0;i<4;i++) {
@@ -292,7 +293,7 @@ public class TestContentActivity extends AppCompatActivity {
                 if(type.equals("소문자")|type.equals("단어알파벳"))
                     testTv1.setAllCaps(false);
                 testTv1.setText(letter);
-                if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성"))
+                if(type.equals("초성")|type.equals("중성")|type.equals("종성")|type.equals("된소리초성")|type.equals("된소리종성")|letter.equals("0"))
                     testTv2.setText("("+type+")");
 
 
@@ -391,6 +392,7 @@ public class TestContentActivity extends AppCompatActivity {
                                         it.putExtra("incorrect_number",incorrect_number);
                                         it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
                                         it.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                                        it.putExtra("incorrect_num",incorrect_num);
                                         startActivity(it);
                                         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
                                         layout1.removeAllViews();
@@ -401,7 +403,7 @@ public class TestContentActivity extends AppCompatActivity {
                                         finish();
                                     }
                                 });
-                alertDialogBuilder.setTitle("정답입니다. 다음문제로 넘어갑니다.");
+                alertDialogBuilder.setTitle("정답입니다.\n다음문제로 넘어갑니다.");
 
 
             } else if (input == answerNum && count == 7) {
@@ -424,8 +426,9 @@ public class TestContentActivity extends AppCompatActivity {
                                         dialog_layout.removeAllViews();
                                         finish();
                                     }
-                                });
-                alertDialogBuilder.setTitle("정답입니다. 연습을 종료합니다.");
+                                })
+                        .setMessage("   총 문제 : 7개\n   오답 : "+incorrect_num+"개\n    정답 : "+(7-incorrect_num)+"개");
+                alertDialogBuilder.setTitle("정답입니다.\n연습을 종료합니다.");
             } else {
                 alertDialogBuilder
                         .setCancelable(false)
@@ -435,6 +438,7 @@ public class TestContentActivity extends AppCompatActivity {
                                             DialogInterface dialog, int id) {
                                         if(!incorrect){
                                             incorrect=true;
+                                            incorrect_num++;
                                             if(flag!=7)
                                                 incorrect_number[flag] = incorrect_number[flag] + 1;
                                             else
@@ -448,7 +452,7 @@ public class TestContentActivity extends AppCompatActivity {
                                         dialog_layout.removeAllViews();
                                     }
                                 });
-                alertDialogBuilder.setTitle("오답입니다. 다시 시도하세요.");
+                alertDialogBuilder.setTitle("오답입니다.\n다시 시도하세요.");
 
             }
 

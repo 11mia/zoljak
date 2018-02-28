@@ -224,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("total_number",total_number);
         it.putExtra("incorrect_number",incorrect_number);
         it.putIntegerArrayListExtra("incorrect_list", (ArrayList<Integer>) incorrect_list);
+        it.putExtra("incorrect_num",0);
         startActivityForResult(it,2);
 
 
