@@ -53,30 +53,36 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="300dp"
         android:layout_height="110dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/shape_button1"
-        android:gravity="center"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787">
+        app:layout_constraintVertical_bias="0.787"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp">
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="110dp"
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="285dp"
-            android:layout_height="100dp"
+            android:background="@drawable/shape_button1"
             android:gravity="center"
-            android:lineSpacingExtra="3sp"
-            android:text="지면 위에 도드라진 점을 손가락으로 만져서 읽는 맹인용 문자"
-            android:textSize="25sp" />
-    </LinearLayout>
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="285dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:lineSpacingExtra="3sp"
+                android:text="지면 위에 도드라진 점을 손가락으로 만져서 읽는 맹인용 문자"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

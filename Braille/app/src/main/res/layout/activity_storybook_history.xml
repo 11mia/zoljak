@@ -33,7 +33,7 @@
                 android:layout_gravity="center"
                 android:lineSpacingExtra="3sp"
                 android:text="파리맹학교에 재학 중 세로로 3점, 가로로 2점인 6점 점자를 창안하였다.\n\n1824년에 알파벳, 숫자, 간단한 문장부호 등을 제작하였고, 1829년에 자신의 문자에 대한 논문을 발표하였으며, 1837년에 점자를 더욱 수정, 보완하였다.\n\n후에 파리맹학교에서 점자를 맹인의 문자로 공인함으로써 점자가 세계 맹인의 문자로 발돋움하는 중요한 계기가 되었다."
-                android:textSize="20sp" />
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 

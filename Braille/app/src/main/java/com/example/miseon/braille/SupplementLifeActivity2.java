@@ -1,16 +1,12 @@
 package com.example.miseon.braille;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,21 +26,35 @@ public class SupplementLifeActivity2  extends AppCompatActivity {
         LinearLayout layout_life=(LinearLayout)findViewById(R.id.lifelayout);
         ImageButton button_life=(ImageButton)findViewById(R.id.lifeimage);
         TextView text_life=(TextView)findViewById(R.id.lifetext);
-        ImageView image_life=(ImageView)findViewById(R.id.lifeimage2);
 
         Intent it= getIntent();
         String tag=it.getStringExtra("tag");
 
         Resources res = getResources();
 
-        ActionBar ab = getSupportActionBar();
+        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 290, getResources().getDisplayMetrics());
+        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 290, getResources().getDisplayMetrics());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+        layoutParams.gravity = Gravity.CENTER;
+        layoutParams.setMargins(20,20,20,20);
+
+        final int width1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 250, getResources().getDisplayMetrics());
+        final int height1 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 150, getResources().getDisplayMetrics());
+        final int width2 = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 150, getResources().getDisplayMetrics());
+        LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(width1, height1);//단위로 dp를 사용하기 위함.
+        LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(width2, height1);//단위로 dp를 사용하기 위함.
+
+        layoutParams1.gravity = Gravity.CENTER;
+        layoutParams2.gravity = Gravity.CENTER;
+        layoutParams1.setMargins(10,20,10,20);
+        layoutParams2.setMargins(10,0,10,20);
+
 
         if(tag.equals("1")) {
-/*
-            ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#A1C1C1")));
-*/
             setTitle("엘리베이터");
-             text_life.setText("엘리베이터");
+            text_life.setText("엘리베이터");
+            ImageView image_life=new ImageView(this);
+            image_life.setLayoutParams(layoutParams);
             int id_img = res.getIdentifier("elevator_icon", "drawable", getPackageName());
             button_life.setImageResource(id_img);
             button_life.setBackground(this.getResources().getDrawable(R.drawable.shape1));
@@ -54,16 +64,16 @@ public class SupplementLifeActivity2  extends AppCompatActivity {
 
             int id_img3=res.getIdentifier("elevator_image", "drawable", getPackageName());
             image_life.setImageResource(id_img3);
+            layout_life.addView(image_life);
 
 
         }
 
         else if (tag.equals("2")) {
-/*
-            ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#AEB7CC")));
-*/
             setTitle("보행");
             text_life.setText("보행");
+            ImageView image_life=new ImageView(this);
+            image_life.setLayoutParams(layoutParams);
             int id_img = res.getIdentifier("street_icon", "drawable", getPackageName());
             button_life.setImageResource(id_img);
            button_life.setBackground(this.getResources().getDrawable(R.drawable.shape3));
@@ -73,34 +83,47 @@ public class SupplementLifeActivity2  extends AppCompatActivity {
 
             int id_img3=res.getIdentifier("street_image", "drawable", getPackageName());
             image_life.setImageResource(id_img3);
+            layout_life.addView(image_life);
+
         }
 
         else if (tag.equals("3")) {
-/*
-            ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#8D82AF")));
-*/
-            setTitle("버스 정류장");
-            text_life.setText("버스 정류장");
-            int id_img = res.getIdentifier("bus_icon", "drawable", getPackageName());
-            button_life.setImageResource(id_img);
-            button_life.setBackground(this.getResources().getDrawable(R.drawable.shape5));
+            setTitle("대중교통");
+            text_life.setText("대중교통");
 
             int id_img2 = res.getIdentifier("shape_button3", "drawable", getPackageName());
             layout_life.setBackgroundResource(id_img2);
+            int id_img = res.getIdentifier("sub2", "drawable", getPackageName());
+            ImageView im2 = new ImageView(this);
+            im2.setLayoutParams(layoutParams1);
+            im2.setImageResource(id_img);
+            layout_life.addView(im2);
+            id_img = res.getIdentifier("sub1", "drawable", getPackageName());
+            ImageView im3 = new ImageView(this);
+            im3.setLayoutParams(layoutParams2);
+            im3.setImageResource(id_img);
+            layout_life.addView(im3);
+            id_img = res.getIdentifier("subway_icon", "drawable", getPackageName());
+            button_life.setImageResource(id_img);
+            button_life.setBackground(this.getResources().getDrawable(R.drawable.shape5));
         }
 
         else if (tag.equals("4")) {
-/*
-            ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#D6B676")));
-*/
-            setTitle("지하철");
-            text_life.setText("지하철");
-            int id_img = res.getIdentifier("subway_icon", "drawable", getPackageName());
+            setTitle("기타");
+            text_life.setText("기타");
+            int id_img = res.getIdentifier("life_icon", "drawable", getPackageName());
             button_life.setImageResource(id_img);
             button_life.setBackground(this.getResources().getDrawable(R.drawable.shape6));
 
             int id_img2 = res.getIdentifier("shape_button4", "drawable", getPackageName());
             layout_life.setBackgroundResource(id_img2);
+
+            int id_img3 = res.getIdentifier("bank1", "drawable", getPackageName());
+            ImageView im2 = new ImageView(this);
+            im2.setLayoutParams(layoutParams1);
+            im2.setImageResource(id_img3);
+            layout_life.addView(im2);
+            button_life.setBackground(this.getResources().getDrawable(R.drawable.shape6));
 
         }
 
@@ -120,18 +143,6 @@ public class SupplementLifeActivity2  extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public static void setStatusBarColor(Activity activity, int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = activity.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(color);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-                window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
-    }
-
 
 
 }

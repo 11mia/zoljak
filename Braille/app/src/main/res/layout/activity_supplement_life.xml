@@ -40,7 +40,7 @@
                 android:background="@drawable/shape1"
                 android:clickable="true"
                 android:onClick="goToLife"
-                android:scaleType="fitXY"
+                android:scaleType="centerInside"
                 android:src="@drawable/elevator_icon" />
 
             <TextView
@@ -76,7 +76,7 @@
                 android:clickable="true"
                 android:onClick="goToLife"
 
-                android:scaleType="fitXY"
+                android:scaleType="centerInside"
                 android:src="@drawable/street_icon" />
 
             <TextView
@@ -111,15 +111,14 @@
                 android:background="@drawable/shape5"
                 android:clickable="true"
                 android:onClick="goToLife"
-
-                android:scaleType="fitXY"
-                android:src="@drawable/bus_icon" />
+                android:src="@drawable/subway_icon"
+                android:scaleType="centerInside"/>
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="버스 정류장"
+                android:text="대중교통"
                 android:textColor="#000000"
                 android:textSize="15sp" />
 
@@ -148,15 +147,14 @@
                 android:background="@drawable/shape6"
                 android:clickable="true"
                 android:onClick="goToLife"
-
-                android:scaleType="fitXY"
-                android:src="@drawable/subway_icon" />
+                android:scaleType="centerInside"
+                android:src="@drawable/life_icon" />
 
             <TextView
                 android:layout_width="90dp"
                 android:layout_height="25dp"
                 android:gravity="center"
-                android:text="지하철"
+                android:text="기타"
                 android:textColor="#000000"
                 android:textSize="15sp" />
 

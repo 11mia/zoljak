@@ -44,12 +44,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/shape_button4"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:lineSpacingExtra="2dp"
-                    android:padding="12dp"
                     android:text="한국 점자 규정에서 정한 것을 표준으로 한다."
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp" />
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="15sp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,12 +71,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/shape_button4"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:lineSpacingExtra="2dp"
-                    android:padding="12dp"
                     android:text="한국 점자는 풀어쓰기 방식으로 적는 것을 원칙으로 한다."
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp" />
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="15sp" />
             </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -97,12 +97,12 @@
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
                         android:background="@drawable/shape_button4"
-                        android:gravity="start"
+                        android:gravity="center_vertical"
                         android:lineSpacingExtra="2dp"
-                        android:padding="12dp"
                         android:text="초성 자음과 종성 자음이 다르게 제작되었다."
-                        android:textAlignment="viewStart"
-                        android:textSize="20sp" />
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textSize="15sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -125,12 +125,12 @@
                         android:layout_height="match_parent"
                         android:layout_marginBottom="3dp"
                         android:background="@drawable/shape_button4"
-                        android:gravity="start"
+                        android:gravity="center_vertical"
                         android:lineSpacingExtra="2dp"
-                        android:padding="12dp"
                         android:text="'ㅇ'이 초성으로 쓰일 때에는 이를 표기하지 않는다."
-                        android:textAlignment="viewStart"
-                        android:textSize="20sp" />
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
             <LinearLayout
@@ -153,12 +153,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/shape_button4"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:lineSpacingExtra="2dp"
-                    android:padding="12dp"
                     android:text="27개의 약자와 7개의 약어를 사용한다."
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp" />
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -181,12 +181,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/shape_button4"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:lineSpacingExtra="2dp"
-                    android:padding="12dp"
                     android:text="약자는 앞뒤에 다른 자음자가 함께 쓰일 때에도 풀어 쓰지 않는다."
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp" />
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -209,12 +209,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/shape_button4"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:lineSpacingExtra="2dp"
-                    android:padding="12dp"
                     android:text="약어는 뒤에 다른 음절이 함께 쓰일 때만 풀어 쓰지 않는다."
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp" />
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="15sp" />
             </LinearLayout>
 
 

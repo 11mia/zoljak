@@ -54,15 +54,14 @@
                 android:id="@+id/textView8"
                 android:layout_width="320dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:lineSpacingExtra="3sp"
+                android:lineSpacingExtra="4sp"
                 android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="15dp"
                 android:text="점자는 6개의 점(세로로 3점, 가로로 2점)이 모여 한 칸을 구성하고 각 점에 1에서 6까지의 번호를 붙여 사용한다.\n6개의 점을 조합하여 64개의 점형을 생성(묵자 포함)하며 이 점형에 의미를 부여하여 사용한다."
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>

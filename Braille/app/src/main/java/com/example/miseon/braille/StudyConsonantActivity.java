@@ -25,8 +25,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
 public class StudyConsonantActivity extends AppCompatActivity {
     FragmentManager manager;
     FragmentTransaction tran;
@@ -106,9 +104,7 @@ public class StudyConsonantActivity extends AppCompatActivity {
                 button3.setTextColor(Color.BLACK);
 
                 tran = manager.beginTransaction();
-                tran.remove(frag2);
-                tran.remove(frag3);
-                tran.add(R.id.consonantFragment,frag1);
+                tran.replace(R.id.consonantFragment,frag1);
                 tran.commit();
                 break;
             case R.id.ssang://button3
@@ -122,11 +118,7 @@ public class StudyConsonantActivity extends AppCompatActivity {
                 button2.setTextColor(Color.BLACK);
 
                 tran=manager.beginTransaction();
-                tran.remove(frag1);
-                tran.remove(frag3);
-
-                tran.add(R.id.consonantFragment,frag2);
-                //tran.replace(R.id.consonantFragment,frag2);
+                tran.replace(R.id.consonantFragment,frag2);
 
                 tran.commit();
                 break;
@@ -141,10 +133,7 @@ public class StudyConsonantActivity extends AppCompatActivity {
                 button3.setTextColor(Color.BLACK);
 
                 tran=manager.beginTransaction();
-                tran.remove(frag2);
-                tran.remove(frag1);
-
-                tran.add(R.id.consonantFragment,frag3);
+                tran.replace(R.id.consonantFragment,frag3);
                 tran.commit();
                 break;
 
@@ -200,15 +189,7 @@ public class StudyConsonantActivity extends AppCompatActivity {
                     ImageView iv = new ImageView(this); //추가할 이미지뷰
                     String str = cursor.getString(cursor.getColumnIndex("dot_"+i));
                     id_img = res.getIdentifier(str, "drawable", getPackageName());
-                    //iv.setImageResource(id_img);
-                    Picasso
-                            .with(this)
-                            .load(id_img)
-                            .resize(300, 300)
-                            .centerInside()
-                            .into(iv);
-
-
+                    iv.setImageResource(id_img);
                     final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
                     final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
                     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
@@ -231,14 +212,7 @@ public class StudyConsonantActivity extends AppCompatActivity {
                     ImageView iv = new ImageView(this); //추가할 이미지뷰
                     String str = cursor.getString(cursor.getColumnIndex("dot_"+i));
                     id_img = res.getIdentifier(str, "drawable", getPackageName());
-                    //iv.setImageResource(id_img);
-                    Picasso
-                            .with(this)
-                            .load(id_img)
-                            .resize(300, 300)
-                            .centerInside()
-                            .into(iv);
-
+                    iv.setImageResource(id_img);
                     final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
                     final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
                     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
