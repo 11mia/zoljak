@@ -116,6 +116,7 @@ public class TranslateActivity3 extends AppCompatActivity {
         final EditText et = (EditText)findViewById(R.id.inputtext);
         imm.hideSoftInputFromWindow(et.getWindowToken(),0);//변환 클릭하면 키보드 쫙 사라진다
         al1="";
+        int happy=0;
 
         al1 = editText.getText().toString();
 
@@ -129,7 +130,7 @@ public class TranslateActivity3 extends AppCompatActivity {
         }
 
         imageView.removeAllViews();
-        textView.setText("Result of '" + al1 + "'");
+        textView.setText("");
         count=0;
 
         char[] temp = new char[20];
@@ -140,8 +141,6 @@ public class TranslateActivity3 extends AppCompatActivity {
             temp[i] = al1.charAt(i);
             count++;
         }
-
-
 
 
         try {
@@ -225,15 +224,25 @@ public class TranslateActivity3 extends AppCompatActivity {
                     imageView.setGravity(Gravity.CENTER);
                     imageView.addView(iv);
                 }
+                else {happy=1; break;}
 
 
             }//for문
             sqlitedb.setTransactionSuccessful();
 
-        }catch(SQLiteException e){
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }catch(Exception e){
+           // Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }finally {
             sqlitedb.endTransaction();
+
+            if (happy==1) {//There is no result
+                imageView.removeAllViews();
+                textView.setText("");
+                Toast.makeText(this, "No Result", Toast.LENGTH_LONG).show();
+
+            }
+            else
+                textView.setText("Result of '" + al1 + "'");
         }
     }
 

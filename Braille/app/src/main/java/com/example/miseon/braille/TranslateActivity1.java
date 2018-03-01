@@ -108,6 +108,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         final InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         final  EditText et = (EditText)findViewById(R.id.inputtext);
         imm.hideSoftInputFromWindow(et.getWindowToken(),0);//변환 클릭하면 키보드 쫙 사라진다
+        int happy=0;
 
         chos = "";
         juns = "";
@@ -125,7 +126,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         String al1 = editText.getText().toString();
 
         imageView.removeAllViews();
-        textView.setText("['" + al1 + "'" + "의 점역결과]");
+       /* textView.setText("['" + al1 + "'" + "의 점역결과]");*/
 
 
         // ㄱ ㄲ ㄴ ㄷ ㄸ ㄹ ㅁ ㅂ ㅃ ㅅ ㅆ ㅇ ㅈ ㅉ ㅊ ㅋ ㅌ ㅍ ㅎ//19개
@@ -197,7 +198,11 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                     jong_2[count] = 'A';
                 }
 
-            } else {//스페이스바처리
+            }
+            else if(test<0xAC00&&test!=0x0020) {
+                happy=1; count=0; break;
+            }
+            else {//스페이스바처리
                 arr += "  ";
                 chos += 'B';
                 juns += 'B'; //중성
@@ -213,9 +218,9 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
         }
         Cursor cursor=null;
         Cursor cursor2 = null;
-        Cursor cursor4 = null;
+       /* Cursor cursor4 = null;
         Cursor cursor5 = null;
-
+*/
         try {
             dbmanager = new DBManager(this);
             sqlitedb = dbmanager.getReadableDatabase();
@@ -243,7 +248,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
                 else {//스페이스바 아닌 부분 처리하는 코드
 
-                    if ((chos_2[start] == 'ㄲ' || chos_2[start] == 'ㅆ' || chos_2[start] == 'ㅉ') && juns_2[start] == 'ㅏ') {//case1
+                    if ((start+1>=0)&&chos_2[start+1]!='ㅇ'&&juns_2[start+1]!='ㅖ'&&(chos_2[start] == 'ㄲ' || chos_2[start] == 'ㅆ'/* || chos_2[start] == 'ㅉ'*/) && juns_2[start] == 'ㅏ') {//case1
 
                         if (chos_2[start] == 'ㄲ') {
                             ImageView iv = new ImageView(this); //추가할 이미지뷰
@@ -336,6 +341,17 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                             }
                         }//까 or 싸에 종성이 있으면
                     }
+
+                    else if(chos_2[start]==0x0000||juns_2[start]==0x0000) {
+                        happy=1; break;
+                    }
+
+
+
+
+
+
+
 
                     //제 7절 약어 18항 처리해주기
 
@@ -1029,30 +1045,113 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
                         cursor =sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(chos_2[start]), "변환초성"}, null, null, "letter");
 
-                        if(cursor.moveToNext()) {//반드시 거치고1
+                        if(cursor.moveToNext()||(chos_2[start]=='ㄱ'&&juns_2[start]=='ㅏ')||(chos_2[start]=='ㅅ'&&juns_2[start]=='ㅏ')
+                                ||(chos_2[start]=='ㄲ'&&juns_2[start]=='ㅏ')||(chos_2[start]=='ㅆ'&&juns_2[start]=='ㅏ')) {//반드시 거치고1
                             if (chos_2[start]=='ㅇ') {
 
                             }
 
                             else {
-                                ImageView iv = new ImageView(this);
-                                String str = cursor.getString(cursor.getColumnIndex("dot_1"));
-                                id_img = res.getIdentifier(str, "drawable", getPackageName());
-                                iv.setImageResource(id_img);
-                                final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
-                                final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
-                                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
-                                layoutParams.gravity = Gravity.CENTER;
-                                iv.setLayoutParams(layoutParams);
-                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
-                                imageView.setGravity(Gravity.CENTER);
-                                imageView.addView(iv);
-                            }
 
+                                if(chos_2[start]=='ㄲ'||chos_2[start]=='ㅆ') {
+                                    ImageView iv = new ImageView(this);
+
+                                    id_img = res.getIdentifier("c777776", "drawable", getPackageName());
+                                    iv.setImageResource(id_img);
+                                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv.setLayoutParams(layoutParams);
+                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv);
+
+                                }
+
+
+                                if (chos_2[start] == 'ㄱ'||chos_2[start]=='ㄲ') {
+                                    ImageView iv = new ImageView(this);
+
+                                    id_img = res.getIdentifier("c127476", "drawable", getPackageName());
+                                    iv.setImageResource(id_img);
+                                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv.setLayoutParams(layoutParams);
+                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv);
+
+                                } else if (chos_2[start] == 'ㅅ'||chos_2[start]=='ㅆ') {
+                                    ImageView iv = new ImageView(this);
+
+                                    id_img = res.getIdentifier("c123777", "drawable", getPackageName());
+                                    iv.setImageResource(id_img);
+                                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv.setLayoutParams(layoutParams);
+                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv);
+
+                                } else {
+                                    ImageView iv = new ImageView(this);
+                                    String str = cursor.getString(cursor.getColumnIndex("dot_1"));
+                                    id_img = res.getIdentifier(str, "drawable", getPackageName());
+                                    iv.setImageResource(id_img);
+                                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv.setLayoutParams(layoutParams);
+                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv);
+
+
+                                    if (chos_2[start] == 'ㄸ') {
+                                        ImageView iv1 = new ImageView(this);
+                                        id_img = res.getIdentifier("c727477", "drawable", getPackageName());
+                                        iv1.setImageResource(id_img);
+                                        layoutParams.gravity = Gravity.CENTER;
+                                        iv1.setLayoutParams(layoutParams);
+                                        iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                        imageView.setGravity(Gravity.CENTER);
+                                        imageView.addView(iv1);
+
+                                    } else if (chos_2[start] == 'ㅃ') {
+                                        ImageView iv1 = new ImageView(this);
+                                        id_img = res.getIdentifier("c777457", "drawable", getPackageName());
+                                        iv1.setImageResource(id_img);
+                                        layoutParams.gravity = Gravity.CENTER;
+                                        iv1.setLayoutParams(layoutParams);
+                                        iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                        imageView.setGravity(Gravity.CENTER);
+                                        imageView.addView(iv1);
+
+                                    } else if (chos_2[start] == 'ㅉ') {
+                                        ImageView iv1 = new ImageView(this);
+                                        id_img = res.getIdentifier("c777476", "drawable", getPackageName());
+                                        iv1.setImageResource(id_img);
+                                        layoutParams.gravity = Gravity.CENTER;
+                                        iv1.setLayoutParams(layoutParams);
+                                        iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                        imageView.setGravity(Gravity.CENTER);
+                                        imageView.addView(iv1);
+
+                                    }
+
+
+                                }
+                            }
 
                         }
                         cursor =sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(juns_2[start]), "중성"}, null, null, "letter");
-                        if(cursor.moveToNext()) {//반드시 거치고2
+                        if(cursor.moveToNext()&&chos_2[start]!='ㄱ'&&chos_2[start]!='ㅅ'&&chos_2[start]!='ㄲ'&&chos_2[start]!='ㅆ') {//반드시 거치고2
                             ImageView iv = new ImageView(this);
                             String str = cursor.getString(cursor.getColumnIndex("dot_1"));
                             id_img = res.getIdentifier(str, "drawable", getPackageName());
@@ -1219,17 +1318,17 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
                     }
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
                     else if ((chos_2[start]=='ㄴ'||chos_2[start]=='ㄷ'||chos_2[start]=='ㅁ'||chos_2[start]=='ㅂ'||chos_2[start]=='ㅈ'||chos_2[start]=='ㅋ'||chos_2[start]=='ㅌ'//조항 17항 처리부분!
-                            ||chos_2[start]=='ㅍ'||chos_2[start]=='ㅎ')&&juns_2[start]=='ㅏ'&&jong_2[start]=='A') {
+                            ||chos_2[start]=='ㅍ'||chos_2[start]=='ㅎ'||chos_2[start]=='ㄸ'||chos_2[start]=='ㅃ'||chos_2[start]=='ㅉ')&&juns_2[start]=='ㅏ'&&jong_2[start]=='A') {
 
                         int start1=start+1;
-                        if(chos_2[start1]=='ㅇ') {//나 다 마 바 자 카 타 하  뒤에 초성에서 ㅇ이 나오면 ㅏ를 생략하면 안되기 때문에
-                            cursor =sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(chos_2[start]), "변환초성"}, null, null, "letter");
-                            if(cursor.moveToNext()) {
+                        if(chos_2[start1]=='ㅇ') {
+
+                            if(chos_2[start]=='ㄸ'||chos_2[start]=='ㅃ'||chos_2[start]=='ㅉ'){
+
                                 ImageView iv = new ImageView(this);
-                                String str = cursor.getString(cursor.getColumnIndex("dot_1"));
-                                id_img = res.getIdentifier(str, "drawable", getPackageName());
+                                id_img = res.getIdentifier("c777776", "drawable", getPackageName());
                                 iv.setImageResource(id_img);
                                 final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
                                 final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
@@ -1241,14 +1340,98 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                                 imageView.addView(iv);
 
 
+                                if(chos_2[start]=='ㄸ') {
+                                    ImageView iv1 = new ImageView(this);
+                                    id_img = res.getIdentifier("c727477", "drawable", getPackageName());
+                                    iv1.setImageResource(id_img);
+
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv1.setLayoutParams(layoutParams);
+                                    iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv1);
+
+                                }
+                                else if(chos_2[start]=='ㅃ') {
+                                    ImageView iv2 = new ImageView(this);
+                                    id_img = res.getIdentifier("c777457", "drawable", getPackageName());
+                                    iv2.setImageResource(id_img);
+
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv2.setLayoutParams(layoutParams);
+                                    iv2.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv2);
+
+                                }
+                                else if(chos_2[start]=='ㅉ') {
+                                    ImageView iv3 = new ImageView(this);
+                                    id_img = res.getIdentifier("c777476", "drawable", getPackageName());
+                                    iv3.setImageResource(id_img);
+
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv3.setLayoutParams(layoutParams);
+                                    iv3.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv3);
+
+                                }
+
+
                                 ImageView iv1 = new ImageView(this);
-                                iv1.setImageResource(R.drawable.c127776);//중성의 ㅏ를 표현해줍니다.
+                                iv1.setImageResource(R.drawable.c127776);//중성의 ㅏ를 표현해줍니다.공통~~~~~~~~
                                 layoutParams.gravity = Gravity.CENTER;
                                 iv1.setLayoutParams(layoutParams);
                                 iv1.setScaleType(ImageView.ScaleType.FIT_XY);
                                 imageView.setGravity(Gravity.CENTER);
                                 imageView.addView(iv1);
+
+
+                                if (juns_2[start1]=='ㅖ') {
+                                    ImageView iv4 = new ImageView(this);
+                                    iv4.setImageResource(R.drawable.c773776);//분리~
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv4.setLayoutParams(layoutParams);
+                                    iv4.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv4);
+
+                                }
+
+
+
+
+
                             }
+                            //나 다 마 바 자 카 타 하  뒤에 초성에서 ㅇ이 나오면 ㅏ를 생략하면 안되기 때문에
+                          else {
+                                cursor = sqlitedb.query("Braille", null, "letter=?AND type=?", new String[]{String.valueOf(chos_2[start]), "변환초성"}, null, null, "letter");
+                                if (cursor.moveToNext()) {
+                                    ImageView iv = new ImageView(this);
+                                    String str = cursor.getString(cursor.getColumnIndex("dot_1"));
+                                    id_img = res.getIdentifier(str, "drawable", getPackageName());
+                                    iv.setImageResource(id_img);
+                                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv.setLayoutParams(layoutParams);
+                                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv);
+
+
+                                    ImageView iv1 = new ImageView(this);
+                                    iv1.setImageResource(R.drawable.c127776);//중성의 ㅏ를 표현해줍니다.
+                                    layoutParams.gravity = Gravity.CENTER;
+                                    iv1.setLayoutParams(layoutParams);
+                                    iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                    imageView.setGravity(Gravity.CENTER);
+                                    imageView.addView(iv1);
+                                }
+
+                            }
+
                         }
                         else if (chos_2[start1]!='ㅇ'){
 
@@ -1258,7 +1441,62 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                             final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
                             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
 
-                            if(chos_2[start]=='ㄴ') {
+                            if(chos_2[start]=='ㄸ') {
+
+                                iv.setImageResource(R.drawable.c777776);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+
+
+                                ImageView iv1 = new ImageView(this);
+                                iv1.setImageResource(R.drawable.c727477);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv1.setLayoutParams(layoutParams);
+                                iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv1);
+
+                            }
+                            else if (chos_2[start]=='ㅃ') {
+                                iv.setImageResource(R.drawable.c777776);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+
+
+                                ImageView iv1 = new ImageView(this);
+                                iv1.setImageResource(R.drawable.c777457);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv1.setLayoutParams(layoutParams);
+                                iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv1);
+
+                            }
+                            else if (chos_2[start]=='ㅉ') {
+                                iv.setImageResource(R.drawable.c777476);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv.setLayoutParams(layoutParams);
+                                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv);
+
+
+                                ImageView iv1 = new ImageView(this);
+                                iv1.setImageResource(R.drawable.c727477);
+                                layoutParams.gravity = Gravity.CENTER;
+                                iv1.setLayoutParams(layoutParams);
+                                iv1.setScaleType(ImageView.ScaleType.FIT_XY);
+                                imageView.setGravity(Gravity.CENTER);
+                                imageView.addView(iv1);
+
+                            }
+                            else if(chos_2[start]=='ㄴ') {
                                 iv.setImageResource(R.drawable.c177477);
                                 layoutParams.gravity = Gravity.CENTER;
                                 iv.setLayoutParams(layoutParams);
@@ -1726,6 +1964,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
                                 }
                             }
+                            else {happy=1;break;}/////////////////////////////////////////////////
 
                         }
 
@@ -1753,6 +1992,7 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
                             }
                         }
+                        else { happy=1; break;}
 
 
                         if (jong_2[start] != 'A') {
@@ -1783,11 +2023,20 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                     }//else
                 }//else 스페이스 안한거 처리
             }//for문
+
             sqlitedb.setTransactionSuccessful();
+
 
         }catch(SQLiteException e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }finally{
+            if(happy==1) {
+                textView.setText("");
+                imageView.removeAllViews();
+                Toast.makeText(this, "변환결과가 없습니다", Toast.LENGTH_LONG).show();
+            }
+            else textView.setText("['" + al1 + "'" + "의 점역결과]");
+
             sqlitedb.endTransaction();
 
    /*  Typeface typeFace= Typeface.createFromAsset(getAssets(),"HSBRL02.ttf");
