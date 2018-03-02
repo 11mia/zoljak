@@ -12,22 +12,22 @@ import android.widget.Toast;
 
 public class ManualActivity extends AppCompatActivity {
     int page;
-
+    ImageView im;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent it = getIntent();
         page =it.getIntExtra("page",1);
-        ImageView im = (ImageView)this.findViewById(R.id.manualIV);
+        im = (ImageView)this.findViewById(R.id.manualIV);
         Resources res = getResources();
         String str = "p"+page;
         int id_img = res.getIdentifier(str, "drawable", getPackageName());
         im.setImageResource(id_img);
-        setTitle("도움말("+page+"/13)");
-
+        setTitle("도움말("+page+"/12)");
 
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -40,6 +40,7 @@ public class ManualActivity extends AppCompatActivity {
 
     public void clickPrevious(View v){
         if(page==1){
+            im.setImageResource(0);
             finish();
         }
         else{
@@ -47,6 +48,7 @@ public class ManualActivity extends AppCompatActivity {
             it.putExtra("page",--page);
             startActivity(it);
             overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+            im.setImageResource(0);
             finish();
         }
 
@@ -60,6 +62,7 @@ public class ManualActivity extends AppCompatActivity {
             Intent it = new Intent(this,ManualActivity.class);
             it.putExtra("page",++page);
             startActivity(it);
+            im.setImageResource(0);
             overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
             finish();
         }
