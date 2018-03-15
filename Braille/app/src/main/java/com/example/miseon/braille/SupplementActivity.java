@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
 public class SupplementActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +59,8 @@ public class SupplementActivity extends AppCompatActivity {
         InputStream in = null;
         OutputStream out = null;
         File file = new File(getFilesDir(), "brailleRule.pdf");
+
+        Log.v("filedir : ", String.valueOf(getFilesDir()));
         try
         {
             in = assetManager.open("brailleRule.pdf");
@@ -102,11 +103,10 @@ public class SupplementActivity extends AppCompatActivity {
     public void openPDF(){
         Intent intent = new Intent(Intent.ACTION_VIEW);
         File file = new File(getFilesDir(), "brailleRule.pdf");
-/*
 
         intent.setDataAndType(
                 Uri.parse("file://" + getFilesDir() + "/brailleRule.pdf"),"application/pdf");
-*/
+
         Uri path  = Uri.fromFile(file);
         intent.setDataAndType(path,"application/pdf");
 

@@ -8,9 +8,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -176,10 +179,47 @@ public class MainActivity extends AppCompatActivity {
             Log.v("incorrect_list"+i+" : ",Integer.toString(incorrect_list.get(i)));
     }
 
+    private void Toast_ActionBar(View view, String string) {
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+        Point windowSize = new Point();
+        getWindowManager().getDefaultDisplay().getSize(windowSize);
+        Toast t = Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT);
+        t.setGravity(
+                Gravity.TOP | Gravity.RIGHT,
+                windowSize.x - location[0] - view.getWidth() / 2,
+                location[1] + view.getHeight() / 2
+        );
+        t.show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
-        return true;
+
+        MenuItem item1 = menu.findItem(R.id.action_settings3);
+
+        MenuItemCompat.setActionView(item1, R.layout.layout_menu);
+        final View menuLayout = MenuItemCompat.getActionView(item1);
+
+        final View cameraMenu = menuLayout.findViewById(R.id.button1);
+        cameraMenu.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast_ActionBar(cameraMenu,"도움말");
+                return true;
+            }
+        });
+
+        cameraMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this,ManualActivity.class);
+                it.putExtra("page",1);
+                startActivity(it);            }
+        });
+        return super.onCreateOptionsMenu(menu);
+      //  return true;
     }
 
     @Override
@@ -192,13 +232,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if(id==R.id.action_settings2){
            finish();
-        }
-        if(id==R.id.action_settings3){
-            //도움말 추가하기!
-            Intent it = new Intent(this,ManualActivity.class);
-            it.putExtra("page",1);
-            startActivity(it);
-            return true;
         }
         return super.onOptionsItemSelected(item);
     }

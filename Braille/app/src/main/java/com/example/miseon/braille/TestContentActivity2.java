@@ -478,7 +478,7 @@ public class TestContentActivity2 extends AppCompatActivity {
                                         finish();
                                     }
                                 })
-                        .setMessage("   총 문제 : 7개\n   오답 : "+incorrect_num+"개\n    정답 : "+(7-incorrect_num)+"개");
+                        .setMessage("\n   총 문제 : 7개\n   오답 : "+incorrect_num+"개\n    정답 : "+(7-incorrect_num)+"개");
                 alertDialogBuilder.setTitle("정답입니다.\n연습을 종료합니다.");
             } else {
                 alertDialogBuilder
