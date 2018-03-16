@@ -31,7 +31,7 @@
                     android:text="a"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                     android:text="b"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -82,7 +82,7 @@
                     android:text="c"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -115,7 +115,7 @@
                     android:text="d"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -139,7 +139,7 @@
                     android:textColor="#000000"
                     android:text="e"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -163,7 +163,7 @@
                     android:text="f"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -194,7 +194,7 @@
                     android:text="g"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -218,7 +218,7 @@
                     android:text="h"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -243,7 +243,7 @@
                     android:textColor="#000000"
                     android:text="i"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -275,7 +275,7 @@
                     android:layout_height="38dp"
                     android:text="j"
                     android:textAlignment="center"
-                    android:textSize="30sp"
+                    android:textSize="30dp"
                     android:textColor="#000000"/>
                 <ImageView
                     android:layout_width="match_parent"
@@ -300,7 +300,7 @@
                     android:text="k"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -324,7 +324,7 @@
                     android:text="l"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -355,7 +355,7 @@
                     android:text="m"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -379,7 +379,7 @@
                     android:text="n"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -403,7 +403,7 @@
                     android:textColor="#000000"
                     android:text="o"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -434,7 +434,7 @@
                     android:text="p"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -458,7 +458,7 @@
                     android:textColor="#000000"
                     android:text="q"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -482,7 +482,7 @@
                     android:text="r"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -513,7 +513,7 @@
                     android:text="s"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -537,7 +537,7 @@
                     android:text="t"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -561,7 +561,7 @@
                     android:text="u"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -592,7 +592,7 @@
                     android:text="v"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -616,7 +616,7 @@
                     android:text="w"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -640,7 +640,7 @@
                     android:text="x"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -674,7 +674,7 @@
                     android:text="y"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -700,7 +700,7 @@
                     android:text="z"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -720,7 +720,7 @@
                     android:layout_height="40dp"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
 
                 <ImageView
                     android:layout_width="match_parent"

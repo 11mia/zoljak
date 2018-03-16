@@ -37,7 +37,7 @@
                         android:text="가"
                         android:textAlignment="center"
 
-                        android:textSize="30sp"
+                        android:textSize="30dp"
                         android:textColor="#000000" />
 
                     <ImageView
@@ -61,7 +61,7 @@
                         android:text="나"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -83,7 +83,7 @@
                         android:text="다"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -114,7 +114,7 @@
                         android:text="마"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -136,7 +136,7 @@
                         android:text="바"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -158,7 +158,7 @@
                         android:text="사"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -187,7 +187,7 @@
                         android:text="자"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -209,7 +209,7 @@
                         android:text="카"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -231,7 +231,7 @@
                         android:text="타"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -261,7 +261,7 @@
                         android:text="파"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -283,7 +283,7 @@
                         android:text="하"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -305,7 +305,7 @@
                         android:text="억"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -333,7 +333,7 @@
                         android:text="언"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -355,7 +355,7 @@
                         android:text="얼"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -377,7 +377,7 @@
                         android:text="연"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -405,7 +405,7 @@
                         android:text="열"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -427,7 +427,7 @@
                         android:text="영"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -449,7 +449,7 @@
                         android:text="옥"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -477,7 +477,7 @@
                         android:text="온"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -499,7 +499,7 @@
                         android:text="옹"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -521,7 +521,7 @@
                         android:text="운"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -549,7 +549,7 @@
                         android:text="울"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -571,7 +571,7 @@
                         android:text="은"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -593,7 +593,7 @@
                         android:text="을"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -621,7 +621,7 @@
                         android:text="인"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -641,7 +641,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -661,7 +661,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -696,7 +696,7 @@
                         android:text="것"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -730,7 +730,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -771,7 +771,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -805,7 +805,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -847,7 +847,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -881,7 +881,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -924,7 +924,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -958,7 +958,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

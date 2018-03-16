@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -16,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -179,7 +179,11 @@ public class TranslateActivity2 extends AppCompatActivity{
         if(totalWidth>300)
             layout = (LinearLayout) findViewById(R.id.input2);
         if(totalWidth>=660) {
-            Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
 
@@ -234,7 +238,11 @@ public class TranslateActivity2 extends AppCompatActivity{
         if(totalWidth>320)
             layout = (LinearLayout) findViewById(R.id.input2);
         if(totalWidth>=660) {
-            Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
 
@@ -3365,12 +3373,20 @@ public class TranslateActivity2 extends AppCompatActivity{
             if(happy1==1) {
                 translateToWord.setText("");
                 /*translateToWord.setText("-변환 결과가 없습니다-");*/
-                Toast.makeText(this, "변환 결과가 없습니다.", Toast.LENGTH_LONG).show();
+                Toast toast = Toast.makeText(this, "변환 결과가 없습니다.", Toast.LENGTH_LONG);
+                ViewGroup group = (ViewGroup) toast.getView();
+                TextView messageTextView = (TextView) group.getChildAt(0);
+                messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                toast.show();
             }
             else if (happy==1){
                 translateToWord.setText("");
                 /*translateToWord.setText("-변환 결과가 없습니다-");*/
-                Toast.makeText(this, "변환 결과가 없습니다.", Toast.LENGTH_LONG).show();
+                Toast toast = Toast.makeText(this, "변환 결과가 없습니다.", Toast.LENGTH_LONG);
+                ViewGroup group = (ViewGroup) toast.getView();
+                TextView messageTextView = (TextView) group.getChildAt(0);
+                messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                toast.show();
             }
             else {
                 translateToWord.setText(lastStr);

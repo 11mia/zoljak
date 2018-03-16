@@ -46,7 +46,7 @@
                     android:gravity="center"
                     android:text="점자란?"
                     android:textColor="#000000"
-                    android:textSize="15sp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -80,7 +80,7 @@
                     android:gravity="center"
                     android:text="점자 구성"
                     android:textColor="#000000"
-                    android:textSize="15sp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -114,7 +114,7 @@
                     android:gravity="center"
                     android:text="점자 역사"
                     android:textColor="#000000"
-                    android:textSize="15sp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -146,7 +146,7 @@
                 <TextView
                     android:layout_height="25dp"
                     android:layout_width="90dp"
-                    android:textSize="15sp"
+                    android:textSize="15dp"
                     android:textColor="#000000"
                     android:text="한국점자 특성"
                     android:gravity="center" />

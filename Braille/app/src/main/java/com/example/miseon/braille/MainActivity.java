@@ -13,10 +13,13 @@ import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -93,14 +96,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if ( pressedTime == 0 ) {
-            Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
+
             pressedTime = System.currentTimeMillis();
         }
         else {
             int seconds = (int) (System.currentTimeMillis() - pressedTime);
 
             if ( seconds > 2000 ) {
-                Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(MainActivity.this, " 한 번 더 누르면 종료됩니다." , Toast.LENGTH_SHORT);
+                ViewGroup group = (ViewGroup) toast.getView();
+                TextView messageTextView = (TextView) group.getChildAt(0);
+                messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                toast.show();
                 //pressedTime = 0 ;
                 pressedTime = System.currentTimeMillis();
 
@@ -185,6 +197,9 @@ public class MainActivity extends AppCompatActivity {
         Point windowSize = new Point();
         getWindowManager().getDefaultDisplay().getSize(windowSize);
         Toast t = Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT);
+        ViewGroup group = (ViewGroup) t.getView();
+        TextView messageTextView = (TextView) group.getChildAt(0);
+        messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
         t.setGravity(
                 Gravity.TOP | Gravity.RIGHT,
                 windowSize.x - location[0] - view.getWidth() / 2,

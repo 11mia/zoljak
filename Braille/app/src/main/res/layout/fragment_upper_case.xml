@@ -37,7 +37,7 @@
                     android:text="대문자표"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -87,7 +87,7 @@
                     android:text="A"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -166,7 +166,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -200,7 +200,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -242,7 +242,7 @@
 
                     android:text="E"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -276,7 +276,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -318,7 +318,7 @@
 
                     android:text="G"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -352,7 +352,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -394,7 +394,7 @@
 
                     android:text="I"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -428,7 +428,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -470,7 +470,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -504,7 +504,7 @@
 
                     android:text="L"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -546,7 +546,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -580,7 +580,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -622,7 +622,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -656,7 +656,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -698,7 +698,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -732,7 +732,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -774,7 +774,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -808,7 +808,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -850,7 +850,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -884,7 +884,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -926,7 +926,7 @@
 
                     android:text="W"
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -960,7 +960,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -1002,7 +1002,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
@@ -1036,7 +1036,7 @@
                     android:textColor="#000000"
 
                     android:textAlignment="center"
-                    android:textSize="30sp" />
+                    android:textSize="30dp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="92dp"

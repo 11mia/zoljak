@@ -8,8 +8,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -113,7 +116,11 @@ public class SupplementActivity extends AppCompatActivity {
         try{
             startActivity(intent);
         }catch(ActivityNotFoundException ex){
-            Toast.makeText(this,"PDF 파일을 보기 위한 뷰어 앱이 없습니다.", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this,"PDF 파일을 보기 위한 뷰어 앱이 없습니다.", Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
         }
     }
 

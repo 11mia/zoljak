@@ -16,6 +16,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -87,12 +88,12 @@ public class WrongAnswerActivity extends AppCompatActivity {
 
                 TextView tv = new TextView(this);//letter
                 tv.setLayoutParams(layoutParams1);
-                tv.setTextSize(20);
+                tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
                 layoutParams1.setMargins(15,0,15,0);
 
                 TextView tv0 = new TextView(this);//type
                 tv0.setLayoutParams(layoutParams2);
-                tv0.setTextSize(20);
+                tv0.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
                 layoutParams2.setMargins(0,0,10,0);
 
                 String letter;
@@ -198,7 +199,11 @@ public class WrongAnswerActivity extends AppCompatActivity {
 
     public void clickPractice(View v){
         if(incorrect_list_count==0) {
-            Toast.makeText(this, "오답노트가 비어있습니다. \n연습을 실행 할 수 없습니다.", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(this, "오답노트가 비어있습니다. \n연습을 실행 할 수 없습니다.", Toast.LENGTH_LONG);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
         Intent it = new Intent(this,PracticeWrongAnswerActivity.class);
@@ -214,7 +219,11 @@ public class WrongAnswerActivity extends AppCompatActivity {
 
     public void clickTest(View v){
         if(incorrect_list_count<4) {
-            Toast.makeText(this, "오답노트 항목이 4개이상 필요합니다.\n테스트를 실행 할 수 없습니다.", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(this, "오답노트 항목이 4개이상 필요합니다.\n테스트를 실행 할 수 없습니다.", Toast.LENGTH_LONG);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(

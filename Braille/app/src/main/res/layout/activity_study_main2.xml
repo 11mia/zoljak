@@ -44,7 +44,7 @@
             android:gravity="center"
             android:text="한글자음"
             android:textColor="#000000"
-            android:textSize="15sp" />
+            android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,7 +75,7 @@
                 android:gravity="center"
                 android:text="한글모음"
                 android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -106,7 +106,7 @@
                 android:gravity="center"
                 android:text="한글약어"
                 android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,7 +137,7 @@
                 android:gravity="center"
                 android:text="알파벳"
                 android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
         </LinearLayout>
 
 
@@ -169,7 +169,7 @@
                 android:gravity="center"
                 android:text="숫자"
                 android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
         </LinearLayout>
 
 
@@ -201,7 +201,7 @@
                 android:gravity="center"
                 android:text="문장부호"
                 android:textColor="#000000"
-                android:textSize="15sp" />
+                android:textSize="15dp" />
         </LinearLayout>
 
 

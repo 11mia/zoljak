@@ -8,7 +8,9 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,7 +81,11 @@ public class supplementLibraryMapActivity extends AppCompatActivity implements O
         newloc = new LatLng(loc.getLatitude(),loc.getLongitude());
 
         if(loc.getLatitude()==0&&loc.getLongitude()==0){
-            Toast.makeText(this,"해당되는 주소 정보가 없습니다.",Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this,"해당되는 주소 정보가 없습니다.",Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
 

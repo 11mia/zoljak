@@ -40,7 +40,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -60,11 +60,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
-                        android:text="?"
+                        android:text="@string/question"
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -87,7 +87,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -119,7 +119,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -142,7 +142,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -165,7 +165,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -195,7 +195,7 @@
                         android:textAlignment="center"
 
                         android:textColor="#000000"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -217,7 +217,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -240,7 +240,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
@@ -271,7 +271,7 @@
                         android:text="·"
                         android:textColor="#000000"
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -305,7 +305,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -346,7 +346,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -380,7 +380,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -422,7 +422,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -456,7 +456,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -498,7 +498,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -532,7 +532,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -573,7 +573,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -607,7 +607,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -648,7 +648,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -682,7 +682,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -724,7 +724,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -758,7 +758,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -800,7 +800,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -834,7 +834,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -875,7 +875,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -909,7 +909,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -950,7 +950,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -984,7 +984,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1025,7 +1025,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1059,7 +1059,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1105,7 +1105,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1143,7 +1143,7 @@
                         android:textColor="#000000"
 
                         android:textAlignment="center"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -194,7 +195,11 @@ public class TranslateActivity4 extends AppCompatActivity{
         if(totalWidth>300)
             layout = (LinearLayout) findViewById(R.id.input2);
         if(totalWidth>=660) {
-            Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
 
@@ -247,7 +252,11 @@ public class TranslateActivity4 extends AppCompatActivity{
         if(totalWidth>320)
             layout = (LinearLayout) findViewById(R.id.input2);
         if(totalWidth>=660) {
-            Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "더이상 추가할 수 없습니다.", Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }
 
@@ -362,7 +371,11 @@ public class TranslateActivity4 extends AppCompatActivity{
             sqlitedb.endTransaction();
             //     resultchang.setText("[변환 결과]");
             if (happy1==1) {
-                Toast.makeText(this, "No Result", Toast.LENGTH_LONG).show();
+                Toast toast = Toast.makeText(this, "No Result", Toast.LENGTH_LONG);
+                ViewGroup group = (ViewGroup) toast.getView();
+                TextView messageTextView = (TextView) group.getChildAt(0);
+                messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                toast.show();
             }
             else translateToWord.setText(wordText);
 

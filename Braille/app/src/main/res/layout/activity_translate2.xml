@@ -40,9 +40,29 @@
 
     -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
 
-    <Button android:background="@drawable/shape_button" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clickAdd" android:clickable="true" android:layout_margin="5dp" android:id="@+id/add" android:text="추가"/>
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_button"
+        android:clickable="true"
+        android:onClick="clickAdd"
+        android:text="추가"
+        android:textSize="18dp" />
 
-    <Button android:background="@drawable/shape_button" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clickTranslate" android:clickable="true" android:layout_margin="5dp" android:id="@+id/change" android:text="변환"/>
+    <Button
+        android:id="@+id/change"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_button"
+        android:clickable="true"
+        android:onClick="clickTranslate"
+        android:text="변환"
+        android:textSize="18dp" />
 
 </LinearLayout>
 
@@ -58,7 +78,17 @@
 
     -<LinearLayout android:layout_height="0dp" android:layout_width="match_parent" android:orientation="horizontal" android:layout_weight="1">
 
-    <Button android:background="@drawable/shape_button" android:layout_height="match_parent" android:layout_width="match_parent" android:layout_weight="1" android:onClick="clear" android:clickable="true" android:layout_margin="5dp" android:id="@+id/reset" android:text="초기화"/>
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_button"
+        android:clickable="true"
+        android:onClick="clear"
+        android:text="초기화"
+        android:textSize="18dp" />
 
 </LinearLayout>
 
@@ -82,16 +112,52 @@
 
     <FrameLayout android:background="@drawable/shape_trans2" android:layout_height="134dp" android:layout_width="340dp" app:layout_constraintVertical_bias="0.07999998" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/frameLayout" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"> </FrameLayout>
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="0.01999998" app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.501" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/inputwindow" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:text="점자창" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:gravity="center"/>
+    <TextView
+        android:id="@+id/inputwindow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="점자창"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998" />
 
     <FrameLayout android:background="@drawable/shape_trans2" android:layout_height="70dp" android:layout_width="340dp" app:layout_constraintVertical_bias="0.435" app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.48" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"> </FrameLayout>
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintVertical_bias="0.348" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/outputwindow" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:text="결과창" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+    <TextView
+        android:id="@+id/outputwindow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="결과창"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.348" />
 
 
     -<HorizontalScrollView android:layout_height="37dp" android:layout_width="330dp" app:layout_constraintVertical_bias="0.441" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp">
 
-    <TextView android:layout_height="match_parent" android:layout_width="wrap_content" android:id="@+id/translateToWord" android:text="" android:textSize="25sp" android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/translateToWord"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:text=""
+        android:textSize="23dp" />
 
 </HorizontalScrollView>
 

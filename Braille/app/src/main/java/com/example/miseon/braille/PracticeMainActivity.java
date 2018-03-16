@@ -35,46 +35,7 @@ public class PracticeMainActivity extends AppCompatActivity {
         tv = (TextView)findViewById(R.id.recommend);
         calculateMax();
 
-/*
-        double max=0;
-        int check=0;
-        for(int i=0;i<7;i++){
-            if(total_number[i]!=0) {
-                double temp;
-                temp = (double)incorrect_number[i] / total_number[i];
-                percent[i] = temp;
-                if(max<temp){
-                    max = temp;
-                    check = i;
-                }
 
-            }
-        }
-
-        switch(check){
-            case 0:
-                tv.setText("한글 자음");
-                break;
-            case 1:
-                tv.setText("한글 모음");
-                break;
-            case 2:
-                tv.setText("한글 약어");
-                break;
-            case 3:
-                tv.setText("알파벳");
-                break;
-            case 4:
-                tv.setText("숫자");
-                break;
-            case 5:
-                tv.setText("문장부호");
-                break;
-            case 6:
-                tv.setText("단어");
-                break;
-        }
-        tv.append("이(가) 취약합니다\n학습을 권장합니다.");*/
 
 
     }
@@ -127,45 +88,6 @@ public class PracticeMainActivity extends AppCompatActivity {
 
             calculateMax();
 
-           /* double max=0;
-            int check=0;
-            for(int i=0;i<7;i++){
-                if(total_number[i]!=0) {
-                    double temp;
-                    temp = (double) incorrect_number[i] / total_number[i];
-                    percent[i] = temp;
-                    if(max<temp){
-                        max = temp;
-                        check = i;
-                    }
-
-                }
-            }
-
-            switch(check){
-                case 0:
-                    tv.setText("한글 자음");
-                    break;
-                case 1:
-                    tv.setText("한글 모음");
-                    break;
-                case 2:
-                    tv.setText("한글 약어");
-                    break;
-                case 3:
-                    tv.setText("알파벳");
-                    break;
-                case 4:
-                    tv.setText("숫자");
-                    break;
-                case 5:
-                    tv.setText("문장부호");
-                    break;
-                case 6:
-                    tv.setText("단어");
-                    break;
-            }
-            tv.append("이(가) 취약합니다\n학습을 권장합니다.");*/
         }
     }
 

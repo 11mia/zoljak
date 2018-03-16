@@ -5,11 +5,14 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ManualActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
@@ -59,7 +62,11 @@ public class ManualActivity extends AppCompatActivity implements GestureDetector
             // right to left swipe
             if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
                 if(page==12){
-                    Toast.makeText(this,"마지막 페이지 입니다.",Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(this,"마지막 페이지 입니다.",Toast.LENGTH_LONG);
+                    ViewGroup group = (ViewGroup) toast.getView();
+                    TextView messageTextView = (TextView) group.getChildAt(0);
+                    messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                    toast.show();
                 }else{
                     Intent it = new Intent(this,ManualActivity.class);
                     it.putExtra("page",++page);
@@ -139,7 +146,11 @@ public class ManualActivity extends AppCompatActivity implements GestureDetector
 
     public void clickNext(View v){
         if(page==12){
-            Toast.makeText(this,"마지막 페이지 입니다.",Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(this,"마지막 페이지 입니다.",Toast.LENGTH_LONG);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             return;
         }else{
             Intent it = new Intent(this,ManualActivity.class);

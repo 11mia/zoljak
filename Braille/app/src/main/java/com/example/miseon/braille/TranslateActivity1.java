@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -15,6 +13,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -2293,7 +2292,11 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
             if(happy==1) {
                 textView.setText("");
                 imageView.removeAllViews();
-                Toast.makeText(this, "변환결과가 없습니다", Toast.LENGTH_LONG).show();
+                Toast toast = Toast.makeText(this, "변환결과가 없습니다", Toast.LENGTH_LONG);
+                ViewGroup group = (ViewGroup) toast.getView();
+                TextView messageTextView = (TextView) group.getChildAt(0);
+                messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                toast.show();
             }
             else textView.setText("['" + al1 + "'" + "의 점역결과]");
 

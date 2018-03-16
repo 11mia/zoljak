@@ -14,14 +14,16 @@
         android:id="@+id/action_settings2"
         android:orderInCategory="200"
         android:title=" 종료"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+        android:textSize = "12dp"/>
 
     <item
         android:id="@+id/action_settings3"
         android:orderInCategory="50"
         android:title=""
         app:showAsAction="ifRoom"
-        android:icon="@drawable/help2"/>
+        android:icon="@drawable/help2"
+        android:textSize="12dp"/>
 
 
 </menu>

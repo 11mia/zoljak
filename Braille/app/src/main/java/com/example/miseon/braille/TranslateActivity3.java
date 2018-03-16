@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -15,6 +14,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -122,7 +122,11 @@ public class TranslateActivity3 extends AppCompatActivity {
 
 
         if (al1.length()>20) {
-            Toast.makeText(this, "20자 이내로 입력하세요.", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "20자 이내로 입력하세요.", Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
             editText.setText("");
             textView.setText("");
             imageView.removeAllViews();
@@ -238,7 +242,11 @@ public class TranslateActivity3 extends AppCompatActivity {
             if (happy==1) {//There is no result
                 imageView.removeAllViews();
                 textView.setText("");
-                Toast.makeText(this, "No Result", Toast.LENGTH_LONG).show();
+                Toast toast = Toast.makeText(this, "No Result", Toast.LENGTH_LONG);
+                ViewGroup group = (ViewGroup) toast.getView();
+                TextView messageTextView = (TextView) group.getChildAt(0);
+                messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+                toast.show();
 
             }
             else

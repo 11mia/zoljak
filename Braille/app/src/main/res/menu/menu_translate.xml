@@ -8,11 +8,13 @@
         android:id="@+id/translateHangul"
         android:orderInCategory="100"
         android:title="한글"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:textSize = "14dp"/>
     <item
         android:id="@+id/translateEnglish"
         android:orderInCategory="100"
         android:title="English"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:textSize = "14dp"/>
 
 </menu>
