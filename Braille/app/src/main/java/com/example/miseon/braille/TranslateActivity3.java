@@ -63,16 +63,22 @@ public class TranslateActivity3 extends AppCompatActivity {
         imageView = (LinearLayout) this.findViewById(R.id.imagelayout);
         textView.setText("");
 
+
         resultbutton=(Button) this.findViewById(R.id.resultbutton);
         resetbutton=(Button) this.findViewById(R.id.resetbutton);
         resultbutton.setText("change");
         resetbutton.setText("reset");
+        resultbutton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+        resetbutton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+
 
         inputwindow=(TextView)this.findViewById(R.id.inputwindow);
         inputwindow.setText("Search Window");
 
         outputwindow=(TextView)this.findViewById(R.id.outputwindow);
         outputwindow.setText("Result Window");
+        inputwindow.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+        outputwindow.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
 
         editText.setPrivateImeOptions("defaultInputmode=english;"); //기본키패드를 영어로 설정
         editText.setImeOptions(EditorInfo.IME_NULL); //키보드에서 엔터 터치시 '완료'의미

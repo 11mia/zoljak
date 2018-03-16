@@ -50,7 +50,7 @@
         android:clickable="true"
         android:onClick="clickAdd"
         android:text="추가"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/change"
@@ -62,7 +62,7 @@
         android:clickable="true"
         android:onClick="clickTranslate"
         android:text="변환"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
 </LinearLayout>
 
@@ -88,7 +88,7 @@
         android:clickable="true"
         android:onClick="clear"
         android:text="초기화"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
 </LinearLayout>
 
