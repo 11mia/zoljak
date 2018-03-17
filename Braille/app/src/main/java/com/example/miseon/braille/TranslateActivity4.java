@@ -63,31 +63,11 @@ public class TranslateActivity4 extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_translate2);
+        setContentView(R.layout.activity_translate4);
         setTitle("변환(점자->글자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mVibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-
-
-        translateToWord= (TextView) this.findViewById(R.id.translateToWord);
-        //    resultchang=(TextView) this.findViewById(R.id.resultchang);
-
-
-        add=(Button)this.findViewById(R.id.add);
-        change=(Button)this.findViewById(R.id.change);
-        reset =(Button)this.findViewById(R.id.reset);
-
-        add.setText("ADD");
-        change.setText("CHANGE");
-        reset.setText("RESET");
-
-
-        inputwindow=(TextView)this.findViewById(R.id.inputwindow);
-        outputwindow=(TextView)this.findViewById(R.id.outputwindow);
-
-        inputwindow.setText("Braille Window");
-        outputwindow.setText("Result Window");
-
+        translateToWord=(TextView)findViewById(R.id.translateToWord);
 
     }
 
@@ -111,9 +91,7 @@ public class TranslateActivity4 extends AppCompatActivity{
                 finish();
                 break;
             case R.id.translateEnglish:
-                // it=new Intent(this,TranslateActivity4.class);
-                //  startActivity(it);
-                //  finish();
+
                 break;
         }
         return super.onOptionsItemSelected(item);

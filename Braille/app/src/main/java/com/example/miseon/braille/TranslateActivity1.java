@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -53,6 +54,8 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
     final Context context = this;
 
 
+    Button result;
+    Button reset;
 
     char temp='z';
     String lastbatchim="";
@@ -66,18 +69,29 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
         editText = (EditText) this.findViewById(R.id.inputtext);
         textView = (TextView) this.findViewById(R.id.outputtext);
-        //    textView2=(TextView) this.findViewById(R.id.outputimagecho);
-        //  textView3=(TextView) this.findViewById(R.id.outputimagejun);
-        //textView4=(TextView) this.findViewById(R.id.outputimagejong);
+
         imageView = (LinearLayout) this.findViewById(R.id.imagelayout);
 
-
-        //    jeomjafont=(TextView)this.findViewById(R.id.resultjeomjafont);
 
         //키보드 올리기
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
 
+        result = (Button)findViewById(R.id.resultbutton);
+        result.setOnClickListener((new View.OnClickListener() {
+            public void onClick(View v) {
+                try {
+                    goToTranslateToJeom(v);
+                } catch (IOException e) {
+                }
+            }
+        }));
+        reset = (Button)findViewById(R.id.resetbutton);
+        reset.setOnClickListener((new View.OnClickListener() {
+            public void onClick(View v) {
+                    goToReset(v);
+            }
+        }));
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

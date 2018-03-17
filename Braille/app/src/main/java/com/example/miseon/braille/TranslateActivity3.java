@@ -40,16 +40,12 @@ public class TranslateActivity3 extends AppCompatActivity {
 
     int dot_num;
     String al1;
-
-    Button resultbutton;
-    Button resetbutton;
-
-    TextView inputwindow;
-    TextView outputwindow;
+    Button result;
+    Button reset;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_translate1);
+        setContentView(R.layout.activity_translate3);
         setTitle("변환(글자->점자)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //키보드 올리기
@@ -64,24 +60,24 @@ public class TranslateActivity3 extends AppCompatActivity {
         textView.setText("");
 
 
-        resultbutton=(Button) this.findViewById(R.id.resultbutton);
-        resetbutton=(Button) this.findViewById(R.id.resetbutton);
-        resultbutton.setText("change");
-        resetbutton.setText("reset");
-        resultbutton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
-        resetbutton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
-
-
-        inputwindow=(TextView)this.findViewById(R.id.inputwindow);
-        inputwindow.setText("Search Window");
-
-        outputwindow=(TextView)this.findViewById(R.id.outputwindow);
-        outputwindow.setText("Result Window");
-        inputwindow.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-        outputwindow.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-
         editText.setPrivateImeOptions("defaultInputmode=english;"); //기본키패드를 영어로 설정
         editText.setImeOptions(EditorInfo.IME_NULL); //키보드에서 엔터 터치시 '완료'의미
+
+        result = (Button)findViewById(R.id.resultbutton);
+        result.setOnClickListener((new View.OnClickListener() {
+            public void onClick(View v) {
+                try {
+                    goToTranslateToJeom(v);
+                } catch (IOException e) {
+                }
+            }
+        }));
+        reset = (Button)findViewById(R.id.resetbutton);
+        reset.setOnClickListener((new View.OnClickListener() {
+            public void onClick(View v) {
+                goToReset(v);
+            }
+        }));
 
     }
 
@@ -107,9 +103,7 @@ public class TranslateActivity3 extends AppCompatActivity {
                 finish();
                 break;
             case R.id.translateEnglish:
-                // it=new Intent(this,TranslateActivity3.class);
-                // startActivity(it);
-                // finish();
+
                 break;
         }
         return super.onOptionsItemSelected(item);
