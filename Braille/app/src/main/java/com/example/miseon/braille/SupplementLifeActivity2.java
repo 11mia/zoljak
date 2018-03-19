@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 
@@ -33,6 +34,7 @@ public class SupplementLifeActivity2  extends AppCompatActivity
         LinearLayout layout_life=(LinearLayout)findViewById(R.id.lifelayout);
         ImageButton button_life=(ImageButton)findViewById(R.id.lifeimage);
         TextView text_life=(TextView)findViewById(R.id.lifetext);
+        ScrollView scroll = (ScrollView)findViewById(R.id.lifeScroll);
 
         Intent it= getIntent();
         String tag=it.getStringExtra("tag");
@@ -55,6 +57,13 @@ public class SupplementLifeActivity2  extends AppCompatActivity
         layoutParams2.gravity = Gravity.CENTER;
         layoutParams1.setMargins(10,20,10,20);
         layoutParams2.setMargins(10,0,10,20);
+
+        LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(width2, height1);//단위로 dp를 사용하기 위함.
+        layoutParams3.setMargins(20,5,10,20);//왼쪽
+
+        LinearLayout.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(width2, height1);//단위로 dp를 사용하기 위함.
+        layoutParams4.setMargins(10,5,20,20);//오른쪽
+
 
 
         if(tag.equals("1")) {
@@ -100,19 +109,53 @@ public class SupplementLifeActivity2  extends AppCompatActivity
            button_life.setBackground(this.getResources().getDrawable(R.drawable.shape3));
 
             int id_img2 = res.getIdentifier("shape_button2", "drawable", getPackageName());
-            layout_life.setBackgroundResource(id_img2);
+            scroll.setBackgroundResource(id_img2);
 
-            int id_img3=res.getIdentifier("street_image", "drawable", getPackageName());
-            image_life.setImageResource(id_img3);
-            layout_life.addView(image_life);
 
-            layout_life.setOnClickListener(
+            id_img = res.getIdentifier("street_image", "drawable", getPackageName());
+            ImageView im2 = new ImageView(this);
+            im2.setLayoutParams(layoutParams1);
+            im2.setImageResource(id_img);
+            layout_life.addView(im2);
+            im2.setOnClickListener(
                     new Button.OnClickListener() {
                         public void onClick(View v) {
                             showIm("street_image");
                         }
                     }
             );
+
+            LinearLayout hori = new LinearLayout(this);
+            hori.setOrientation(LinearLayout.HORIZONTAL);
+
+            id_img = res.getIdentifier("street1", "drawable", getPackageName());
+            ImageView im3 = new ImageView(this);
+            im3.setLayoutParams(layoutParams3);
+            im3.setImageResource(id_img);
+            hori.addView(im3);
+            im3.setOnClickListener(
+                    new Button.OnClickListener() {
+                        public void onClick(View v) {
+                            showIm("street1");
+                        }
+                    }
+            );
+
+            id_img = res.getIdentifier("street2", "drawable", getPackageName());
+            ImageView im4 = new ImageView(this);
+            im4.setLayoutParams(layoutParams4);
+            im4.setImageResource(id_img);
+            hori.addView(im4);
+            im4.setOnClickListener(
+                    new Button.OnClickListener() {
+                        public void onClick(View v) {
+                            showIm("street2");
+                        }
+                    }
+            );
+
+            layout_life.addView(hori);
+
 
         }
 
@@ -122,7 +165,7 @@ public class SupplementLifeActivity2  extends AppCompatActivity
             text_life.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
 
             int id_img2 = res.getIdentifier("shape_button3", "drawable", getPackageName());
-            layout_life.setBackgroundResource(id_img2);
+            scroll.setBackgroundResource(id_img2);
 
             int id_img = res.getIdentifier("sub2", "drawable", getPackageName());
             ImageView im2 = new ImageView(this);
@@ -142,7 +185,7 @@ public class SupplementLifeActivity2  extends AppCompatActivity
 
             id_img = res.getIdentifier("sub1", "drawable", getPackageName());
             ImageView im3 = new ImageView(this);
-            im3.setLayoutParams(layoutParams2);
+            im3.setLayoutParams(layoutParams3);
             im3.setImageResource(id_img);
             hori.addView(im3);
             im3.setOnClickListener(
@@ -155,7 +198,7 @@ public class SupplementLifeActivity2  extends AppCompatActivity
 
             id_img = res.getIdentifier("sub3", "drawable", getPackageName());
             ImageView im4 = new ImageView(this);
-            im4.setLayoutParams(layoutParams2);
+            im4.setLayoutParams(layoutParams4);
             im4.setImageResource(id_img);
             hori.addView(im4);
             im4.setOnClickListener(

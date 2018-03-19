@@ -7,6 +7,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -33,18 +34,20 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="300dp"
-        android:layout_height="380dp"
+        android:id="@+id/lifeScroll"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/lifelayout"
-            android:layout_width="300dp"
-            android:layout_height="380dp"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"></LinearLayout>
     </ScrollView>
 

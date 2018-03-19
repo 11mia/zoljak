@@ -45,14 +45,16 @@ public class SupplementActivity extends AppCompatActivity {
             Log.d("checkFile", "file Check="+bResult);
             if(!bResult){
                 CopyReadAssets();
-            }else{
-
             }
-        } catch (Exception e) {
 
-        }
         openPDF();
-
+        } catch (Exception e) {
+            Toast toast = Toast.makeText(this, "이 기종에서는 지원하지 않는 기능입니다." , Toast.LENGTH_SHORT);
+            ViewGroup group = (ViewGroup) toast.getView();
+            TextView messageTextView = (TextView) group.getChildAt(0);
+            messageTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            toast.show();
+        }
     }
 
     private void CopyReadAssets()

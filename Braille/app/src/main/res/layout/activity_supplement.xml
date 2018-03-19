@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.30">
 
         <ImageButton
-            android:id="@+id/b3"
+            android:id="@+id/Rulebutton"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:background="@drawable/shape3"
