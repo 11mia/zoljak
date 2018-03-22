@@ -282,7 +282,6 @@ public class TestActivity extends AppCompatActivity{
 
             }
         }
-
         switch(check){
             case 0:
                 tv.setText("한글 자음");

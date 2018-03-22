@@ -15,11 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class ManualActivity extends AppCompatActivity implements GestureDetector.OnGestureListener {
     int page;
     ImageView im;
     private ConstraintLayout main;
-    private static final int SWIPE_MIN_DISTANCE = 90;
+    private static final int SWIPE_MIN_DISTANCE = 100;
     private static final int SWIPE_MAX_OFF_PATH = 250;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
 
@@ -32,7 +34,11 @@ public class ManualActivity extends AppCompatActivity implements GestureDetector
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent it = getIntent();
         page =it.getIntExtra("page",1);
+
         im = (ImageView)this.findViewById(R.id.manualIV);
+        PhotoViewAttacher attacher;
+        attacher = new PhotoViewAttacher(im);
+
         Resources res = getResources();
         String str = "p"+page;
         int id_img = res.getIdentifier(str, "drawable", getPackageName());
