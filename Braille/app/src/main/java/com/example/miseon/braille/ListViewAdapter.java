@@ -48,11 +48,12 @@ public class ListViewAdapter extends BaseAdapter {
         return listVO.get(position);
     }
 
-    public void addVO(String name,String address,String detail){
+    public void addVO(String name,String address,String detail,String url){
         ListVO item = new ListVO();
         item.setname(name);
         item.setaddress(address);
         item.setdetail(detail);
+        item.seturl(url);
         listVO.add(item);
 
     }

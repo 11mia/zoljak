@@ -8,6 +8,7 @@ public class ListVO {
     private String name;
     private String address;
     private String detail;
+    private String url;
 
     public String getname(){
         return name;
@@ -26,6 +27,12 @@ public class ListVO {
     }
     public String getdetail(){
         return detail;
+    }
+    public String geturl(){
+        return url;
+    }
+    public void seturl(String url){
+        this.url=url;
     }
 
 }

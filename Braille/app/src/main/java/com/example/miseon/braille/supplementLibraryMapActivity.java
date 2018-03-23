@@ -7,6 +7,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
@@ -23,6 +24,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class supplementLibraryMapActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
@@ -30,6 +33,7 @@ public class supplementLibraryMapActivity extends AppCompatActivity implements O
     String address;
     String name;
     String detail;
+    String url;
 
 
 
@@ -44,11 +48,25 @@ public class supplementLibraryMapActivity extends AppCompatActivity implements O
         name = it.getStringExtra("name");
         address = it.getStringExtra("address");
         detail = it.getStringExtra("detail");
+        url = it.getStringExtra("url");
         //Toast.makeText(this,"name : "+name+", address : "+address,Toast.LENGTH_LONG).show();
         TextView tvname = (TextView)findViewById(R.id.name);
         TextView tvdetail = (TextView)findViewById(R.id.detail);
+        TextView tvurl = (TextView)findViewById(R.id.url);
         tvname.setText(name);
         tvdetail.setText(detail);
+        if(url!=null) {
+            tvurl.setText(url);
+            Linkify.TransformFilter mTransform = new Linkify.TransformFilter() {
+                @Override
+                public String transformUrl(Matcher match, String url) {
+                    return "";
+                }
+            };
+            Pattern pattern1 = Pattern.compile(url);
+            Linkify.addLinks(tvurl, pattern1, url, null, mTransform);
+        }
+
 
 
 

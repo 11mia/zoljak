@@ -24,6 +24,7 @@ public class supplementLibraryActivity extends AppCompatActivity {
     private String[] name=new String[39];
     private String[] address=new String[39];
     private String[] detail=new String[39];
+    private String[] url = new String[39];
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +45,11 @@ public class supplementLibraryActivity extends AppCompatActivity {
                 String name = item.getname();
                 String address = item.getaddress();
                 String detail = item.getdetail();
+                String url = item.geturl();
                 intent.putExtra("name",name);
                 intent.putExtra("address",address);
                 intent.putExtra("detail",detail);
+                intent.putExtra("url",url);
                 startActivity(intent);
 
             }
@@ -63,6 +66,7 @@ public class supplementLibraryActivity extends AppCompatActivity {
             String str_name;
             String str_address;
             String address_detail;
+            String url_detail;
             int i=-1;
 
             cursor = sqlitedb.query("Library",null,null,null,null,null,"num");
@@ -72,10 +76,12 @@ public class supplementLibraryActivity extends AppCompatActivity {
                 str_name =cursor.getString(cursor.getColumnIndex("name"));
                 str_address=cursor.getString(cursor.getColumnIndex("address"));
                 address_detail=cursor.getString(cursor.getColumnIndex("detail"));
+                url_detail=cursor.getString(cursor.getColumnIndex("url"));
                 name[i]=str_name;
                 address[i]=str_address;
                 detail[i]=address_detail;
-                adapter.addVO(name[i],address[i],detail[i]);
+                url[i]=url_detail;
+                adapter.addVO(name[i],address[i],detail[i],url[i]);
 
             }
 
