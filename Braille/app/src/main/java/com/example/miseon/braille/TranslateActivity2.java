@@ -416,6 +416,22 @@ public class TranslateActivity2 extends AppCompatActivity{
                         count++;
                     }
 
+              /*      else if(ivId!=0&&jeomjanum[start].equals("c777757")) {//제 16항 '청'일 경우
+                        chos_2[count]=',';
+                        juns_2[count]=0x0000;
+                        jong_2[count]=0x0000;
+                        start++;
+                        count++;
+                    }*/
+
+
+
+
+
+
+
+
+
 
 
                     else if ((start+1==ivId)&&jeomjanum[start].equals("c777776")&&(jeomjanum[start+1].equals("c727477")||jeomjanum[start+1].equals("c777457")//따빠짜약어

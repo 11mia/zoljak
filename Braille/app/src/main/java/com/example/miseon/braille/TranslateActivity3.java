@@ -214,6 +214,33 @@ public class TranslateActivity3 extends AppCompatActivity {
                     }
 
                 }
+                else if( temp[start]=='.'||temp[start]==','||temp[start]=='?'||temp[start]=='!') {
+
+                    ImageView iv = new ImageView(this); //추가할 이미지뷰
+                    if (temp[start]=='.'){
+                        iv.setImageResource(R.drawable.c727756);
+                    } else if (temp[start] == ',') {
+                        iv.setImageResource(R.drawable.c777757);
+                    }
+                    else if (temp[start] == '?') {
+                        iv.setImageResource(R.drawable.c723776);
+                    }
+                    else if (temp[start] == '!') {
+                        iv.setImageResource(R.drawable.c723757);
+                    }
+
+                    final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                    final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                    layoutParams.gravity = Gravity.CENTER;
+                    iv.setLayoutParams(layoutParams);
+                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                    imageView.setGravity(Gravity.CENTER);
+                    imageView.addView(iv);
+                }
+
+
                 else if (temp[start]==' ') {
                     ImageView iv = new ImageView(this); //추가할 이미지뷰
 

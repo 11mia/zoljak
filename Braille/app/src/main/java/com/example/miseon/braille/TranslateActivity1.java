@@ -172,49 +172,86 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
             Map<String, Integer> map = new HashMap<String, Integer>();
             char test = al1.charAt(k);
 
-            if (test >= 0xAC00) {//AC00
-                char uniVal = (char) (test - 0xAC00);//AC00
-
-                char cho = (char) (((uniVal - (uniVal % 28)) / 28) / 21);//21
-                char jun = (char) (((uniVal - (uniVal % 28)) / 28) % 21);//21
-                char jon = (char) (uniVal % 28);
 
 
-                System.out.println();
-                System.out.println("" + test + "// 0x" + Integer.toHexString((char) test));
 
-                System.out.println("" + CHO[cho] + "// 0x"
-                        + Integer.toHexString((char) cho));
+            if (test == 0x002E/*'.'*/) {
+                chos_2[count] = '.';
+                juns_2[count] = 'A';
+                jong_2[count] = 'A';
 
-                arr += CHO[cho] + "";
-                chos += CHO[cho];
-                chos_2[count] = CHO[cho];
+            } else if (test == 0x002C) {
 
-                System.out.println("" + JUN[jun] + "// 0x"
-                        + Integer.toHexString((char) jun));
+                chos_2[count] = ',';
+                juns_2[count] = 'A';
+                jong_2[count] = 'A';
 
-                arr += JUN[jun] + "";
-                juns += JUN[jun];
-                juns_2[count] = JUN[jun];
+            } else if (test == 0x003F) {//물음표
+
+                chos_2[count] = '?';
+                juns_2[count] = 'A';
+                jong_2[count] = 'A';
+
+            } else if (test == 0x0021) {//느낌표
+
+                chos_2[count] = '!';
+                juns_2[count] = 'A';
+                jong_2[count] = 'A';
+
+            }
+
+            else if (test >= 0xAC00) {//AC00
 
 
-                if ((char) jon != 0x0000) {
-                    System.out.println("" + JON[jon] + "// 0x"
-                            + Integer.toHexString((char) jon));
-                    arr += JON[jon] + "";
-                    jongs += JON[jon];
-                    jong_2[count] = JON[jon];
+                    char uniVal = (char) (test - 0xAC00);//AC00
+
+                    char cho = (char) (((uniVal - (uniVal % 28)) / 28) / 21);//21
+                    char jun = (char) (((uniVal - (uniVal % 28)) / 28) % 21);//21
+                    char jon = (char) (uniVal % 28);
 
 
-                } else {//종성 없는 경우
-                    jongs += 'A';
-                    jong_2[count] = 'A';
+                    System.out.println();
+                    System.out.println("" + test + "// 0x" + Integer.toHexString((char) test));
+
+                    System.out.println("" + CHO[cho] + "// 0x"
+                            + Integer.toHexString((char) cho));
+
+                    arr += CHO[cho] + "";
+                    chos += CHO[cho];
+                    chos_2[count] = CHO[cho];
+
+                    System.out.println("" + JUN[jun] + "// 0x"
+                            + Integer.toHexString((char) jun));
+
+                    arr += JUN[jun] + "";
+                    juns += JUN[jun];
+                    juns_2[count] = JUN[jun];
+
+
+                    if ((char) jon != 0x0000) {
+                        System.out.println("" + JON[jon] + "// 0x"
+                                + Integer.toHexString((char) jon));
+                        arr += JON[jon] + "";
+                        jongs += JON[jon];
+                        jong_2[count] = JON[jon];
+
+
+                    } else {//종성 없는 경우
+                        jongs += 'A';
+                        jong_2[count] = 'A';
+                    }
+
                 }
 
-            }
-            else if(test<0xAC00&&test!=0x0020) {
+
+
+
+            else if(test<0xAC00) {
+
+
                 happy=1; count=0; break;
             }
+
             else {//스페이스바처리
                 arr += "  ";
                 chos += 'B';
@@ -226,6 +263,8 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                 juns_2[count] = 'B';
                 jong_2[count] = 'B';
             }
+
+
             count++;
 
         }
@@ -260,6 +299,8 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
                 }
 
                 else {//스페이스바 아닌 부분 처리하는 코드
+
+
 
                     if ((start+1>0)/*&&chos_2[start+1]!='ㅇ'&&juns_2[start+1]!='ㅖ'*/&&(chos_2[start] == 'ㄲ' || chos_2[start] == 'ㅆ') && juns_2[start] == 'ㅏ') {//case1
 
@@ -381,6 +422,75 @@ public class TranslateActivity1 extends AppCompatActivity {//아 코드 깔끔�
 
 
 
+                    else if((chos_2[start]==('.'))) {//문장부호처리(온점)
+
+                        ImageView iv = new ImageView(this); //추가할 이미지뷰
+                        iv.setImageResource(R.drawable.c727756);
+                        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                        layoutParams.gravity = Gravity.CENTER;
+                        iv.setLayoutParams(layoutParams);
+                        iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                        imageView.setGravity(Gravity.CENTER);
+                        imageView.addView(iv);
+
+
+                    }
+
+                    else if((chos_2[start]==(','))) {//문장부호처리
+
+                        ImageView iv = new ImageView(this); //추가할 이미지뷰
+
+                        iv.setImageResource(R.drawable.c777757);
+                        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                        layoutParams.gravity = Gravity.CENTER;
+                        iv.setLayoutParams(layoutParams);
+                        iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                        imageView.setGravity(Gravity.CENTER);
+                        imageView.addView(iv);
+                        //알아서 start카운트
+
+                    }
+
+                    else if((chos_2[start]==('?'))) {//문장부호처리물음표
+
+                        ImageView iv = new ImageView(this); //추가할 이미지뷰
+
+                        iv.setImageResource(R.drawable.c723776);
+                        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                        layoutParams.gravity = Gravity.CENTER;
+                        iv.setLayoutParams(layoutParams);
+                        iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                        imageView.setGravity(Gravity.CENTER);
+                        imageView.addView(iv);
+                        //알아서 start카운트
+
+                    }
+                    else if((chos_2[start]==('!'))) {//문장부호처리느낌표
+
+                        ImageView iv = new ImageView(this); //추가할 이미지뷰
+
+                        iv.setImageResource(R.drawable.c723757);
+                        final int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());//30dp
+                        final int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());//50dp
+                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, height);//단위로 dp를 사용하기 위함.
+
+                        layoutParams.gravity = Gravity.CENTER;
+                        iv.setLayoutParams(layoutParams);
+                        iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                        imageView.setGravity(Gravity.CENTER);
+                        imageView.addView(iv);
+                        //알아서 start카운트
+
+                    }
 
 
 
